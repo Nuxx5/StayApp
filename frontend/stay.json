@@ -1,0 +1,164 @@
+{
+  "trip(FrontendOnly)": {
+    "startDate": 1617478393774,
+    "endDate": 1617651221188,
+    "guests": {
+      "adults": 2,
+      "kids": 2
+    },
+    "loc": {
+      "country": "Canada",
+      "countryCode": "CA",
+      "address": "Montreal, Canada",
+      "lat": 45.508888,
+      "lng": -73.561668
+    }
+  },
+  "stay": [
+    {
+      "_id": "10006546",
+      "name": "Charming Villa near the lake",
+      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "otherImg.jpg"],
+      "price": 99.00,
+      "summary": "Charming spacious Villa, located in the historic area of Montreal...",
+      "capacity": 4,
+      "amenities": [
+        "TV",
+        "Wifi",
+        "Kitchen",
+        "Washer and dryer",
+        "Pets allowed",
+        "Pool and Spa"
+      ],
+      "host": {
+        "_id": "51399391",
+        "fullname": "David Smith",
+        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small",
+      },
+      "loc": {
+        "country": "Canada",
+      "countryCode": "CA",
+      "address": "Montreal, Canada",
+      "lat": 45.508888,
+      "lng": -73.561668
+      },
+      "reviews": [
+        {
+          "id": "434312",
+          "txt": "Amazing place, nice hosts...",
+          "rate": 5,
+          "by": {
+            "_id": "u104",
+            "fullname": "Dan Gat",
+            "imgUrl": "/img/img4.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "10006550",
+      "name": "Two bedroom apartment on the hill",
+      "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "otherImg.jpg"],
+      "price": 70.00,
+      "summary": "fully equipped apartment next to the national park...",
+      "capacity": 3,
+      "amenities": [
+        "TV",
+        "Wifi",
+        "Kitchen",
+        "Washer and dryer",
+        "A/C"
+  
+      ],
+      "host": {
+        "_id": "u106",
+        "fullname": "Jeff Gold",
+        "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small",
+      },
+      "loc": {
+        "country": "Canada",
+      "countryCode": "CA",
+      "address": "Toronto, Canada",
+      "lat": 43.651070,
+      "lng": -79.347015
+      },
+      "reviews": [
+        {
+          "id": "434354",
+          "txt": "very lovely place, charming people...",
+          "rate": 5,
+          "by": {
+            "_id": "u103",
+            "fullname": "Ori Rose",
+            "imgUrl": "/img/img3.jpg"
+          }
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "_id": "o1225",
+      "createdAt": 1615916496524,
+      "buyer": {
+        "_id": "u105",
+        "fullname": "Gal Bar"
+      },
+      "totalPrice": 198,
+      "startDate": "2021/04/27",
+      "endDate": "2021/04/29",
+      "guests": {
+        "adults": 2,
+        "kids": 2
+      },
+      "stay": {
+        "_id": "h102",
+        "name": "House On The Lake",
+        "price": 99.00
+      },
+      "status": "pending"
+    }    
+  ],
+  "user": [
+    {
+      "_id": "u101",
+      "fullname": "Ran Porath",
+      "imgUrl": "/img/img1.jpg",
+      "isAdmin": false,
+      "username" : "ran",
+      "password" : "1234"
+    },
+    {
+      "_id": "u102",
+      "fullname": "Bari Avni",
+      "imgUrl": "/img/img2.jpg",
+      "isAdmin": false,
+      "username" : "bari",
+      "password" : "1234"
+    },
+    {
+      "_id": "u103",
+      "fullname": "Ori Rose",
+      "imgUrl": "/img/img3.jpg",
+      "isAdmin": false,
+      "username" : "ori",
+      "password" : "1234"
+    },
+    {
+      "_id": "u104",
+      "fullname": "Dan Gat",
+      "imgUrl": "/img/img4.jpg",
+      "isAdmin": false,
+      "username" : "dan",
+      "password" : "1234"
+    },
+    {
+      "_id": "u105",
+      "fullname": "Gal Bar",
+      "imgUrl": "/img/img5.jpg",
+      "isAdmin": false,
+      "username" : "gal",
+      "password" : "1234"
+    }
+  ]  
+}
