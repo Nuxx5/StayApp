@@ -15,7 +15,11 @@ export default {
   components: {
     appHeader,
     appFooter
-  }
+  },
+  created() {
+    console.log("Vue App was created!!!");
+    this.$store.dispatch({ type: "loadStays" });
+  },
 }
 </script>
 

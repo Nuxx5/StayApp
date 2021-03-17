@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 
 import { userStore } from './user.store.js'
 // import { orderStore } from './order.store.js'
-// import { stayStore } from './stay.store.js'
+import { stayStore } from './stay.store.js'
 // import { tripStore } from './trip.store.js'
 // import { socketStore } from './socket.store.js'
 
@@ -14,7 +14,7 @@ export const store = new Vuex.Store({
   modules: {
     userStore,
     // orderStore,
-    // stayStore,
+    stayStore,
     // tripStore,
     // socketStore
   },

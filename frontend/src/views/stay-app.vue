@@ -1,6 +1,6 @@
 <template>
   <section class="stay-app main-container">
-    <!-- <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" /> -->
+    <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" />
     <stay-list
       :stays="stays"
     />
@@ -19,22 +19,23 @@ export default {
   data() {
     return {
       stayToEdit: stayService.getEmptyStay(),
-      // isUserScrolling: false
+      isUserScrolling: false
     };
   },
   methods: {
     setFilter(filterBy) {
+      console.log('in filter');
       // this.$store.commit({ type: "setFilter", filterBy });
       this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
     },
-    // handleScroll (event) {
-    //   // Any code to be executed when the window is scrolled
-    //   if (window.scrollY > 0) {
-    //     this.isUserScrolling = true;
-    //     this.isSearch = false;
-    //   }
-    //   else this.isUserScrolling = false
-    // }
+    handleScroll (event) {
+      // Any code to be executed when the window is scrolled
+      if (window.scrollY > 0) {
+        this.isUserScrolling = true;
+        this.isSearch = false;
+      }
+      else this.isUserScrolling = false
+    }
   },
   created () {
     window.addEventListener('scroll', this.handleScroll);

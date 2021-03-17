@@ -1,8 +1,8 @@
     <template>
-  <section class="stay-preview flex">
+  <section class="stay-preview flex column">
     <p>Stay: {{ stay.name }}</p>
     <p>Price: ${{ stay.price }}</p>
-    <p>Type: {{ stay.capacity }}</p>
+    <p>Capacity: {{ stay.capacity }}</p>
   </section>    
 </template>
 <script>
