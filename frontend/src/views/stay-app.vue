@@ -28,7 +28,7 @@ export default {
   computed: {
     stays() {
       console.log(
-        JSON.parse(JSON.stringify(this.$store.getters.staysForDisplay))
+        // JSON.parse(JSON.stringify(this.$store.getters.staysForDisplay))
       );
       return this.$store.getters.staysForDisplay;
     },
