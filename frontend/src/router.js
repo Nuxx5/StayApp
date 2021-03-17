@@ -5,7 +5,7 @@ import homePage from './views/home-page.vue'
 import stayApp from './views/stay-app.vue'
 import stayDetails from './views/stay-details.vue'
 import stayEdit from './views/stay-edit.vue'
-import loginSignup from './views/login-signup.vue'
+import login from './views/login-signup.vue'
 import userDetails from './views/user-details.vue'
 
 Vue.use(Router)
@@ -41,8 +41,8 @@ export const router = new Router({
         // },
         {
             path: '/login',
-            name: 'loginSignup',
-            component: loginSignup
+            name: 'login',
+            component: login
         },
         {
             path: '/user/:id',
