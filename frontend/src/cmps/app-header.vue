@@ -41,7 +41,7 @@ export default {
       this.isUserScrolling = (window.scrollY > 20);
     },
     setIsUserScrolling() {
-      this.isUserScrolling = !this.isUserScrolling
+      // this.isUserScrolling = !this.isUserScrolling
     }
   }
 };

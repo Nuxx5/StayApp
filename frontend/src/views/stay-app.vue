@@ -1,9 +1,9 @@
 <template>
   <section class="stay-app main-container">
     <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" />
-    <!-- <stay-list
+    <stay-list
       :stays="stays"
-    /> -->
+    />
     <div class="big" />
   </section>
 </template>
@@ -31,7 +31,7 @@ export default {
     handleScroll (event) {
       // Any code to be executed when the window is scrolled
     this.isUserScrolling = (window.scrollY > 20);
-    console.log('this.myJson.stay._id', this.myJson.stay[0]._id);
+    // console.log('this.myJson.stay._id', this.myJson.stay[0]._id);
     }
   },
   created () {
