@@ -10,11 +10,11 @@ export const userStore = {
         users: [],
         watchedUser: null
     },
-    getters: {
-        users({ users }) { return users },
-        loggedinUser({ loggedinUser }) { return loggedinUser },
-        watchedUser({ watchedUser }) { return watchedUser }
-    },
+    // getters: {
+        // users({ users }) { return users },
+        // loggedinUser({ loggedinUser }) { return loggedinUser },
+        // watchedUser({ watchedUser }) { return watchedUser }
+    // },
     mutations: {
         setLoggedinUser(state, { user }) {
             state.loggedinUser = user;
