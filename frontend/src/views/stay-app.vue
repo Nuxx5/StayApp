@@ -1,10 +1,10 @@
 <template>
   <section class="stay-app main-container">
     <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" />
-    <stay-list
+    <!-- <stay-list
       :stays="stays"
-    />
-    <div class="big"/>
+    /> -->
+    <div class="big" />
   </section>
 </template>
 
@@ -13,12 +13,14 @@ import stayList from "../cmps/stay-list.vue";
 import stayFilter from "../cmps/stay-filter.vue";
 import { stayService } from "../services/stay.service.js";
 // import { showMsg } from "../services/eventBus.service.js";
+import MY_JSON from '../../stay.json'
 
 export default {
   data() {
     return {
-      stayToEdit: stayService.getEmptyStay(),
-      isUserScrolling: false
+    //   stayToEdit: stayService.getEmptyStay(),
+      isUserScrolling: false,
+      myJson: MY_JSON
     };
   },
   methods: {
@@ -29,6 +31,7 @@ export default {
     handleScroll (event) {
       // Any code to be executed when the window is scrolled
     this.isUserScrolling = (window.scrollY > 20);
+    console.log('this.myJson.stay._id', this.myJson.stay[0]._id);
     }
   },
   created () {
