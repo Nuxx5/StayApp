@@ -5,13 +5,13 @@
     <h2><span>Capacity: </span>{{ stay.capacity }}</h2>
     <h2><span>amenities: </span>{{ stay.amneties }}</h2>
     <h2><span>Created at: </span> {{ date }}</h2>
-    <chat :stay="stay" />
+    <chat-app :stay="stay" />
     <router-link to="/stay" class="btn">Back</router-link>
   </section>
 </template>
     <script>
 import { stayService } from "../services/stay.service.js";
-import chat from "../cmps/chat.vue";
+import chatApp from "../cmps/chat-app.vue";
 export default {
   data() {
     return {
@@ -32,7 +32,7 @@ export default {
     },
   },
   components: {
-    chat,
+    chatApp,
   },
 };
 </script>
