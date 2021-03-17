@@ -1,8 +1,8 @@
 <template>
   <section class="container home text-center">
-    <h1>Home Page</h1>
+    <h1>Stay.</h1>
     <h5 class="text-center">
-      Stay. 
+      Anywhere. 
     </h5>
     <!-- <img alt="Stay logo" src="../assets/logo.png"> -->
   </section>

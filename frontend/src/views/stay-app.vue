@@ -4,6 +4,7 @@
     <stay-list
       :stays="stays"
     />
+    <div class="big"/>
   </section>
 </template>
 
@@ -38,8 +39,10 @@ export default {
   },
   computed: {
     stays() {
-    //   console.log(JSON.parse(JSON.stringify(this.$store.getters.staysForDisplay)));
-    //   return this.$store.getters.staysForDisplay;
+      console.log(
+        // JSON.parse(JSON.stringify(this.$store.getters.staysForDisplay))
+      );
+      return this.$store.getters.staysForDisplay;
     },
   },
   components: {
