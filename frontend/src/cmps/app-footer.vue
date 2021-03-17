@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
       <div className="footer">
-        <h3>© 2021 Stay. All rights reserved · Privacy · Terms · Sitemap</h3>
+        <h5>© 2021 Stay. All rights reserved · Privacy · Terms · Sitemap</h5>
       </div>
   </footer>
 </template>
