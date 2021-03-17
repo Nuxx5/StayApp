@@ -4,7 +4,7 @@
       <router-link to="/">
         <span role="img" aria-label="logo">🏨</span>
       </router-link>
-      <stay-filter/>
+      <button v-if="isUserScrolling" @click="setIsUserScrolling">Search...</button>
       <router-link to="/stay">Explore</router-link>
       <router-link to="/stay/add">Become a Host</router-link>
       <router-link to="/login">☰</router-link>
@@ -19,10 +19,30 @@
 </template>
 <script>
 export default {
+  data() {
+        return {
+          isUserScrolling : false
+
+        }
+  },
   computed: {
     loggedInUser() {
       return this.$store.getters.loggedinUser
     }
   },
+   created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll (event) {
+      this.isUserScrolling = (window.scrollY > 20);
+    },
+    setIsUserScrolling() {
+      this.isUserScrolling = !this.isUserScrolling
+    }
+  }
 };
 </script>

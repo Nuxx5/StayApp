@@ -16,6 +16,7 @@ html {
 body {
     font-size: rem(18px);
     margin: 0;
+    // background-image: url('~@/assets/img/nasa-Q1p7bh3SHj8-unsplash.jpg');
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -45,3 +46,7 @@ a:hover {
     text-decoration: underline;
 }
 
+.big {
+    height: 110vh;
+    width: 100%
+}

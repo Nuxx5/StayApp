@@ -4,6 +4,7 @@
     <stay-list
       :stays="stays"
     />
+    <div class="big"/>
   </section>
 </template>
 
