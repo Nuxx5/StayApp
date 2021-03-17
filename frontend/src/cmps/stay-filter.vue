@@ -40,7 +40,7 @@ export default {
         children: 0,
         infants: 0,
       filterBy: {
-        txt: "",
+        txt: '',
         startDate: null,
         endDate: null,
         capacity: 0,
