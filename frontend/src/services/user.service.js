@@ -14,6 +14,7 @@ export const userService = {
     increaseScore
 }
 
+
 window.userService = userService
 // Note: due to async, must run one by one...
 // userService.signup({fullname: 'Puki Norma', username: 'user1', password:'123',score: 100, isAdmin: false})
