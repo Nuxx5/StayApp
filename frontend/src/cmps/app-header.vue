@@ -1,10 +1,11 @@
 <template>
+<section>
   <header>
     <nav>
       <router-link to="/">
         <span role="img" aria-label="logo">🏨</span>
       </router-link>
-      <button v-if="isUserScrolling" @click="setIsUserScrolling">Search...</button>
+      <button v-if="isUserScrolling" @click="openSearchBar">Search...</button>
       <router-link to="/stay">Explore</router-link>
       <router-link to="/stay/add">Become a Host</router-link>
       <router-link to="/login">☰</router-link>
@@ -15,34 +16,47 @@
       </router-link>
       <!-- <span>{{ loggedInUser.score }}</span> -->
     </section>
-  </header>
+     
+  </header> 
+  <stay-filter v-if="!isUserScrolling || isSearch" />
+      </section>
 </template>
 <script>
+import stayFilter from "../cmps/stay-filter.vue";
 export default {
   data() {
-        return {
-          isUserScrolling : false
-
-        }
+    return {
+      isUserScrolling: false,
+      isSearch: false,
+    };
   },
   computed: {
     loggedInUser() {
-      return this.$store.getters.loggedinUser
-    }
+      return this.$store.getters.loggedinUser;
+    },
   },
-   created () {
-    window.addEventListener('scroll', this.handleScroll);
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
   },
-  destroyed () {
-    window.removeEventListener('scroll', this.handleScroll);
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
-    handleScroll (event) {
-      this.isUserScrolling = (window.scrollY > 20);
+    handleScroll(event) {
+      if (window.scrollY > 0) {
+        this.isUserScrolling = true;
+        this.isSearch = false;
+      }
+      else this.isUserScrolling = false
     },
-    setIsUserScrolling() {
+    openSearchBar() {
       // this.isUserScrolling = !this.isUserScrolling
-    }
-  }
+      this.isSearch = true;
+      console.log(this.isSearch);
+    },
+  },
+  components: {
+    stayFilter,
+  },
 };
 </script>

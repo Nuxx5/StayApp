@@ -1,6 +1,6 @@
 <template>
   <section class="stay-app main-container">
-    <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" />
+    <!-- <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" /> -->
     <stay-list
       :stays="stays"
     />
@@ -18,9 +18,8 @@ import MY_JSON from '../../stay.json'
 export default {
   data() {
     return {
-    //   stayToEdit: stayService.getEmptyStay(),
-      isUserScrolling: false,
-      myJson: MY_JSON
+      stayToEdit: stayService.getEmptyStay(),
+      // isUserScrolling: false
     };
   },
   methods: {
@@ -28,11 +27,14 @@ export default {
       // this.$store.commit({ type: "setFilter", filterBy });
       this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
     },
-    handleScroll (event) {
-      // Any code to be executed when the window is scrolled
-    this.isUserScrolling = (window.scrollY > 20);
-    // console.log('this.myJson.stay._id', this.myJson.stay[0]._id);
-    }
+    // handleScroll (event) {
+    //   // Any code to be executed when the window is scrolled
+    //   if (window.scrollY > 0) {
+    //     this.isUserScrolling = true;
+    //     this.isSearch = false;
+    //   }
+    //   else this.isUserScrolling = false
+    // }
   },
   created () {
     window.addEventListener('scroll', this.handleScroll);
