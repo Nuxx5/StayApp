@@ -77,11 +77,18 @@ function save(stay){
 
 function getEmptyStay(){
     return { 
+        _id: utilService.makeId(),
         name: '', 
-        price: 0,
-        type: null, 
+        price: 0, 
         createdAt: null, 
-        inStock: true
+        summary: '',
+        capacity: 4,
+        amenities: [
+          "TV",
+          "Wifi",
+          "Kitchen",
+          "A/C"
+        ],
     }
 }
 
