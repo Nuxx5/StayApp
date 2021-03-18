@@ -2,6 +2,7 @@
   <section class="stay-preview flex column clickable" @click="openDetails">
     <img :src="loadImg"/>
     <p :class="{opacity:noReviews}">{{ rating }}</p>
+    <p>{{ stay.loc.address }}</p>
     <p>{{ stay.name }}</p>
     <p>{{ stay.capacity }} guests</p>
     <p><span class="bold">${{ stay.price }}</span> / night</p>
