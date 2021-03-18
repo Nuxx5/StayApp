@@ -1,7 +1,7 @@
 header {
     background-color: $clr5;
     padding: 10px;
-    display: flex;
+    // display: flex;
     justify-content: space-between;
     height: 80px;
     top: 0;
@@ -13,7 +13,7 @@ header {
     }
 
     .logo-icon{
-        width: 50px;
+        width: 30px;
     }
 
     .loggedin-user {
