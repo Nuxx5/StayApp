@@ -1,17 +1,19 @@
 <template>
 <section class="header-sec">
   <header>
-    <nav>
+    <nav class="flex space-between">
       <router-link to="/" class="logo">
-        <span role="img" aria-label="logo">🏨</span>
+        <!-- <span role="img" aria-label="logo">🏨</span> -->
         <img class="logo-icon" src="@/assets/img/logo.png" alt="" />
         <span>Stay.</span>
       </router-link>
       <!-- <button v-if="isUserScrolling" @click="openSearchBar">Search...</button> -->
+      <div class="nav-menu">
       <router-link to="/stay">Explore</router-link>
       <router-link to="/stay/add">Become a Host</router-link>
       <router-link to="/login">☰</router-link>
-  <stay-filter v-if="isUserScrolling" />
+  <!-- <stay-filter v-if="isUserScrolling" /> -->
+      </div>
     </nav>
     <section className="loggedin-user" v-if="loggedInUser">
       <router-link :to="`/user/${loggedInUser._id}`">

@@ -107,7 +107,7 @@ function _createStays() {
             {
                 "_id": "10006546",
                 "name": "Charming Villa near the lake",
-                "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "https://res.cloudinary.com/ranporath/image/upload/v1616069079/stay1_lvrhp1.jpg"],
+                "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200", "https://a0.muscache.com/im/pictures/0301689a-ddd3-4cb1-82cb-86c9e35c845d.jpg?im_w=720", "https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/908f77ba-3d40-4957-bc58-13aefb4017a7.png?im_w=720", "https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/84218d4a-cfd0-4eb6-80b9-8356ce71abce.png?im_w=720", "https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/a8442fac-869b-4884-99dd-d1a2898d90cb.jpeg?im_w=720"],
                 "price": 99.00,
                 "summary": "Charming spacious Villa, located in the historic area of Toronto...",
                 "capacity": 4,
