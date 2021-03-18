@@ -12,11 +12,11 @@
           </li>
           <li class="card clickable" @click="openStays('London')">
             <img src="@/assets/img/canada.jpg" alt="" />
-            <h3>Toronto</h3>
+            <h3>London</h3>
           </li>
           <li class="card clickable" @click="openStays('Los Angeles')">
             <img src="@/assets/img/canada.jpg" alt="" />
-            <h3>Toronto</h3>
+            <h3>Los Angeles</h3>
           </li>
         </ul>
       </div>

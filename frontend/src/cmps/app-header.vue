@@ -4,6 +4,7 @@
     <nav>
       <router-link to="/" class="logo">
         <span role="img" aria-label="logo">🏨</span>
+        <img class="logo-icon" src="@/assets/img/logo.png" alt="" />
         <span>Stay.</span>
       </router-link>
       <!-- <button v-if="isUserScrolling" @click="openSearchBar">Search...</button> -->
