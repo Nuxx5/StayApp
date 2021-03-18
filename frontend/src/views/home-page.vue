@@ -5,17 +5,17 @@
       <h2>Explore Locations</h2>
       <div class="home-card">
         <ul class="clean-list flex card-grid">
-          <li class="card">
+          <li class="card clickable" @click="openStays('Toronto')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>Toronto</h3>
           </li>
-          <li class="card">
+          <li class="card clickable" @click="openStays('London')">
             <img src="@/assets/img/canada.jpg" alt="" />
-            <h3>Toronto</h3>
+            <h3>London</h3>
           </li>
-          <li class="card">
+          <li class="card clickable" @click="openStays('Los Angeles')">
             <img src="@/assets/img/canada.jpg" alt="" />
-            <h3>Toronto</h3>
+            <h3>Los Angeles</h3>
           </li>
         </ul>
       </div>
@@ -56,6 +56,10 @@ export default {
   },
   computed: {},
   created() {},
-  methods: {},
+  methods: {
+    openStays(city) {
+      this.$router.push(`/stay?city=${city}`)
+    }
+  },
 };
 </script>
