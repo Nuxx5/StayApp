@@ -1,19 +1,20 @@
 <template>
   <section class="container home text-center">
+    <stay-filter  @setFilter="setFilter" />
     <img src="@/assets/img/hero.jpg" alt="" />
     <div class="home-container">
       <h2>Explore Locations</h2>
       <div class="home-card">
         <ul class="clean-list flex card-grid">
-          <li class="card" @click="openStays('toronto')">
+          <li class="card clickable" @click="openStays('Toronto')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>Toronto</h3>
           </li>
-          <li class="card">
+          <li class="card clickable" @click="openStays('London')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>Toronto</h3>
           </li>
-          <li class="card">
+          <li class="card clickable" @click="openStays('Los Angeles')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>Toronto</h3>
           </li>
@@ -49,6 +50,7 @@
 </template>
 
 <script>
+import stayFilter from "../cmps/stay-filter.vue";
 export default {
   name: "home",
   data() {
@@ -57,9 +59,12 @@ export default {
   computed: {},
   created() {},
   methods: {
-    openStays(city){
-      this.$router.push(`/stay/city=${city}`)
-    }
+    openStays(city) {
+      this.$router.push(`/stay?city=${city}`);
+    },
+  },
+  components: {
+    stayFilter
   },
 };
 </script>
