@@ -30,7 +30,7 @@ export default {
     },
     handleScroll (event) {
       // Any code to be executed when the window is scrolled
-      if (window.scrollY > 0) {
+      if (window.scrollY > 20) {
         this.isUserScrolling = true;
         this.isSearch = false;
       }

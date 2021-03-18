@@ -1,5 +1,5 @@
 <template>
-  <form class="stay-filter flex space-evenly">
+  <form class="stay-filter  space-evenly">
     <div class="flex column">
       <label> search a stay: </label>
       <input

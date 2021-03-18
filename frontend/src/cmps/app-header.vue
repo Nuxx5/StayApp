@@ -2,8 +2,9 @@
 <section>
   <header>
     <nav>
-      <router-link to="/">
+      <router-link to="/" class="logo">
         <span role="img" aria-label="logo">🏨</span>
+        <span>Stay.</span>
       </router-link>
       <button v-if="isUserScrolling" @click="openSearchBar">Search...</button>
       <router-link to="/stay">Explore</router-link>
@@ -18,7 +19,7 @@
     </section>
      
   </header> 
-  <stay-filter v-if="!isUserScrolling || isSearch" />
+  <!-- <stay-filter v-if="!isUserScrolling || isSearch" /> -->
       </section>
 </template>
 <script>
@@ -43,7 +44,7 @@ export default {
   },
   methods: {
     handleScroll(event) {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 20) {
         this.isUserScrolling = true;
         this.isSearch = false;
       }

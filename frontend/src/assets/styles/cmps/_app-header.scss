@@ -3,7 +3,14 @@ header {
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    // position: fixed;
+    height: 80px;
+    top: 0;
+    position: fixed;
+    width: 100%;
+
+    .logo{
+        text-decoration: none;
+    }
 
     .loggedin-user {
         background-color: $clr1;
