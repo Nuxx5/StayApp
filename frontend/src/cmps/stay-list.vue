@@ -1,6 +1,6 @@
     <template>
   <section>
-    <ul class="stay-list clean-list card-grid">
+    <ul class="stay-list clean-list preview-grid">
       <li
         v-for="stay in stays"
         :key="stay._id"
