@@ -1,6 +1,17 @@
 <template>
-  <section v-if="stay" class="stay-details flex column align-center">
+  <section v-if="stay" class="main-container stay-details flex column">
     <h2>{{ stay.name }}</h2>
+    <div class="ratings flex">
+      <div class="details-rating" :class="{opacity:noReviews}">{{ rating }}</div>
+      <div>{{ stay.loc.address }}</div>
+      </div>
+      <div class="image-gallery">
+        <img class="image-gallery img1" :src="stay.imgUrls[2]">
+        <img class="image-gallery img2" :src="stay.imgUrls[2]">
+        <img class="image-gallery img3" :src="stay.imgUrls[2]">
+        <img class="image-gallery img4" :src="stay.imgUrls[2]">
+        <img class="image-gallery img5" :src="stay.imgUrls[2]">
+        </div>
     <h2><span>Price: </span>${{ stay.price }}</h2>
     <h2><span>Capacity: </span>{{ stay.capacity }}</h2>
     <h2><span>amenities: </span>{{ stay.amenities }}</h2>
@@ -30,6 +41,12 @@ export default {
       if (this.stay.createdAt)
         return new Date(this.stay.createdAt).toLocaleDateString("he-IS");
     },
+    rating() {
+      return this.stay.reviews.length? '⭐ ' + this.stay.reviews[0].rate + ' (' + this.stay.reviews.length + ')' : 'no reviews yet'
+    },
+    noReviews() {
+      return !this.stay.reviews.length 
+    }
   },
   components: {
     // chatApp,
