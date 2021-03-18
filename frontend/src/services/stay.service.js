@@ -267,7 +267,7 @@ function _createStays() {
                 "loc": {
                   "country": "United States",
                 "countryCode": "USA",
-                "address": "Los Angeles, CA, USA",
+                "address": "Los Angeles, USA",
                 "lat": 34.052235,
                 "lng": -118.243683
                 },
@@ -296,7 +296,7 @@ function _createStays() {
                 "loc": {
                   "country": "United States",
                 "countryCode": "USA",
-                "address": "Los Angeles, CA, USA",
+                "address": "Los Angeles, USA",
                 "lat": 34.052235,
                 "lng": -118.243683
                 },
