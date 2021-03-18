@@ -12,9 +12,8 @@
         <!-- <button @click="removeStay(stay)">X</button> -->
 
         <router-link class="btn"
-          :to="'/stay/details/' + stay._id"
-          >Details</router-link
-        >
+          :to="'/stay/' + stay._id"
+          >Details</router-link>
         <!-- <router-link class="btn"
           :to="'/stay/edit/' + stay._id"
           >Edit</router-link

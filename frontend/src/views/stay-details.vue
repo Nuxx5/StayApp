@@ -4,13 +4,13 @@
     <h2><span>Price: </span>${{ stay.price }}</h2>
     <h2><span>Capacity: </span>{{ stay.capacity }}</h2>
     <h2><span>amenities: </span>{{ stay.amneties }}</h2>
-    <chat-app :stay="stay" />
+    <!-- <chat-app :stay="stay" /> -->
     <router-link to="/stay" class="btn">Back</router-link>
   </section>
 </template>
     <script>
 import { stayService } from "../services/stay.service.js";
-import chatApp from "../cmps/chat-app.vue";
+// import chatApp from "../cmps/chat-app.vue";
 export default {
   data() {
     return {
@@ -18,9 +18,11 @@ export default {
     };
   },
   created() {
-    const stayId = this.$route.params.stayId;
+    const stayId = this.$route.params.id;
+    console.log(stayId)
     stayService.getStayById(stayId)
     .then((stay) => {
+      console.log(stay)
       this.stay = stay;
     });
   },
@@ -31,7 +33,7 @@ export default {
     },
   },
   components: {
-    chatApp,
+    // chatApp,
   },
 };
 </script>
