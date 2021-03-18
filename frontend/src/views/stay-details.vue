@@ -10,7 +10,7 @@
 </template>
     <script>
 import { stayService } from "../services/stay.service.js";
-import chatApp from "../cmps/chat-app.vue";
+// import chatApp from "../cmps/chat-app.vue";
 export default {
   data() {
     return {
@@ -21,6 +21,7 @@ export default {
     const stayId = this.$route.params.id;
     stayService.getStayById(stayId)
     .then((stay) => {
+      console.log(stay)
       this.stay = stay;
     });
   },
@@ -31,7 +32,7 @@ export default {
     },
   },
   components: {
-    chatApp,
+    // chatApp,
   },
 };
 </script>
