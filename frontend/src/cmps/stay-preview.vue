@@ -1,12 +1,19 @@
     <template>
   <section class="stay-preview flex column">
-    <p>Stay: {{ stay.name }}</p>
-    <p>Price: ${{ stay.price }}</p>
-    <p>Capacity: {{ stay.capacity }}</p>
+    <p>{{ stay.name }}</p>
+    <p>{{ stay.capacity }} guests</p>
+    <p>${{ stay.price }} / night</p>
+    <img :src="loadImg"/>
+    <!-- <img class="card" src="@/assets/img/stay1.jpg"/> -->
   </section>    
 </template>
 <script>
 export default {
   props: ["stay"],
-};
+  computed: {
+    loadImg() {
+      return this.stay.imgUrls[0]
+    }
+  }
+}
 </script>

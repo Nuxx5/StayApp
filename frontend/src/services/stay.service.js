@@ -107,9 +107,9 @@ function _createStays() {
             {
                 "_id": "10006546",
                 "name": "Charming Villa near the lake",
-                "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "otherImg.jpg"],
+                "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "https://res.cloudinary.com/ranporath/image/upload/v1616069079/stay1_lvrhp1.jpg"],
                 "price": 99.00,
-                "summary": "Charming spacious Villa, located in the historic area of Montreal...",
+                "summary": "Charming spacious Villa, located in the historic area of Toronto...",
                 "capacity": 4,
                 "amenities": [
                   "TV",
@@ -127,9 +127,9 @@ function _createStays() {
                 "loc": {
                   "country": "Canada",
                 "countryCode": "CA",
-                "address": "Montreal, Canada",
-                "lat": 45.508888,
-                "lng": -73.561668
+                "address": "Toronto, Canada",
+                "lat": 43.651070,
+                "lng": -79.347015
                 },
                 "reviews": [
                   {
@@ -183,6 +183,125 @@ function _createStays() {
                     }
                   }
                 ]
+              },
+              {
+                "_id": "10006549",
+                "name": "Super 60m2 in trendy neighborhood!",
+                "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "otherImg.jpg"],
+                "price": 85.00,
+                "summary": "Super 60m2 in trendy neighborhood of London",
+                "capacity": 3,
+                "amenities": [
+                  "TV",
+                  "Wifi",
+                  "Kitchen",
+                  "Washer and dryer",
+                  "Pets allowed",
+                  "Pool and Spa"
+                ],
+                "host": {
+                  "_id": "21312321",
+                  "fullname": "Sophie Moritz",
+                  "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+                },
+                "loc": {
+                  "country": "United Kingdom",
+                "countryCode": "UK",
+                "address": "London, UK",
+                "lat": 51.509865,
+                "lng": -0.118092
+                },
+                "reviews": []   
+                
+              },
+              {
+                "_id": "10006549",
+                "name": "Charm at the Steps of the Big Ben",
+                "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "otherImg.jpg"],
+                "price": 125.00,
+                "summary": "Charm at the Steps of the Big Ben - very central",
+                "capacity": 4,
+                "amenities": [
+                  "TV",
+                  "Wifi",
+                  "Kitchen",
+                  "Washer and dryer",
+                  "Pets allowed",
+                  "Pool and Spa"
+                ],
+                "host": {
+                  "_id": "21312321",
+                  "fullname": "Sophie Moritz",
+                  "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+                },
+                "loc": {
+                  "country": "United Kingdom",
+                "countryCode": "UK",
+                "address": "London, UK",
+                "lat": 51.509865,
+                "lng": -0.118092
+                },
+                "reviews": []   
+                
+              },
+              {
+                "_id": "10006549",
+                "name": "Bohemian and Chic in LA",
+                "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "otherImg.jpg"],
+                "price": 135.00,
+                "summary": "Bohemian and Chic apartment in Central Los Angeles",
+                "capacity": 4,
+                "amenities": [
+                  "TV",
+                  "Wifi",
+                  "Kitchen",
+                  "Washer and dryer",
+                  "Pets allowed",
+                  "Pool and Spa"
+                ],
+                "host": {
+                  "_id": "21312321",
+                  "fullname": "Sophie Moritz",
+                  "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+                },
+                "loc": {
+                  "country": "United States",
+                "countryCode": "USA",
+                "address": "Los Angeles, CA, USA",
+                "lat": 34.052235,
+                "lng": -118.243683
+                },
+                "reviews": []   
+                
+              },{
+                "_id": "10006549",
+                "name": "Trendy Apt in Hollywood",
+                "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "@/assets/img/stay1.jpg"],
+                "price": 128.00,
+                "summary": "Trendy Apt in Hollywood - close to everything",
+                "capacity": 3,
+                "amenities": [
+                  "TV",
+                  "Wifi",
+                  "Kitchen",
+                  "Washer and dryer",
+                  "Pets allowed",
+                  "Pool and Spa"
+                ],
+                "host": {
+                  "_id": "21312321",
+                  "fullname": "Sophie Moritz",
+                  "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+                },
+                "loc": {
+                  "country": "United States",
+                "countryCode": "USA",
+                "address": "Los Angeles, CA, USA",
+                "lat": 34.052235,
+                "lng": -118.243683
+                },
+                "reviews": []   
+                
               }
         ];
         localStorage.setItem(KEY, JSON.stringify(stays))
