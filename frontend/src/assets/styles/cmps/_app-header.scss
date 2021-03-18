@@ -1,12 +1,12 @@
 header {
-    background-color: $clr5;
+    // background-color: $clr5;
     padding: 10px;
     // display: flex;
     justify-content: space-between;
     height: 80px;
     top: 0;
-    position: fixed;
     width: 100%;
+    border: 2px black solid;
 
     .logo{
         text-decoration: none;
@@ -45,7 +45,7 @@ header {
 }
 
 .header-sec{
-    background-color: $clr5;
+    // background-color: $clr5;
     padding: 10px;
     display: flex;
     justify-content: space-between;
