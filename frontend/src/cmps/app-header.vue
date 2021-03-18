@@ -1,5 +1,5 @@
 <template>
-<section>
+<section class="header-sec">
   <header>
     <nav>
       <router-link to="/" class="logo">

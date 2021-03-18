@@ -39,3 +39,13 @@ header {
     }
     
 }
+
+.header-sec{
+    background-color: $clr5;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    top: 0;
+    width: 100%;
+}
