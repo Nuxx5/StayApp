@@ -1,19 +1,25 @@
 <template>
-  <section class="container home text-center">
-    <img class="bgimage" src="@/assets/img/hero.jpg" alt="" />
-    <div class="home-container">
+  <section class="home text-center">
+    <div class="hero-img">
+      <img class="bgimage" src="@/assets/img/hero.jpg" alt="" />
+      <div class="bottom-left">
+        <h1>Stay.</h1>
+        <h3 class="text-center">Anywhere.</h3>
+      </div>
+    </div>
+    <div class="main-container">
       <h2>Explore Locations</h2>
       <div class="home-card">
-        <ul class="clean-list flex space-around">
-          <li class="card clickable" @click="openStays('Toronto')">
+        <ul class="clean-list flex space-between">
+          <li class="card clickable" @click="openStays('toronto')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>Toronto</h3>
           </li>
-          <li class="card clickable" @click="openStays('London')">
+          <li class="card clickable" @click="openStays('london')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>London</h3>
           </li>
-          <li class="card clickable" @click="openStays('Los Angeles')">
+          <li class="card clickable" @click="openStays('los angeles')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>Los Angeles</h3>
           </li>
@@ -43,8 +49,6 @@
         </div>
       </div>
     </div>
-    <h1>Stay.</h1>
-    <h5 class="text-center">Anywhere.</h5>
   </section>
 </template>
 

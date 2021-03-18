@@ -2,20 +2,35 @@
     margin-bottom: 60px;
     height: 100%;
     width: 100%;
-}
     
     .about-txt-card {
         width: 50%;
-        margin-right: 50px;
+        margin-right: 80px;
         & h3, p{
             text-align: left;
         }
     }
-
+    
     .bgimage {
-        height: 650px;
-        // width: 70%;
+        height: 67vh;
+        width: 95%;
+        padding-top: 10vh;
         margin: auto;
         object-fit: cover;
     }
+    .hero-img{
+        height: 76vh;
+        background-color: black;
+        margin-bottom: 60px;
+        // position: relative;
+    }
+
+    ul{
+        padding-inline-start: 0;
+    }
+
+    .home-card{
+        margin-bottom: 30px;
+    }
     
+}
