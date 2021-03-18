@@ -215,7 +215,7 @@ function _createStays() {
                 
               },
               {
-                "_id": "10006549",
+                "_id": "10006569",
                 "name": "Charm at the Steps of the Big Ben",
                 "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "otherImg.jpg"],
                 "price": 125.00,
@@ -245,7 +245,7 @@ function _createStays() {
                 
               },
               {
-                "_id": "10006549",
+                "_id": "10006563",
                 "name": "Bohemian and Chic in LA",
                 "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "otherImg.jpg"],
                 "price": 135.00,
@@ -274,7 +274,7 @@ function _createStays() {
                 "reviews": []   
                 
               },{
-                "_id": "10006549",
+                "_id": "10006566",
                 "name": "Trendy Apt in Hollywood",
                 "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "@/assets/img/stay1.jpg"],
                 "price": 128.00,
