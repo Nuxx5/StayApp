@@ -12,8 +12,8 @@
       <router-link to="/stay">Explore</router-link>
       <router-link to="/stay/add">Become a Host</router-link>
       <router-link to="/login">☰</router-link>
+  <!-- <stay-filter v-if="isUserScrolling" /> -->
       </div>
-  <stay-filter v-if="isUserScrolling" />
     </nav>
     <section className="loggedin-user" v-if="loggedInUser">
       <router-link :to="`/user/${loggedInUser._id}`">
