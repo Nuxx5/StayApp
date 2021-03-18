@@ -1,6 +1,6 @@
     <template>
   <section>
-    <ul class="stay-list clean-list">
+    <ul class="stay-list clean-list card-grid">
       <li
         v-for="stay in stays"
         :key="stay._id"
@@ -12,7 +12,7 @@
         <!-- <button @click="removeStay(stay)">X</button> -->
 
         <router-link class="btn"
-          :to="'/stay/details/' + stay._id"
+          :to="'/stay/' + stay._id"
           >Details</router-link
         >
         <!-- <router-link class="btn"
