@@ -49,6 +49,7 @@
 </template>
 
 <script>
+import stayFilter from "../cmps/stay-filter.vue";
 export default {
   name: "home",
   data() {
@@ -58,8 +59,11 @@ export default {
   created() {},
   methods: {
     openStays(city) {
-      this.$router.push(`/stay?city=${city}`)
-    }
+      this.$router.push(`/stay?city=${city}`);
+    },
+  },
+  components: {
+    stayFilter
   },
 };
 </script>
