@@ -6,10 +6,11 @@
         <span role="img" aria-label="logo">🏨</span>
         <span>Stay.</span>
       </router-link>
-      <button v-if="isUserScrolling" @click="openSearchBar">Search...</button>
+      <!-- <button v-if="isUserScrolling" @click="openSearchBar">Search...</button> -->
       <router-link to="/stay">Explore</router-link>
       <router-link to="/stay/add">Become a Host</router-link>
       <router-link to="/login">☰</router-link>
+  <stay-filter v-if="isUserScrolling" />
     </nav>
     <section className="loggedin-user" v-if="loggedInUser">
       <router-link :to="`/user/${loggedInUser._id}`">
@@ -19,7 +20,6 @@
     </section>
      
   </header> 
-  <!-- <stay-filter v-if="!isUserScrolling || isSearch" /> -->
       </section>
 </template>
 <script>
@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     handleScroll(event) {
-      if (window.scrollY > 20) {
+      if (window.scrollY > 0) {
         this.isUserScrolling = true;
         this.isSearch = false;
       }
@@ -52,6 +52,7 @@ export default {
     },
     openSearchBar() {
       // this.isUserScrolling = !this.isUserScrolling
+      this.$emit("isSearch", this.isSearch)
       this.isSearch = true;
       console.log(this.isSearch);
     },
