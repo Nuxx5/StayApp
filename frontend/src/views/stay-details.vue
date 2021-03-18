@@ -1,6 +1,6 @@
 <template>
   <section v-if="stay" class="stay-details flex column align-center">
-    <h2><span>Stay: </span>{{ stay.name }}</h2>
+    <h2>{{ stay.name }}</h2>
     <h2><span>Price: </span>${{ stay.price }}</h2>
     <h2><span>Capacity: </span>{{ stay.capacity }}</h2>
     <h2><span>amenities: </span>{{ stay.amenities }}</h2>
