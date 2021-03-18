@@ -1,10 +1,10 @@
 <template>
   <section class="container home text-center">
-    <img src="@/assets/img/hero.jpg" alt="" />
+    <img class="bgimage" src="@/assets/img/hero.jpg" alt="" />
     <div class="home-container">
       <h2>Explore Locations</h2>
       <div class="home-card">
-        <ul class="clean-list flex card-grid">
+        <ul class="clean-list flex space-around">
           <li class="card clickable" @click="openStays('Toronto')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>Toronto</h3>
