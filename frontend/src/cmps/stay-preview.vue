@@ -1,5 +1,5 @@
     <template>
-  <section class="stay-preview flex column">
+  <section class="stay-preview flex column clickable" @click="openDetails">
     <p>{{ stay.name }}</p>
     <p>{{ stay.capacity }} guests</p>
     <p>${{ stay.price }} / night</p>
@@ -13,6 +13,11 @@ export default {
   computed: {
     loadImg() {
       return this.stay.imgUrls[0]
+    }
+  },
+  methods: {
+    openDetails() {
+      this.$router.push(`/stay/${this.stay._id}`)
     }
   }
 }

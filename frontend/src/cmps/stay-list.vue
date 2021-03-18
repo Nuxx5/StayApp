@@ -1,6 +1,6 @@
     <template>
   <section>
-    <ul class="stay-list clean-list">
+    <ul class="stay-list clean-list preview-grid">
       <li
         v-for="stay in stays"
         :key="stay._id"
@@ -11,10 +11,9 @@
         />
         <!-- <button @click="removeStay(stay)">X</button> -->
 
-        <router-link class="btn"
-          :to="'/stay/details/' + stay._id"
-          >Details</router-link
-        >
+        <!-- <router-link class="btn"
+          :to="'/stay/' + stay._id"
+          >Details</router-link> -->
         <!-- <router-link class="btn"
           :to="'/stay/edit/' + stay._id"
           >Edit</router-link
