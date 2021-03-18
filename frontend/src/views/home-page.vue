@@ -23,7 +23,7 @@
         <h2>About Stay.</h2>
         <div class="about-txt flex">
           <div class="about-txt-card">
-            <h3>Who are we</h3>
+            <h3>Who we are</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Recusandae perferendis dignissimos nihil, id, sequi repudiandae
@@ -32,7 +32,7 @@
             </p>
           </div>
           <div class="about-txt-card">
-            <h3>Our service</h3>
+            <h3>Our services</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Recusandae perferendis dignissimos nihil, id, sequi repudiandae
