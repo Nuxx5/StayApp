@@ -4,7 +4,6 @@
     <h2><span>Price: </span>${{ stay.price }}</h2>
     <h2><span>Capacity: </span>{{ stay.capacity }}</h2>
     <h2><span>amenities: </span>{{ stay.amneties }}</h2>
-    <h2><span>Created at: </span> {{ date }}</h2>
     <chat-app :stay="stay" />
     <router-link to="/stay" class="btn">Back</router-link>
   </section>
