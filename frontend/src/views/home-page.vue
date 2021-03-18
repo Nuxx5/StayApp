@@ -5,7 +5,7 @@
       <h2>Explore Locations</h2>
       <div class="home-card">
         <ul class="clean-list flex card-grid">
-          <li class="card">
+          <li class="card" @click="openStays('toronto')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>Toronto</h3>
           </li>
@@ -56,6 +56,10 @@ export default {
   },
   computed: {},
   created() {},
-  methods: {},
+  methods: {
+    openStays(city){
+      this.$router.push(`/stay/city=${city}`)
+    }
+  },
 };
 </script>
