@@ -76,7 +76,7 @@ export default {
       this.$router.push(`/stay?city=${city}`);
     },
     setFilter(filterBy) {
-      console.log('in filter');
+      console.log('filterBy home', filterBy);
       // this.$store.commit({ type: "setFilter", filterBy });
       this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
     },
