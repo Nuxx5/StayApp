@@ -12,12 +12,21 @@
         <img class="image-gallery img4" :src="stay.imgUrls[2]">
         <img class="image-gallery img5" :src="stay.imgUrls[2]">
         </div>
+        <div class="main-content flex space-between">
+          <div class="room-details flex column">
+            <div class="room-summary">
+              <p class="summary-text1">Entire place hosted by {{stay.host.fullname}}</p>
+              <p class="summary-text2">{{stay.capacity}} guests</p>
+              <img class="summary-img" :src="stay.host.imgUrl">
+              </div>
+           </div>
+        <tripSettings></tripSettings>
+          </div>
     <h2><span>Price: </span>${{ stay.price }}</h2>
     <h2><span>Capacity: </span>{{ stay.capacity }}</h2>
     <h2><span>amenities: </span>{{ stay.amenities }}</h2>
     <!-- <chat-app :stay="stay" /> -->
     <router-link to="/stay" class="btn">Back</router-link>
-    <tripSettings></tripSettings>
   </section>
 </template>
     <script>
