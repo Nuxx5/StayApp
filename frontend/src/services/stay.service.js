@@ -35,6 +35,7 @@ function query(filterBy) {
     // return axios.get(TOY_URL, { params: filterBy})
     //     .then(res => res.data)
         //  { params: gFilterBy }
+
     return storageService.query(KEY)
     // return JSON.parse(JSON.stringify(gStays));
 }
@@ -122,7 +123,7 @@ function _createStays() {
                 "host": {
                   "_id": "51399391",
                   "fullname": "David Smith",
-                  "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+                  "imgUrl": "https://a0.muscache.com/im/pictures/user/13b7cb9a-3ca4-4cd0-bd16-c501da6a12fe.jpg?im_w=240"
                 },
                 "loc": {
                   "country": "Canada",
