@@ -73,12 +73,14 @@ export default {
   },
   methods: {
     openStays(city) {
+      // this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
       this.$router.push(`/stay?city=${city}`);
     },
     setFilter(filterBy) {
       console.log('filterBy home', filterBy);
-      // this.$store.commit({ type: "setFilter", filterBy });
-      this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
+      this.$store.commit({ type: "setFilter", filterBy });
+      // this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
+      this.$router.push("/stay");
     },
     handleScroll (event) {
       // Any code to be executed when the window is scrolled

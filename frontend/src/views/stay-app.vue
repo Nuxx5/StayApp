@@ -37,9 +37,9 @@ export default {
   created() {
     console.log("stay-app");
     // console.log("this.$route.params;", this.$route.params);
-    console.log("this.$route.query;", this.$route.query.city);
+    console.log("this.$route.query", this.$route.query.city);
     window.addEventListener("scroll", this.handleScroll);
-    this.setFilter(this.$route.query.city);
+    // this.setFilter(this.$route.query.city);
     return this.$store.getters.staysForDisplay;
   },
   destroyed() {
@@ -47,10 +47,7 @@ export default {
   },
   computed: {
     stays() {
-      console
-        .log
-        // JSON.parse(JSON.stringify(this.$store.getters.staysForDisplay))
-        ();
+      console.log(JSON.parse(JSON.stringify(this.$store.getters.staysForDisplay)));
       return this.$store.getters.staysForDisplay;
     },
   },
