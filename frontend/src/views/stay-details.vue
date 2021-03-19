@@ -20,7 +20,7 @@
               <img class="summary-img" :src="stay.host.imgUrl">
               </div>
            </div>
-        <tripSettings></tripSettings>
+        <tripSettings @reservationMade="handleReservation" />
           </div>
     <h2><span>Price: </span>${{ stay.price }}</h2>
     <h2><span>Capacity: </span>{{ stay.capacity }}</h2>
@@ -63,5 +63,10 @@ export default {
     // chatApp,
     tripSettings
   },
+  methods:{
+    handleReservation(reservation){
+      console.log(reservation)
+    }
+  }
 };
 </script>
