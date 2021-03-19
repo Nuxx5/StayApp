@@ -23,7 +23,7 @@
                 <p>{{stay.summary}}</p>
                 </div>
            </div>
-        <tripSettings></tripSettings>
+        <tripSettings @reservationMade="handleReservation" />
           </div>
     <h2><span>amenities: </span>{{ stay.amenities }}</h2>
     <!-- <chat-app :stay="stay" /> -->
@@ -64,5 +64,10 @@ export default {
     // chatApp,
     tripSettings
   },
+  methods:{
+    handleReservation(reservation){
+      console.log(reservation)
+    }
+  }
 };
 </script>
