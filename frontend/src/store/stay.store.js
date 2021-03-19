@@ -14,6 +14,7 @@ export const stayStore = {
     },
     getters: {
         staysForDisplay(state) {
+            console.log('stays display', state.filterBy);
             const regex = new RegExp(state.filterBy.txt, 'i')
             return state.stays.filter(stay => {
                 const containsTxt = regex.test(stay.name);
@@ -56,6 +57,7 @@ export const stayStore = {
         setFilter(state, payload) {
             const filterBy = { ...payload.filterBy }
             state.filterBy = filterBy;
+            // console.log('filterBy stay-store', filterBy);
         },
         getStayById(state, payload) {
             state.currStay = state.stays.find(stay => {
@@ -109,6 +111,7 @@ export const stayStore = {
                 })
         },
         setFilter(context, payload) {
+            console.log('filterBy stay-store', payload.filterBy);
             stayService.query(payload.filterBy)
             .then(stays => {
                 context.commit({ type: 'setStays', stays })

@@ -8,15 +8,15 @@ header {
     width: 100%;
     position: fixed;
     // border: 2px black solid;
-
+    
     .logo{
         text-decoration: none;
     }
-
+    
     .logo-icon{
         width: 30px;
     }
-
+    
     .loggedin-user {
         background-color: $clr1;
         padding: 2px 8px;
@@ -33,6 +33,7 @@ header {
     nav {
         // background-color: $clr4;
         // padding: 5px 0;
+        color: whitesmoke;
     }
     nav a:not(:first-child) {
         // border-top: 1px solid $clr1;
