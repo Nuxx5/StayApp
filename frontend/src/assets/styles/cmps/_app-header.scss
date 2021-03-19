@@ -35,6 +35,9 @@ header {
         // padding: 5px 0;
         color: whitesmoke;
     }
+    nav a{
+        color: $clr6;
+    }
     nav a:not(:first-child) {
         // border-top: 1px solid $clr1;
         padding: 0 5px;
