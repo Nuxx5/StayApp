@@ -17,11 +17,13 @@
     <h2><span>amenities: </span>{{ stay.amenities }}</h2>
     <!-- <chat-app :stay="stay" /> -->
     <router-link to="/stay" class="btn">Back</router-link>
+    <tripSettings></tripSettings>
   </section>
 </template>
     <script>
 import { stayService } from "../services/stay.service.js";
 // import chatApp from "../cmps/chat-app.vue";
+import tripSettings from "../cmps/trip-settings.vue"
 export default {
   data() {
     return {
@@ -50,6 +52,7 @@ export default {
   },
   components: {
     // chatApp,
+    tripSettings
   },
 };
 </script>
