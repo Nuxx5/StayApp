@@ -1,6 +1,6 @@
 <template>
   <section v-if="stay" class="main-container stay-details flex column">
-    <h2>{{ stay.name }}</h2>
+    <h2 class="room-title">{{ stay.name }}</h2>
     <div class="ratings flex">
       <div class="details-rating" :class="{opacity:noReviews}">{{ rating }}</div>
       <div>{{ stay.loc.address }}</div>

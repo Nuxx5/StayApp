@@ -128,7 +128,7 @@ function _createStays() {
                 "loc": {
                   "country": "Canada",
                 "countryCode": "CA",
-                "address": "Toronto, Canada",
+                "address": "Toronto",
                 "lat": 43.651070,
                 "lng": -79.347015
                 },
@@ -168,7 +168,7 @@ function _createStays() {
                 "loc": {
                   "country": "Canada",
                 "countryCode": "CA",
-                "address": "Toronto, Canada",
+                "address": "Toronto",
                 "lat": 43.651070,
                 "lng": -79.347015
                 },
@@ -208,7 +208,7 @@ function _createStays() {
                 "loc": {
                   "country": "United Kingdom",
                 "countryCode": "UK",
-                "address": "London, UK",
+                "address": "London",
                 "lat": 51.509865,
                 "lng": -0.118092
                 },
@@ -238,7 +238,7 @@ function _createStays() {
                 "loc": {
                   "country": "United Kingdom",
                 "countryCode": "UK",
-                "address": "London, UK",
+                "address": "London",
                 "lat": 51.509865,
                 "lng": -0.118092
                 },
@@ -268,7 +268,7 @@ function _createStays() {
                 "loc": {
                   "country": "United States",
                 "countryCode": "USA",
-                "address": "Los Angeles, USA",
+                "address": "Los Angeles",
                 "lat": 34.052235,
                 "lng": -118.243683
                 },
@@ -297,7 +297,7 @@ function _createStays() {
                 "loc": {
                   "country": "United States",
                 "countryCode": "USA",
-                "address": "Los Angeles, USA",
+                "address": "Los Angeles",
                 "lat": 34.052235,
                 "lng": -118.243683
                 },
