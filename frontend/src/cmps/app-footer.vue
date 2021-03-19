@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="main-container footer">
       <div>
         <small>© 2021 Stay. All rights reserved · Privacy · Terms · Sitemap</small>
       </div>
