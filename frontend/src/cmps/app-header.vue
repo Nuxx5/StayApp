@@ -7,6 +7,13 @@
         <img class="logo-icon" src="@/assets/img/logo.png" alt="" />
         <span>Stay.</span>
       </router-link>
+      <div class="header-filter">
+        <button class="header-filter-btn flex align-center">
+          <div class="header-search">Start your search</div>
+          <div>🔎</div>
+          <!-- <img src="" alt="" /> -->
+        </button>
+      </div>
       <!-- <button v-if="isUserScrolling" @click="openSearchBar">Search...</button> -->
       <div class="nav-menu">
       <router-link to="/stay">Explore</router-link>
