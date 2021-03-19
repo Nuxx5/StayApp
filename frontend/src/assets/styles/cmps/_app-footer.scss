@@ -1,8 +1,9 @@
 footer {
-    background-color: $clr5;
+    // background-color: black;
+    // color: white;
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    bottom: 0
-    
+    bottom: 0;
+    border-top: 1px solid #ddd;
 }
