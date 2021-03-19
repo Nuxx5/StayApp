@@ -14,12 +14,11 @@ export const stayStore = {
     },
     getters: {
         staysForDisplay(state) {
-            // this.filterBy.txt = 'toronto';
             console.log('filter display', state.filterBy);
             console.log('stays display', state.stays);
             const regex = new RegExp(state.filterBy.txt, 'i')
             return state.stays.filter(stay => {
-                const containsTxt = regex.test(stay.name);
+                const containsTxt = regex.test(stay.loc.address);
                 return containsTxt
                 // if (!state.filterBy.complete) return containsTxt
                 // const isComplete = (state.filterBy.complete === 'true');

@@ -14,15 +14,15 @@
       <h2>Explore Locations</h2>
       <div class="home-card">
         <ul class="clean-list flex space-between">
-          <li class="card clickable" @click="openStays('toronto')">
+          <li class="card clickable" @click="setStay('toronto')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>Toronto</h3>
           </li>
-          <li class="card clickable" @click="openStays('london')">
+          <li class="card clickable" @click="setStay('london')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>London</h3>
           </li>
-          <li class="card clickable" @click="openStays('los angeles')">
+          <li class="card clickable" @click="setStay('los angeles')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>Los Angeles</h3>
           </li>
@@ -61,38 +61,47 @@ export default {
   name: "home",
   data() {
     return {
-      isUserScrolling: false
+      isUserScrolling: false,
+      filterBy: {
+        txt: "",
+        startDate: null,
+        endDate: null,
+        capacity: 0,
+      },
     };
   },
   computed: {},
-  created () {
-    window.addEventListener('scroll', this.handleScroll);
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
   },
-  destroyed () {
-    window.removeEventListener('scroll', this.handleScroll);
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
-    openStays(city) {
-      // this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
-      this.$router.push(`/stay?city=${city}`);
+    setStay(city) {
+      this.filterBy.txt = city;
+      console.log('filterBy', this.filterBy);
+      var filterBy = this.filterBy
+      // this.$store.commit({ type: "setFilter", filterBy });
+      // this.$router.push(`/stay?city=${city}`);
+      this.setFilter(filterBy);
     },
     setFilter(filterBy) {
-      console.log('filterBy home', filterBy);
+      console.log("filterBy home", filterBy);
       this.$store.commit({ type: "setFilter", filterBy });
       // this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
       this.$router.push("/stay");
     },
-    handleScroll (event) {
+    handleScroll(event) {
       // Any code to be executed when the window is scrolled
       if (window.scrollY > 0) {
         this.isUserScrolling = true;
         // this.isSearch = false;
-      }
-      else this.isUserScrolling = false
-    }
+      } else this.isUserScrolling = false;
+    },
   },
   components: {
-    stayFilter
+    stayFilter,
   },
 };
 </script>

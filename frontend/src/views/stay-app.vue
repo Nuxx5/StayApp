@@ -23,8 +23,8 @@ export default {
   methods: {
     setFilter(filterBy) {
       console.log("filter stay-app", filterBy);
-      // this.$store.commit({ type: "setFilter", filterBy });
-      this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
+      this.$store.commit({ type: "setFilter", filterBy });
+    //   this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
     },
     handleScroll(event) {
       // Any code to be executed when the window is scrolled
