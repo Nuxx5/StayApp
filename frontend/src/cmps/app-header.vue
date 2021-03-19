@@ -1,7 +1,7 @@
 <template>
 <section class="header-sec">
-  <header>
-    <nav class="flex space-between">
+  <header class="main-container">
+    <nav class="flex space-between align-center">
       <router-link to="/" class="logo">
         <!-- <span role="img" aria-label="logo">🏨</span> -->
         <img class="logo-icon" src="@/assets/img/logo.png" alt="" />

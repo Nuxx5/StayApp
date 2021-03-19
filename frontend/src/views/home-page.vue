@@ -2,7 +2,10 @@
   <section class="home text-center">
     <div class="hero-img">
       <img class="bgimage" src="@/assets/img/hero.jpg" alt="" />
-      <div class="bottom-left">
+      <div class="home-filter">
+        <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" />
+      </div>
+      <div>
         <h1>Stay.</h1>
         <h3 class="text-center">Anywhere.</h3>
       </div>
@@ -26,7 +29,7 @@
         </ul>
       </div>
       <div class="home-about">
-        <h2>About Stay.</h2>
+        <h2 class="about-header">About Stay.</h2>
         <div class="about-txt flex">
           <div class="about-txt-card">
             <h3>Who we are</h3>
@@ -57,14 +60,34 @@ import stayFilter from "../cmps/stay-filter.vue";
 export default {
   name: "home",
   data() {
-    return {};
+    return {
+      isUserScrolling: false
+    };
   },
   computed: {},
-  created() {},
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
   methods: {
     openStays(city) {
       this.$router.push(`/stay?city=${city}`);
     },
+    setFilter(filterBy) {
+      console.log('in filter');
+      // this.$store.commit({ type: "setFilter", filterBy });
+      this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
+    },
+    handleScroll (event) {
+      // Any code to be executed when the window is scrolled
+      if (window.scrollY > 0) {
+        this.isUserScrolling = true;
+        // this.isSearch = false;
+      }
+      else this.isUserScrolling = false
+    }
   },
   components: {
     stayFilter

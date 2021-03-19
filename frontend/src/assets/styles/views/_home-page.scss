@@ -10,6 +10,12 @@
             text-align: left;
         }
     }
+
+    .home-filter{
+        position: absolute;
+        top: 70px;
+        
+    }
     
     .bgimage {
         height: 67vh;
@@ -19,10 +25,10 @@
         object-fit: cover;
     }
     .hero-img{
-        height: 76vh;
+        height: 80vh;
         background-color: black;
         margin-bottom: 60px;
-        // position: relative;
+        color: whitesmoke
     }
 
     ul{
@@ -31,6 +37,10 @@
 
     .home-card{
         margin-bottom: 30px;
+    }
+
+    .about-header{
+        padding-bottom: 30px;
     }
     
 }
