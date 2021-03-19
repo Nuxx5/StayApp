@@ -23,8 +23,8 @@ export default {
   methods: {
     setFilter(filterBy) {
       console.log("filter stay-app", filterBy);
-      // this.$store.commit({ type: "setFilter", filterBy });
-      this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
+      this.$store.commit({ type: "setFilter", filterBy });
+    //   this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
     },
     handleScroll(event) {
       // Any code to be executed when the window is scrolled
@@ -37,9 +37,9 @@ export default {
   created() {
     console.log("stay-app");
     // console.log("this.$route.params;", this.$route.params);
-    console.log("this.$route.query;", this.$route.query.city);
+    console.log("this.$route.query", this.$route.query.city);
     window.addEventListener("scroll", this.handleScroll);
-    this.setFilter(this.$route.query.city);
+    // this.setFilter(this.$route.query.city);
     return this.$store.getters.staysForDisplay;
   },
   destroyed() {
@@ -47,10 +47,7 @@ export default {
   },
   computed: {
     stays() {
-      console
-        .log
-        // JSON.parse(JSON.stringify(this.$store.getters.staysForDisplay))
-        ();
+      console.log(JSON.parse(JSON.stringify(this.$store.getters.staysForDisplay)));
       return this.$store.getters.staysForDisplay;
     },
   },
