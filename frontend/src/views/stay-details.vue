@@ -19,11 +19,12 @@
               <p class="summary-text2">{{stay.capacity}} guests</p>
               <img class="summary-img" :src="stay.host.imgUrl">
               </div>
+              <div class="room-desc flex column">
+                <p>{{stay.summary}}</p>
+                </div>
            </div>
         <tripSettings></tripSettings>
           </div>
-    <h2><span>Price: </span>${{ stay.price }}</h2>
-    <h2><span>Capacity: </span>{{ stay.capacity }}</h2>
     <h2><span>amenities: </span>{{ stay.amenities }}</h2>
     <!-- <chat-app :stay="stay" /> -->
     <router-link to="/stay" class="btn">Back</router-link>

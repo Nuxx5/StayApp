@@ -38,7 +38,7 @@
     display: grid;
     grid-template-columns: 1fr 60px;
     grid-template-rows: 1fr 1fr;
-    grid-row-gap: 10px;
+    // grid-row-gap: 10px;
     grid-template-areas:
         "text1 img"
         "text2 img";
@@ -66,3 +66,15 @@
     height: 60px;
     border-radius: 50%;
 }
+
+.room-desc {
+        padding: 32px 0 48px 0;
+        line-height: 24px;
+        border-top: 1px solid #ddd;
+        max-width: 650px;
+    }
+
+    .amenity-section {
+        border-top: 1px solid #ddd;
+        padding: 48px 0;
+    }
