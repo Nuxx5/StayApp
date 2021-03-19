@@ -110,7 +110,7 @@ function _createStays() {
                 "name": "Charming Villa near the lake",
                 "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200", "https://a0.muscache.com/im/pictures/0301689a-ddd3-4cb1-82cb-86c9e35c845d.jpg?im_w=720", "https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/908f77ba-3d40-4957-bc58-13aefb4017a7.png?im_w=720", "https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/84218d4a-cfd0-4eb6-80b9-8356ce71abce.png?im_w=720", "https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/a8442fac-869b-4884-99dd-d1a2898d90cb.jpeg?im_w=720"],
                 "price": 99.00,
-                "summary": "Charming spacious Villa, located in the historic area of Toronto...",
+                "summary": "I hope you'll feel perfectly at home at my spacious villa located where the entertainment district, waterfront, and financial district merge. My place is just steps away from the city's most popular attractions! It features a large balcony with a city view. The kitchen is fully equipped. The queen-sized bed is comfortable and sofa beds are also available!",
                 "capacity": 4,
                 "amenities": [
                   "TV",
@@ -128,7 +128,7 @@ function _createStays() {
                 "loc": {
                   "country": "Canada",
                 "countryCode": "CA",
-                "address": "Toronto, Canada",
+                "address": "Toronto",
                 "lat": 43.651070,
                 "lng": -79.347015
                 },
@@ -168,7 +168,7 @@ function _createStays() {
                 "loc": {
                   "country": "Canada",
                 "countryCode": "CA",
-                "address": "Toronto, Canada",
+                "address": "Toronto",
                 "lat": 43.651070,
                 "lng": -79.347015
                 },
@@ -208,7 +208,7 @@ function _createStays() {
                 "loc": {
                   "country": "United Kingdom",
                 "countryCode": "UK",
-                "address": "London, UK",
+                "address": "London",
                 "lat": 51.509865,
                 "lng": -0.118092
                 },
@@ -238,7 +238,7 @@ function _createStays() {
                 "loc": {
                   "country": "United Kingdom",
                 "countryCode": "UK",
-                "address": "London, UK",
+                "address": "London",
                 "lat": 51.509865,
                 "lng": -0.118092
                 },
@@ -268,7 +268,7 @@ function _createStays() {
                 "loc": {
                   "country": "United States",
                 "countryCode": "USA",
-                "address": "Los Angeles, USA",
+                "address": "Los Angeles",
                 "lat": 34.052235,
                 "lng": -118.243683
                 },
@@ -297,7 +297,7 @@ function _createStays() {
                 "loc": {
                   "country": "United States",
                 "countryCode": "USA",
-                "address": "Los Angeles, USA",
+                "address": "Los Angeles",
                 "lat": 34.052235,
                 "lng": -118.243683
                 },

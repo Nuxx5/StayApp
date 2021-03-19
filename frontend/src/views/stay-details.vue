@@ -1,6 +1,6 @@
 <template>
   <section v-if="stay" class="main-container stay-details flex column">
-    <h2>{{ stay.name }}</h2>
+    <h2 class="room-title">{{ stay.name }}</h2>
     <div class="ratings flex">
       <div class="details-rating" :class="{opacity:noReviews}">{{ rating }}</div>
       <div>{{ stay.loc.address }}</div>
@@ -19,11 +19,12 @@
               <p class="summary-text2">{{stay.capacity}} guests</p>
               <img class="summary-img" :src="stay.host.imgUrl">
               </div>
+              <div class="room-desc flex column">
+                <p>{{stay.summary}}</p>
+                </div>
            </div>
-        <tripSettings></tripSettings>
+        <tripSettings @reservationMade="handleReservation" />
           </div>
-    <h2><span>Price: </span>${{ stay.price }}</h2>
-    <h2><span>Capacity: </span>{{ stay.capacity }}</h2>
     <h2><span>amenities: </span>{{ stay.amenities }}</h2>
     <!-- <chat-app :stay="stay" /> -->
     <router-link to="/stay" class="btn">Back</router-link>
@@ -63,5 +64,10 @@ export default {
     // chatApp,
     tripSettings
   },
+  methods:{
+    handleReservation(reservation){
+      console.log(reservation)
+    }
+  }
 };
 </script>
