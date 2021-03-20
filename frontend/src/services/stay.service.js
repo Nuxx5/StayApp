@@ -144,12 +144,22 @@ function _createStays() {
         "reviews": [
           {
             "id": "434312",
-            "txt": "Amazing place, nice hosts...",
-            "rate": 5,
+            "txt": "Nicely designed, cosy apartment for professionals and those who like downtown lifestyle. Highly recommend!",
+            "rate": 4,
             "by": {
               "_id": "u104",
               "fullname": "Dan Gat",
-              "imgUrl": "/img/img4.jpg"
+              "imgUrl": "https://a0.muscache.com/im/pictures/user/4b4af084-02c2-4a83-b753-738b0c643ab7.jpg?aki_policy=profile_x_medium"
+            }
+          },
+          {
+            "id": "434532",
+            "txt": "This place was ok and could've been a lot better. definitely not clean and smelled really bad in there.",
+            "rate": 4,
+            "by": {
+              "_id": "u107",
+              "fullname": "Bruce Brown",
+              "imgUrl": "https://a0.muscache.com/im/pictures/user/a641c617-c565-42c0-a02e-e7451f6f5092.jpg?aki_policy=profile_x_medium"
             }
           }
         ]
@@ -283,7 +293,8 @@ function _createStays() {
         },
         "reviews": []
 
-      }, {
+      },
+      {
         "_id": "10006566",
         "name": "Trendy Apt in Hollywood",
         "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "@/assets/img/stay1.jpg"],
@@ -311,14 +322,12 @@ function _createStays() {
           "lng": -118.243683
         },
         "reviews": []
-
       }
     ];
     localStorage.setItem(KEY, JSON.stringify(stays))
-
-  }
-  // _saveStaysToStorage(stays)
-  return stays;
+}
+// _saveStaysToStorage(stays)
+return stays;
 }
 
 

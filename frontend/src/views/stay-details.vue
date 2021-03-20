@@ -1,6 +1,6 @@
 <template>
   <section v-if="stay" class="main-container stay-details flex column">
-    <h2 class="room-title">{{ stay.name }}</h2>
+    <h2 class="stay-title">{{ stay.name }}</h2>
     <div class="ratings flex">
       <div class="details-rating" :class="{ opacity: noReviews }">
         {{ rating }}
@@ -15,15 +15,15 @@
       <img class="image-gallery img5" :src="stay.imgUrls[2]" />
     </div>
     <div class="main-content flex space-between">
-      <div class="room-details flex column">
-        <div class="room-summary">
+      <div class="stay-details flex column">
+        <div class="stay-summary">
           <p class="summary-text1">
             Entire place hosted by {{ stay.host.fullname }}
           </p>
           <p class="summary-text2">{{ stay.capacity }} guests</p>
           <img class="summary-img" :src="stay.host.imgUrl" />
         </div>
-        <div class="room-desc flex column">
+        <div class="stay-desc flex column">
           <p>{{ stay.summary }}</p>
         </div>
         <div class="amenity-section">
@@ -56,8 +56,35 @@
           </div>
         </div>
       <!-- <datepicker :multi="true" :inline="true" :value="Date.now()"></datepicker> -->
-       <date-picker v-model="time" :formatter="momentFormat" inline range></date-picker>
-       <span>{{time}}</span>
+      <div class="calendar flex column">
+        <h2>{{ stay.loc.address }}</h2>
+        <span>{{date[0]}} - {{date[1]}}</span>
+       <date-picker v-model="date" value-type="format" format="MMM DD, YYYY" inline range></date-picker>
+      </div>
+      <div class="reviews flex column">
+        <ul class="review-cards">
+          <li
+        v-for="review in stay.reviews"
+        :key="review.id"
+        class="review-card"
+      >
+      <div class="review-header">
+        <img :src="review.by.imgUrl">
+        <div class="header-text">
+          <span class="review-name">{{review.by.fullname}}</span>
+          <p class="review-date">June 2019</p>
+        </div>
+      </div>
+      <p class="review-txt">{{review.txt}}</p>
+      </li>
+      </ul>
+      </div>
+      <div class="maps">
+      <google-maps :pos="setPos"/>
+      </div>
+      <!-- <div class="stay-map" v-bind:style="{ backgroundImage: `url(${mapUrl})`}">
+        {{stay.loc.address}}
+      </div> -->
       </div>
       <tripSettings @reservationMade="handleReservation" />
     </div>
@@ -73,25 +100,13 @@ import DatePicker from 'vue2-datepicker';
   import 'vue2-datepicker/index.css';
 // import chatApp from "../cmps/chat-app.vue";
 import tripSettings from "../cmps/trip-settings.vue";
+import googleMaps from "../cmps/google-maps";
 export default {
   data() {
     return {
       stay: null,
-      time: null,
-      momentFormat: {
-      //[optional] Date to String
-      stringify: (date) => {
-        return date ? moment(date).format('LL') : ''
-      },
-      //[optional]  String to Date
-      parse: (value) => {
-        return value ? moment(value, 'LL').toDate() : null
-      },
-      //[optional] getWeekNumber
-      getWeek: (date) => {
-        return // a number
-      }
-    }
+      date: [],
+      pos: {}
       }
     },
   created() {
@@ -102,10 +117,9 @@ export default {
     });
   },
   computed: {
-    date() {
-      if (this.stay.createdAt)
-        return new Date(this.stay.createdAt).toLocaleDateString("he-IS");
-    },
+    // mapUrl: function(){
+    //   return `http://maps.googleapis.com/maps/api/staticmap?center=${this.stay.loc.lat},${this.stay.loc.lng}&zoom=14&size=480x250&markers=${this.stay.loc.lat},${this.stay.loc.lng}&key=AIzaSyCP18cD4FwL37eXgcB1MbLNtG9ktbkzdlw`
+    // },
     rating() {
       return this.stay.reviews.length
         ? "⭐ " +
@@ -118,18 +132,23 @@ export default {
     noReviews() {
       return !this.stay.reviews.length;
     },
+    setPos() {
+  return {lat:this.stay.loc.lat, lng:this.stay.loc.lng}
+    }
   },
   components: {
     // chatApp,
     tripSettings,
-    DatePicker
+    DatePicker,
+    googleMaps
   },
   methods: {
     handleReservation(reservation) {
       console.log(reservation);
+      if ((reservation.adults+reservation.children === 0) || reservation.startDate === null || reservation.endDate === null) return
       this.$message({
           showClose: true,
-          message: `${this.stay.name} reserved from ${reservation.startDate} to ${reservation.endDate}`,
+          message: `${this.stay.name} reserved from ${reservation.startDate} to ${reservation.endDate}. (${reservation.adults+reservation.children} guests total)`,
           type: 'success'
         });
     },
