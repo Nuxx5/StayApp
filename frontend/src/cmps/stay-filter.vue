@@ -1,11 +1,12 @@
 <template>
-  <form class="stay-filter space-evenly" @submit.prevent="setFilter">
-    <div class="flex column">
-      <label> search a stay: </label>
+  <!-- <form @submit.prevent="setFilter"> -->
+  <!-- <form class="stay-filter space-evenly" @submit.prevent="setFilter"> -->
+  <section class="filter-container flex">
+    <div class="filter-location flex column">
+      <label>Location</label>
       <input
         type="text"
         v-model="filterBy.txt"
-        
         placeholder="Where are you going?"
       />
       <!-- @input="setFilter" -->
@@ -21,7 +22,6 @@
         max="2031-12-31"
         v-model="filterBy.startDate"
       />
-        <!-- @input="setFilter" -->
     </div>
     <div class="flex column">
       <label for="end">Check out:</label>
@@ -36,10 +36,19 @@
       />
       <!-- @input="setFilter" -->
     </div>
-    <label>
-      Add guests: <span>{{ sumOfGuests }}</span></label
-    >
-    <div class="flex column">
+    <!-- <div class="filter-dates flex column">
+      <label>Dates</label>
+      <span>Check in - Check out</span>
+    </div> -->
+    <div class="filter-guests flex column">
+      <button @click="showModal">
+      <label>Guests</label>
+      <span class="flex"
+        >Add guests: <span>{{ sumOfGuests }}</span></span
+      >
+      </button>
+    </div>
+    <div class="guests-modal flex column">
       <p>
         Adults:<button @click="removeAdult">-</button><span>{{ adults }}</span
         ><button @click="addAdult">+</button>
@@ -55,8 +64,11 @@
         ><button @click="addInfant">+</button>
       </p>
     </div>
-    <button class="filter-search">🔎</button>
-  </form>
+    <div class="search-btn">
+      <button class="filter-search" @click="setFilter">🔎</button>
+    </div>
+  </section>
+  <!-- </form> -->
 </template>
 
 <script>
@@ -85,29 +97,30 @@ export default {
     setFilter() {
       this.$emit("setFilter", this.filterBy);
     },
-    //     sumOfGuests() {
-    //         console.log('in methods')
-    //         this.filterBy.capacity = this.adults + this.children + this.infants
-    //         return this.filterBy.capacity
-    //   },
     addAdult() {
       this.adults++;
     },
     removeAdult() {
       this.adults--;
+      if (this.adults < 0) this.adults = 0;
     },
     addChild() {
       this.children++;
     },
     removeChild() {
       this.children--;
+      if (this.children < 0) this.children = 0;
     },
     addInfant() {
       this.infants++;
     },
     removeInfant() {
       this.infants--;
+      if (this.infants < 0) this.infants = 0;
     },
+    showModal(){
+
+    }
   },
 };
 </script>
