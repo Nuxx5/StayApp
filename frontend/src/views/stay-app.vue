@@ -1,6 +1,6 @@
 <template>
   <section class="stay-app main-container">
-    <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" />
+    <!-- <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" /> -->
     <stay-list :stays="stays" />
     <!-- <div class="big" /> -->
   </section>
@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       stayToEdit: stayService.getEmptyStay(),
-      isUserScrolling: false,
+    //   isUserScrolling: false,
     };
   },
   methods: {
@@ -26,25 +26,24 @@ export default {
       this.$store.commit({ type: "setFilter", filterBy });
     //   this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
     },
-    handleScroll(event) {
-      // Any code to be executed when the window is scrolled
-      if (window.scrollY > 0) {
-        this.isUserScrolling = true;
-        // this.isSearch = false;
-      } else this.isUserScrolling = false;
-    },
+    // handleScroll(event) {
+    //   if (window.scrollY > 0) {
+    //     this.isUserScrolling = true;
+    //     // this.isSearch = false;
+    //   } else this.isUserScrolling = false;
+    // },
   },
   created() {
     console.log("stay-app");
     // console.log("this.$route.params;", this.$route.params);
     console.log("this.$route.query", this.$route.query.city);
-    window.addEventListener("scroll", this.handleScroll);
+    // window.addEventListener("scroll", this.handleScroll);
     // this.setFilter(this.$route.query.city);
     return this.$store.getters.staysForDisplay;
   },
-  destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
-  },
+//   destroyed() {
+//     window.removeEventListener("scroll", this.handleScroll);
+//   },
   computed: {
     stays() {
       console.log(JSON.parse(JSON.stringify(this.$store.getters.staysForDisplay)));
