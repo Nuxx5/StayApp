@@ -1,3 +1,25 @@
-.host-container{
-    
+.host-content{
+height: 80vh;
+align-items: center;
+}
+
+.host-txt{
+    width: 50%;
+}
+
+.host-form{
+    width: 400px
+}
+
+form > *{
+    width: unset;
+}
+.form-input{
+    border: 1px solid #bbb;
+    color: #606266;
+    font-size: inherit;
+    line-height: 40px;
+    padding: 10px 15px;
+    min-width: 400px;
+    height: 60px;
 }
