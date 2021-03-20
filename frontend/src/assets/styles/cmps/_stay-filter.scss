@@ -32,3 +32,16 @@
     // margin: 0;
 }
 
+.el-popover .popper__arrow{
+    display: none;
+}
+
+.el-popper .popper__arrow, .el-popper .popper__arrow::after {
+    // position: absolute;
+    display: none;
+    // width: 0;
+    // height: 0;
+    // border-color: transparent;
+    // border-style: solid;
+}
+

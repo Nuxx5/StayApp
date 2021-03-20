@@ -48,6 +48,15 @@
       >
       </button>
     </div>
+    <el-popover
+    placement="bottom"
+    title="Title"
+    width="200"
+    offset="200"
+    trigger="click">
+    <!-- content="this is content, this is content, this is content"> -->
+    <el-button slot="reference">Add guests: <span>{{ sumOfGuests }}</span></el-button>
+  </el-popover>
     <div class="guests-modal flex column">
       <p>
         Adults:<button @click="removeAdult">-</button><span>{{ adults }}</span
