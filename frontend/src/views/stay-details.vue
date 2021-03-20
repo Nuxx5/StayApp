@@ -127,6 +127,11 @@ export default {
   methods: {
     handleReservation(reservation) {
       console.log(reservation);
+      this.$message({
+          showClose: true,
+          message: `${this.stay.name} reserved from ${reservation.startDate} to ${reservation.endDate}`,
+          type: 'success'
+        });
     },
   },
 };
