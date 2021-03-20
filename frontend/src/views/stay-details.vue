@@ -127,9 +127,10 @@ export default {
   methods: {
     handleReservation(reservation) {
       console.log(reservation);
+      if ((reservation.adults+reservation.children === 0) || reservation.startDate === null || reservation.endDate === null) return
       this.$message({
           showClose: true,
-          message: `${this.stay.name} reserved from ${reservation.startDate} to ${reservation.endDate}`,
+          message: `${this.stay.name} reserved from ${reservation.startDate} to ${reservation.endDate}. (${reservation.adults+reservation.children} guests total)`,
           type: 'success'
         });
     },
