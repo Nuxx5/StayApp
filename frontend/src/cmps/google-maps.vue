@@ -28,9 +28,9 @@ export default {
 	data() {
 		return {
 			markers: [
-				{ position: { lat: 32.109333, lng: 34.855499 } },
-				{ position: { lat: 31.66926, lng: 34.57149 } },
-				{ position: { lat: 31.771959, lng: 35.217018 } }
+				{ position: { lat: this.pos.lat, lng: this.pos.lng } },
+				// { position: { lat: 31.66926, lng: 34.57149 } },
+				// { position: { lat: 31.771959, lng: 35.217018 } }
 			]
 		}
 	},
