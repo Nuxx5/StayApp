@@ -55,7 +55,9 @@
             </div>
           </div>
         </div>
-      <datepicker :value="Date.now()"></datepicker>
+      <!-- <datepicker :multi="true" :inline="true" :value="Date.now()"></datepicker> -->
+       <date-picker v-model="time" :formatter="momentFormat" inline range></date-picker>
+       <span>{{time}}</span>
       </div>
       <tripSettings @reservationMade="handleReservation" />
     </div>
@@ -66,15 +68,32 @@
 </template>
     <script>
 import { stayService } from "../services/stay.service.js";
-import Datepicker from "vuejs-datepicker";
+// import Datepicker from "vuejs-datepicker";
+import DatePicker from 'vue2-datepicker';
+  import 'vue2-datepicker/index.css';
 // import chatApp from "../cmps/chat-app.vue";
 import tripSettings from "../cmps/trip-settings.vue";
 export default {
   data() {
     return {
       stay: null,
-    };
-  },
+      time: null,
+      momentFormat: {
+      //[optional] Date to String
+      stringify: (date) => {
+        return date ? moment(date).format('LL') : ''
+      },
+      //[optional]  String to Date
+      parse: (value) => {
+        return value ? moment(value, 'LL').toDate() : null
+      },
+      //[optional] getWeekNumber
+      getWeek: (date) => {
+        return // a number
+      }
+    }
+      }
+    },
   created() {
     const stayId = this.$route.params.id;
     stayService.getStayById(stayId).then((stay) => {
@@ -103,7 +122,7 @@ export default {
   components: {
     // chatApp,
     tripSettings,
-    Datepicker,
+    DatePicker
   },
   methods: {
     handleReservation(reservation) {
