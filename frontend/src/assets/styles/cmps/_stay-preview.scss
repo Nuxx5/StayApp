@@ -5,4 +5,16 @@
     letter-spacing: .3px;
     color: #484848;
     margin-bottom: 15px;
+    img {
+        border-radius: 20px;
+        margin-bottom: .625rem;
+        }
+}
+
+.preview-txt {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    p {
+        margin: 0;
+    }
 }

@@ -1,12 +1,15 @@
     <template>
   <section class="stay-preview clickable" @click="openDetails">
-
+    <div class="preview-img">
     <img :src="loadImg"/>
+    </div>  
     <p :class="{opacity:noReviews}">{{ rating }}</p>
+    <div class="preview-txt">
     <p>{{ stay.loc.address }}</p>
     <p>{{ stay.name }}</p>
     <p>{{ stay.capacity }} guests</p>
     <p><span class="bold">${{ stay.price }}</span> / night</p>
+    </div>
     <!-- <img class="card" src="@/assets/img/stay1.jpg"/> -->
   </section>    
 </template>
