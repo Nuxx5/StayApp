@@ -167,7 +167,7 @@ function _createStays() {
       {
         "_id": "10006550",
         "name": "Two bedroom apartment on the hill",
-        "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "otherImg.jpg"],
+        "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200", "otherImg.jpg"],
         "price": 70.00,
         "summary": "fully equipped apartment next to the national park...",
         "capacity": 3,
@@ -207,7 +207,7 @@ function _createStays() {
       {
         "_id": "10006549",
         "name": "Super 60m2 in trendy neighborhood!",
-        "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "otherImg.jpg"],
+        "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200", "otherImg.jpg"],
         "price": 85.00,
         "summary": "Super 60m2 in trendy neighborhood of London",
         "capacity": 3,
@@ -237,7 +237,7 @@ function _createStays() {
       {
         "_id": "10006569",
         "name": "Charm at the Steps of the Big Ben",
-        "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "otherImg.jpg"],
+        "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200", "otherImg.jpg"],
         "price": 125.00,
         "summary": "Charm at the Steps of the Big Ben - very central",
         "capacity": 4,
@@ -267,7 +267,7 @@ function _createStays() {
       {
         "_id": "10006563",
         "name": "Bohemian and Chic in LA",
-        "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "otherImg.jpg"],
+        "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200", "otherImg.jpg"],
         "price": 135.00,
         "summary": "Bohemian and Chic apartment in Central Los Angeles",
         "capacity": 4,
@@ -297,7 +297,7 @@ function _createStays() {
       {
         "_id": "10006566",
         "name": "Trendy Apt in Hollywood",
-        "imgUrls": ["https://a0.muscache.com/im/pictures/e83e702f-ef49-40fb-8fa0-6512d7e26e9b.jpg?aki_policy=large", "@/assets/img/stay1.jpg"],
+        "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200", "@/assets/img/stay1.jpg"],
         "price": 128.00,
         "summary": "Trendy Apt in Hollywood - close to everything",
         "capacity": 3,

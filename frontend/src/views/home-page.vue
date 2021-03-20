@@ -14,15 +14,15 @@
       <h2>Explore Locations</h2>
       <div class="home-card">
         <ul class="clean-list flex space-between">
-          <li class="card clickable" @click="setStay('toronto')">
+          <li class="card clickable" @click="setStay('Toronto')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>Toronto</h3>
           </li>
-          <li class="card clickable" @click="setStay('london')">
+          <li class="card clickable" @click="setStay('London')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>London</h3>
           </li>
-          <li class="card clickable" @click="setStay('los angeles')">
+          <li class="card clickable" @click="setStay('Los Angeles')">
             <img src="@/assets/img/canada.jpg" alt="" />
             <h3>Los Angeles</h3>
           </li>
@@ -83,8 +83,8 @@ export default {
       console.log('filterBy', this.filterBy);
       var filterBy = this.filterBy
       // this.$store.commit({ type: "setFilter", filterBy });
-      // this.$router.push(`/stay?city=${city}`);
       this.setFilter(filterBy);
+      this.$router.push(`/stay?city=${city}`);
     },
     setFilter(filterBy) {
       console.log("filterBy home", filterBy);

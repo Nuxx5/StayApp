@@ -1,10 +1,12 @@
     <template>
   <section>
+    <div class="list-container">
+      <h1 v-if="this.$route.query.city" class="list-container h1"> Stays in {{this.$route.query.city}}</h1>
+      <h1 v-else class="list-container h1"> Places to stay near you</h1>
     <ul class="stay-list clean-list preview-grid">
-      <li
+      <li class="list-card"
         v-for="stay in stays"
         :key="stay._id"
-        class="flex align-center"
       >
         <stay-preview
           :stay="stay"
@@ -20,6 +22,7 @@
         > -->
       </li>
     </ul>
+    </div>
   </section>
 </template>
 

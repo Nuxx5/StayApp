@@ -1,5 +1,6 @@
     <template>
-  <section class="stay-preview flex column clickable" @click="openDetails">
+  <section class="stay-preview clickable" @click="openDetails">
+
     <img :src="loadImg"/>
     <p :class="{opacity:noReviews}">{{ rating }}</p>
     <p>{{ stay.loc.address }}</p>
