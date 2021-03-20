@@ -1,12 +1,22 @@
+.list-container h1{
+    padding-top: 20px;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 2.25rem;
+    color: #222;
+    margin-bottom: .9375em;
+}
+
+
 .stay-list {
     list-style: none;
     // display: flex;
     // flex-wrap: wrap;
     li {
-        background-color: $clr2;
-        color: $clr6;
-        padding: 5px;
-        margin: 5px;
+        // background-color: $clr2;
+        // color: $clr6;
+        // padding: 5px;
+        // margin: 5px;
     }
     a {
         color: $clr1;
@@ -18,6 +28,7 @@
         margin: 5px;
     }    
 }
+
 
 
 
