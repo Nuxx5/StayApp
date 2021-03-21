@@ -1,6 +1,7 @@
 <template>
   <header class="main-container">
-    <nav class="flex space-between align-center">
+    <div class="header-container">
+    <nav class="main-nav flex space-between align-center">
       <router-link to="/" class="logo">
         <!-- <span role="img" aria-label="logo">🏨</span> -->
         <img class="logo-icon" src="@/assets/img/logo.png" alt="" />
@@ -29,6 +30,7 @@
       </router-link>
       <!-- <span>{{ loggedInUser.score }}</span> -->
     </section>
+    </div>
     <stay-filter v-if="isSearch" @setFilter="setFilter" />
   </header>
 </template>

@@ -1,3 +1,4 @@
+// header
 header {
     background-color: black;
     // padding: 10px;
@@ -10,6 +11,14 @@ header {
     z-index: 10;
     // border: 2px black solid;
     
+    .header-container{
+        // height: 80px;
+    }
+    
+    .main-nav{
+        height: 80px;
+    }
+
     .logo{
         text-decoration: none;
     }
