@@ -10,7 +10,7 @@
         <button @click="openForm">Get started</button>
       </div>
       <div class="host-form" v-if="isForm">
-        <form @submit.prevent="addHost">
+        <form @submit.prevent="addStay">
           <div class="form-header">
             Please fill the below details about you and your stay
           </div>
@@ -18,39 +18,39 @@
             <input
               type="text"
               class="form-input"
-              v-model="stay.host.fullname"
+              v-model="stayToEdit.host.fullname"
               placeholder="Please type your full name"
             />
             <input
               type="text"
               class="form-input"
-              v-model="stay.name"
+              v-model="stayToEdit.name"
               placeholder="Please type your stay name"
             />
             <input
               type="text"
               class="form-input"
-              v-model="stay.summary"
+              v-model="stayToEdit.summary"
               placeholder="Please describe your stay"
             />
-            <select v-model="stay.loc.address" class="form-input">
+            <select v-model="stayToEdit.loc.address" class="form-input">
               <option value disabled>Located at</option>
-              <option value="toronto">Toronto</option>
-              <option value="london">London</option>
-              <option value="los angeles">Los Angeles</option>
+              <option value="Toronto">Toronto</option>
+              <option value="London">London</option>
+              <option value="Los Angeles">Los Angeles</option>
             </select>
             <input
               type="number"
               min="0"
               class="form-input"
-              v-model="stay.price"
+              v-model="stayToEdit.price"
               placeholder="How much will you charge for a night"
             />
             <input
               type="number"
               min="0"
               class="form-input"
-              v-model="stay.accommodates"
+              v-model="stayToEdit.capacity"
               placeholder="How many accommodates in yor stay"
             />
           </div>
@@ -67,64 +67,26 @@ export default {
   name: "stay-add",
   data() {
     return {
-      stay: stayService.getEmptyStay(),
+      stayToEdit: stayService.getEmptyStay(),
       isForm: false,
     };
   },
-  //   computed: {
-  //     users() {
-  //       return this.$store.getters.users;
-  //     },
-  //     loggedinUser() {
-  //       return this.$store.getters.loggedinUser;
-  //     },
-  //   },
-  //   created() {
-  //     this.loadUsers()
-  //   },
   methods: {
     openForm() {
       this.isForm = true;
     },
-    addHost(){
-      
-    }
-    //     async doLogin() {
-    //       if (!this.loginCred.username) {
-    //         this.msg = "Please enter username/password"
-    //         return;
-    //       }
-    //       try {
-    //         await this.$store.dispatch({ type: "login", userCred: this.loginCred });
-    //         this.$router.push('/')
-    //       } catch(err) {
-    //           console.log(err)
-    //           this.msg = "Failed to login"
-    //       }
-    //     },
-    //     doLogout() {
-    //       this.$store.dispatch({ type: "logout" });
-    //     },
-    //     async doSignup() {
-    //       if (!this.signupCred.fullname || !this.signupCred.password || !this.signupCred.username) {
-    //         this.msg = "Please fill up the form"
-    //         return
-    //       }
-    //       await this.$store.dispatch({ type: "signup", userCred: this.signupCred });
-    //       this.$router.push('/')
-
-    //     },
-    //     loadUsers() {
-    //       this.$store.dispatch({ type: "loadUsers" });
-    //     },
-    //     async removeUser(userId) {
-    //       try {
-    //         await this.$store.dispatch({ type: "removeUser", userId })
-    //         this.msg = 'User removed'
-    //       } catch(err) {
-    //         this.msg = 'Failed to remove user'
-    //       }
-    //     }
+    addStay() {
+      const stay = { ...this.stayToEdit };
+      console.log("stay add", stay);
+      this.$store.dispatch({ type: "saveStay", stay }).then(() => {
+        // showMsg('Stay added')
+        this.stayToEdit = stayService.getEmptyStay();
+        this.$router.push("/stay");
+      });
+      // .catch(err => {
+      //     showMsg('Cannot add Stay', 'danger')
+      // })
+    },
   },
 };
 </script>

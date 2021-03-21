@@ -78,13 +78,13 @@ function save(stay) {
 
 function getEmptyStay() {
   return {
-    _id: utilService.makeId(),
+    _id: null,
     name: '',
-    imgUrls: [],
-    price: 0,
+    imgUrls: ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200"],
+    price: null,
     createdAt: null,
     summary: '',
-    capacity: 4,
+    capacity: null,
     amenities: [
       "TV",
       "Wifi",
@@ -94,11 +94,12 @@ function getEmptyStay() {
     host: {
       _id: utilService.makeId(),
       fullname: '',
-      imgUrl: null,
+      imgUrl: "https://a0.muscache.com/im/pictures/user/13b7cb9a-3ca4-4cd0-bd16-c501da6a12fe.jpg?im_w=240",
     },
     loc: {
       address: '',
-    }
+    },
+    reviews: []
   }
 }
 
@@ -325,9 +326,9 @@ function _createStays() {
       }
     ];
     localStorage.setItem(KEY, JSON.stringify(stays))
-}
-// _saveStaysToStorage(stays)
-return stays;
+  }
+  // _saveStaysToStorage(stays)
+  return stays;
 }
 
 
