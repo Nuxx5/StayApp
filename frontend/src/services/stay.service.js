@@ -78,13 +78,13 @@ function save(stay) {
 
 function getEmptyStay() {
   return {
-    _id: null,
+    _id: utilService.makeId(),
     name: '',
-    imgUrls: ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200"],
-    price: null,
+    imgUrls: [],
+    price: 0,
     createdAt: null,
     summary: '',
-    capacity: null,
+    capacity: 4,
     amenities: [
       "TV",
       "Wifi",
@@ -94,12 +94,11 @@ function getEmptyStay() {
     host: {
       _id: utilService.makeId(),
       fullname: '',
-      imgUrl: "https://a0.muscache.com/im/pictures/user/13b7cb9a-3ca4-4cd0-bd16-c501da6a12fe.jpg?im_w=240",
+      imgUrl: null,
     },
     loc: {
       address: '',
-    },
-    reviews: []
+    }
   }
 }
 
@@ -118,7 +117,7 @@ function _createStays() {
       {
         "_id": "10006546",
         "name": "Charming Villa near the lake",
-        "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200", "https://a0.muscache.com/im/pictures/0301689a-ddd3-4cb1-82cb-86c9e35c845d.jpg?im_w=720", "https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/908f77ba-3d40-4957-bc58-13aefb4017a7.png?im_w=720", "https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/84218d4a-cfd0-4eb6-80b9-8356ce71abce.png?im_w=720", "https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/a8442fac-869b-4884-99dd-d1a2898d90cb.jpeg?im_w=720"],
+        "imgUrls": ["https://a0.muscache.com/im/pictures/ff2c1c5a-2f80-4002-a976-f9eb89a33203.jpg?im_w=720", "https://a0.muscache.com/im/pictures/cb8527e0-ba95-431f-b5be-95b1da9fecc2.jpg?im_w=720", "https://a0.muscache.com/im/pictures/7df0697a-af3c-4b06-9ef6-73697d43981d.jpg?im_w=720", "https://a0.muscache.com/im/pictures/c8826702-5697-43c0-ae80-4e066fbe76b2.jpg?im_w=720", "https://a0.muscache.com/im/pictures/da8eb079-a05f-43fa-a537-0b01baba46fb.jpg?im_w=720"],
         "price": 99.00,
         "summary": "I hope you'll feel perfectly at home at my spacious villa located where the entertainment district, waterfront, and financial district merge. My place is just steps away from the city's most popular attractions! It features a large balcony with a city view. The kitchen is fully equipped. The queen-sized bed is comfortable and sofa beds are also available!",
         "capacity": 4,
@@ -168,9 +167,9 @@ function _createStays() {
       {
         "_id": "10006550",
         "name": "Two bedroom apartment on the hill",
-        "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200", "otherImg.jpg"],
+        "imgUrls": ["https://a0.muscache.com/im/pictures/f9fadcd7-969f-4d65-a7cc-a60613b60e30.jpg?im_w=720", "https://a0.muscache.com/im/pictures/ce7f3554-15ce-46f7-b7cc-b2ccd9155341.jpg?im_w=720", "https://a0.muscache.com/im/pictures/cbf4f19b-7c60-4e0a-bdc5-a611391ba819.jpg?im_w=720", "https://a0.muscache.com/im/pictures/bca9e0ee-4c39-47df-a04d-ad30fe780f12.jpg?im_w=720", "https://a0.muscache.com/im/pictures/5c2891b3-4713-479e-95ca-cdaf4f7b61f6.jpg?im_w=720"],
         "price": 70.00,
-        "summary": "fully equipped apartment next to the national park...",
+        "summary": "Beyond everything you can imagine when you see these photos-lays a hidden oasis, just 15 min from city center and 7 min from a perfect beach. A paradise for nature lovers who don't compromise on the highest quality materials.",
         "capacity": 3,
         "amenities": [
           "TV",
@@ -183,7 +182,7 @@ function _createStays() {
         "host": {
           "_id": "u106",
           "fullname": "Jeff Gold",
-          "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+          "imgUrl": "https://a0.muscache.com/im/pictures/user/c3eee178-d38f-460f-b6af-2560f63d09ea.jpg?im_w=240"
         },
         "loc": {
           "country": "Canada",
@@ -195,12 +194,12 @@ function _createStays() {
         "reviews": [
           {
             "id": "434354",
-            "txt": "very lovely place, charming people...",
+            "txt": "I could not recommend it more! We didn’t leave the house once over our entire trip, there was no need. The house, yard and pool are kept in immaculate shape and work for all ages. We were from ages 3 months to 60 years old and the house worked for every single person. We will definitely be staying here again!",
             "rate": 5,
             "by": {
               "_id": "u103",
               "fullname": "Ori Rose",
-              "imgUrl": "/img/img3.jpg"
+              "imgUrl": "https://a0.muscache.com/im/pictures/user/05cffe3a-3573-47b2-b7c0-0bcc7cb53c87.jpg?im_w=240"
             }
           }
         ]
@@ -208,7 +207,7 @@ function _createStays() {
       {
         "_id": "10006549",
         "name": "Super 60m2 in trendy neighborhood!",
-        "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200", "otherImg.jpg"],
+        "imgUrls": ["https://a0.muscache.com/im/pictures/6757ff00-c58e-447b-b835-fcb9c282ef6c.jpg?im_w=720", "https://a0.muscache.com/im/pictures/16c5f59c-2404-4c00-a7b6-497c234ed1e0.jpg?im_w=720", "https://a0.muscache.com/im/pictures/9fc71532-5033-49be-abb1-52bcd8d9fcaf.jpg?im_w=720", "https://a0.muscache.com/im/pictures/f2e6581c-c8f3-4c43-8b02-d095460674d5.jpg?im_w=720", "https://a0.muscache.com/im/pictures/814e51be-6dfc-4373-9cda-154e70eb912b.jpg?im_w=720"],
         "price": 85.00,
         "summary": "Super 60m2 in trendy neighborhood of London",
         "capacity": 3,
@@ -223,7 +222,7 @@ function _createStays() {
         "host": {
           "_id": "21312321",
           "fullname": "Sophie Moritz",
-          "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+          "imgUrl": "https://a0.muscache.com/im/pictures/user/05cffe3a-3573-47b2-b7c0-0bcc7cb53c87.jpg?im_w=240"
         },
         "loc": {
           "country": "United Kingdom",
@@ -232,13 +231,24 @@ function _createStays() {
           "lat": 51.509865,
           "lng": -0.118092
         },
-        "reviews": []
+        "reviews": [
+          {
+          "id": "434998",
+          "txt": "Perfect little getaway",
+          "rate": 4,
+          "by": {
+            "_id": "u109",
+            "fullname": "Dana Schultz",
+            "imgUrl": "https://a0.muscache.com/im/pictures/user/1db47629-4148-4123-9da9-530481e4a8c8.jpg?im_w=240"
+          }
+        }
+      ]
 
       },
       {
         "_id": "10006569",
         "name": "Charm at the Steps of the Big Ben",
-        "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200", "otherImg.jpg"],
+        "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47997821/original/49793977-2eff-4e82-a1ef-610832c3f526.jpeg?im_w=720", "https://a0.muscache.com/im/pictures/miso/Hosting-47997821/original/70575592-6805-47b1-80e0-3fab545d6e23.jpeg?im_w=720", "https://a0.muscache.com/im/pictures/miso/Hosting-47997821/original/916bf962-14c5-4690-b8c8-169c84e06aef.jpeg?im_w=720", "https://a0.muscache.com/im/pictures/miso/Hosting-47997821/original/984f24a0-4d4b-4cd3-a5ca-bf04a24a0b65.jpeg?im_w=720", "https://a0.muscache.com/im/pictures/d1498446-3c89-4511-8ede-dab28ca50edb.jpg?im_w=720"],
         "price": 125.00,
         "summary": "Charm at the Steps of the Big Ben - very central",
         "capacity": 4,
@@ -253,7 +263,7 @@ function _createStays() {
         "host": {
           "_id": "21312321",
           "fullname": "Sophie Moritz",
-          "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+          "imgUrl": "https://a0.muscache.com/im/pictures/user/05cffe3a-3573-47b2-b7c0-0bcc7cb53c87.jpg?im_w=240"
         },
         "loc": {
           "country": "United Kingdom",
@@ -268,9 +278,9 @@ function _createStays() {
       {
         "_id": "10006563",
         "name": "Bohemian and Chic in LA",
-        "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200", "otherImg.jpg"],
+        "imgUrls": ["https://a0.muscache.com/im/pictures/a4e3488f-f601-41d4-aab4-5d339543f161.jpg?im_w=720", "https://a0.muscache.com/im/pictures/d3f63630-df9d-4ae8-a56f-15299047550f.jpg?im_w=720", "https://a0.muscache.com/im/pictures/885e1071-b786-49d6-b689-9e0e30fd84d9.jpg?im_w=720", "https://a0.muscache.com/im/pictures/fd17b546-5ecf-461f-ae41-b3efd0b3ca28.jpg?im_w=720", "https://a0.muscache.com/im/pictures/66ce26ed-3046-4b1c-adab-cdf350fb83ee.jpg?im_w=720"],
         "price": 135.00,
-        "summary": "Bohemian and Chic apartment in Central Los Angeles",
+        "summary": "Stay in this newly renovated, bright and modern studio that packs a full great deal in its space. It welcomes you with full amenities to accommodate your needs for a pleasant stay. The place is located at the heart of Bixby Knolls and Long Beach, 20 minutes away from Disneyland, 5 minutes from Long Beach Airport, 25 mins from LAX and some neighboring great sites like Queen Mary, Aquarium of the Pacific and shopping and restaurants at the Long Beach Hangar",
         "capacity": 4,
         "amenities": [
           "TV",
@@ -281,9 +291,9 @@ function _createStays() {
           "Pool and Spa"
         ],
         "host": {
-          "_id": "21312321",
-          "fullname": "Sophie Moritz",
-          "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+          "_id": "21382321",
+          "fullname": "Michael Moore",
+          "imgUrl": "https://a0.muscache.com/im/pictures/user/5a07ae70-41cd-4ba1-ac9d-fef81ad4e3fb.jpg?im_w=240"
         },
         "loc": {
           "country": "United States",
@@ -297,10 +307,10 @@ function _createStays() {
       },
       {
         "_id": "10006566",
-        "name": "Trendy Apt in Hollywood",
-        "imgUrls": ["https://a0.muscache.com/im/pictures/miso/Hosting-47156138/original/e522b3e5-0ece-4f0e-8023-5443831f3e0b.png?im_w=1200", "@/assets/img/stay1.jpg"],
+        "name": "Trendy house in Hollywood",
+        "imgUrls": ["https://a0.muscache.com/im/pictures/77d8ef5e-8a57-440d-b8f4-3d3ea95214ce.jpg?im_w=720","https://a0.muscache.com/im/pictures/41f1888f-d550-4b3b-84ba-2aa703c5d182.jpg?im_w=720", "https://a0.muscache.com/im/pictures/d2434e46-9d33-40f0-b6b7-bab8ca94006c.jpg?im_w=720", "https://a0.muscache.com/im/pictures/pro_photo_tool/Hosting-37258899-unapproved/original/44b83846-557b-4272-9550-4f81d9ecf55f.JPEG?im_w=720", "https://a0.muscache.com/im/pictures/c2e0cd65-f4b6-4fbd-ab46-497d237d07d1.jpg?im_w=720"],
         "price": 128.00,
-        "summary": "Trendy Apt in Hollywood - close to everything",
+        "summary": "Luxurious and simple, our house is tucked away amongst in the flowers and trees of a tranquil sanctuary garden, on one of the most private and quiet drives (with some of the best canyon views) in Topanga.",
         "capacity": 3,
         "amenities": [
           "TV",
@@ -311,9 +321,9 @@ function _createStays() {
           "Pool and Spa"
         ],
         "host": {
-          "_id": "21312321",
-          "fullname": "Sophie Moritz",
-          "imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+          "_id": "72312321",
+          "fullname": "Rubi Perez",
+          "imgUrl": "https://a0.muscache.com/im/pictures/user/45ebecdb-0ce4-4134-86dd-c7f49957f488.jpg?im_w=240"
         },
         "loc": {
           "country": "United States",
@@ -322,13 +332,23 @@ function _createStays() {
           "lat": 34.052235,
           "lng": -118.243683
         },
-        "reviews": []
+        "reviews": [{
+          "id": "43494708",
+          "txt": "Both hands clap for the beauty, artistry, nature and peacefulness of Shangrilala. One hand claps for the hundred-some steep steps to reach that nirvana, sleeping loft and aerie baño.",
+          "rate": 5,
+          "by": {
+            "_id": "u111",
+            "fullname": "Ephraim Nethanael",
+            "imgUrl": "https://a0.muscache.com/im/users/6366029/profile_pic/1368458816/original.jpg?im_w=240"
+          }
+        }]
+        
       }
     ];
     localStorage.setItem(KEY, JSON.stringify(stays))
-  }
-  // _saveStaysToStorage(stays)
-  return stays;
+}
+// _saveStaysToStorage(stays)
+return stays;
 }
 
 

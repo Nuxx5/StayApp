@@ -8,11 +8,11 @@
       <div>{{ stay.loc.address }}</div>
     </div>
     <div class="image-gallery">
-      <img class="image-gallery img1" :src="stay.imgUrls[0]" />
-      <img class="image-gallery img2" :src="stay.imgUrls[0]" />
-      <img class="image-gallery img3" :src="stay.imgUrls[0]" />
-      <img class="image-gallery img4" :src="stay.imgUrls[0]" />
-      <img class="image-gallery img5" :src="stay.imgUrls[0]" />
+      <img class="gallery img1" :src="stay.imgUrls[0]" />
+      <img class="gallery img2" :src="stay.imgUrls[1]" />
+      <img class="gallery img3" :src="stay.imgUrls[2]" />
+      <img class="gallery img4" :src="stay.imgUrls[3]" />
+      <img class="gallery img5" :src="stay.imgUrls[4]" />
     </div>
     <div class="main-content flex space-between">
       <div class="stay-details flex column">
@@ -68,14 +68,15 @@
         :key="review.id"
         class="review-card"
       >
-      <div class="review-header">
+      <div v-if="review" class="review-header">
         <img :src="review.by.imgUrl">
         <div class="header-text">
           <span class="review-name">{{review.by.fullname}}</span>
           <p class="review-date">June 2019</p>
         </div>
       </div>
-      <p class="review-txt">{{review.txt}}</p>
+      <p v-if="review" class="review-txt">{{review.txt}}</p>
+      <p v-else class="no-review">No reviews (yet)</p>
       </li>
       </ul>
       </div>

@@ -7,7 +7,7 @@
       </div>
       <div>
         <h1>Stay.</h1>
-        <h3 class="text-center">Anywhere.</h3>
+        <h1 class="text-center">Anywhere.</h1>
       </div>
     </div>
     <div class="main-container">
