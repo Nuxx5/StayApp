@@ -7,7 +7,7 @@
         <h1>a world to gain</h1>
         <p>Hosting can help you turn your extra space into</p>
         <p>extra income and pursue more of what you love.</p>
-        <button @click="openForm">Get started</button>
+        <button class="get-started-btn" @click="openForm">Get started</button>
       </div>
       <div class="host-form" v-if="isForm">
         <form @submit.prevent="addStay">
@@ -54,7 +54,7 @@
               placeholder="How many guests can you accommodate"
             />
           </div>
-          <button>Apply</button>
+          <button class="apply-btn">Apply</button>
         </form>
       </div>
     </div>

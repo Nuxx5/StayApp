@@ -17,7 +17,7 @@
     <div class="main-content flex space-between">
       <div class="stay-details flex column">
         <div class="stay-summary">
-          <p class="summary-text1">
+          <p class="summary-text1 bold">
             Entire place hosted by {{ stay.host.fullname }}
           </p>
           <p class="summary-text2">{{ stay.capacity }} guests</p>
@@ -71,7 +71,7 @@
       <div v-if="review" class="review-header">
         <img :src="review.by.imgUrl">
         <div class="header-text">
-          <span class="review-name">{{review.by.fullname}}</span>
+          <span class="review-name bold">{{review.by.fullname}}</span>
           <p class="review-date">June 2019</p>
         </div>
       </div>

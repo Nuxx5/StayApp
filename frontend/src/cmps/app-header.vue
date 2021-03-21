@@ -2,7 +2,7 @@
   <header class="main-container">
     <div class="header-container">
     <nav class="main-nav flex space-between align-center">
-      <router-link to="/" class="logo">
+      <router-link to="/" class="logo flex align-center">
         <!-- <span role="img" aria-label="logo">🏨</span> -->
         <img class="logo-icon" src="@/assets/img/logo.png" alt="" />
         <span>Stay.</span>
