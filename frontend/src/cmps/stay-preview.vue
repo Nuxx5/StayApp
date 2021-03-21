@@ -6,7 +6,7 @@
     <p :class="{opacity:noReviews}">{{ rating }}</p>
     <div class="preview-txt">
     <p>{{ stay.loc.address }}</p>
-    <p>{{ stay.name }}</p>
+    <p class="bold">{{ getName }}</p>
     <p>{{ stay.capacity }} guests</p>
     <p><span class="bold">${{ stay.price }}</span> / night</p>
     </div>
@@ -25,12 +25,16 @@ export default {
     },
     noReviews() {
       return !this.stay.reviews.length 
+    },
+    getName(){
+      return this.stay.name.length <= 27 ? this.stay.name : `${this.stay.name.substring(0,27)}...`
     }
   },
   methods: {
     openDetails() {
       this.$router.push(`/stay/${this.stay._id}`)
     },
+    
   }
 }
 </script>

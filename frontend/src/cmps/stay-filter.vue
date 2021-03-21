@@ -40,14 +40,16 @@
       <label>Dates</label>
       <span>Check in - Check out</span>
     </div> -->
-    <div class="filter-guests flex column">
+
+    <!-- <div class="filter-guests flex column">
       <button @click="showModal">
         <label>Guests</label>
         <span class="flex"
           >Add guests: <span>{{ sumOfGuests }}</span></span
         >
       </button>
-    </div>
+    </div> -->
+    
     <!-- <el-popover
     placement="bottom"
     title="Title"

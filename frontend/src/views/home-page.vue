@@ -5,9 +5,9 @@
       <div class="home-filter">
         <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" />
       </div>
-      <div>
+      <div class="main-txt">
         <h1>Stay.</h1>
-        <h1 class="text-center">Anywhere.</h1>
+        <h1>Anywhere.</h1>
       </div>
     </div>
     <div class="main-container">
@@ -15,15 +15,15 @@
       <div class="home-card">
         <ul class="clean-list flex space-between">
           <li class="card clickable" @click="setStay('Toronto')">
-            <img src="@/assets/img/canada.jpg" alt="" />
+            <img src="@/assets/img/toronto.jpg" alt="" />
             <h3>Toronto</h3>
           </li>
           <li class="card clickable" @click="setStay('London')">
-            <img src="@/assets/img/canada.jpg" alt="" />
+            <img src="@/assets/img/london2.jpg" alt="" />
             <h3>London</h3>
           </li>
           <li class="card clickable" @click="setStay('Los Angeles')">
-            <img src="@/assets/img/canada.jpg" alt="" />
+            <img src="@/assets/img/losangeles.jpg" alt="" />
             <h3>Los Angeles</h3>
           </li>
         </ul>
