@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="onReserve" style="width:200px">
+  <form @submit.prevent="onReserve" class="trip-settings">
     <div class="flex column">
       <label for="start">Check in:</label>
       <input
@@ -26,24 +26,28 @@
     </div>
     <details>
       <summary>Guests</summary>
-      
-        
+        <div class="flex column">
+        <div>
         Adults:<button @click="removeAdult">-</button><span>{{ adults }}</span
         ><button @click="addAdult">+</button>
+        </div>
       
-      
+        <div>
         Children:<button @click="removeChild">-</button
         ><span>{{ children }}</span
         ><button @click="addChild">+</button>
+        </div>
       
-      
+        <div>
         Infants:<button @click="removeInfant">-</button
         ><span>{{ infants }}</span
         ><button @click="addInfant">+</button>
+        </div>
+        </div>
       
       
     </details>
-    <input type="submit" value="Reserve">
+    <input type="submit" value="Reserve" class="reserve-submit-btn">
   </form>
 </template>
 
