@@ -30,6 +30,11 @@
     padding: 16px 32px;
     // width: 90%;
     // margin: 0;
+    opacity: 0;
+}
+
+.modal{
+    opacity: 1;
 }
 
 .el-popover .popper__arrow{
