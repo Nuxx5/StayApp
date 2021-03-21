@@ -8,11 +8,11 @@
       <div>{{ stay.loc.address }}</div>
     </div>
     <div class="image-gallery">
-      <img class="image-gallery img1" :src="stay.imgUrls[0]" />
-      <img class="image-gallery img2" :src="stay.imgUrls[0]" />
-      <img class="image-gallery img3" :src="stay.imgUrls[0]" />
-      <img class="image-gallery img4" :src="stay.imgUrls[0]" />
-      <img class="image-gallery img5" :src="stay.imgUrls[0]" />
+      <img class=" img1" :src="stay.imgUrls[0]" />
+      <img class=" img2" :src="stay.imgUrls[1]" />
+      <img class=" img3" :src="stay.imgUrls[2]" />
+      <img class=" img4" :src="stay.imgUrls[3]" />
+      <img class=" img5" :src="stay.imgUrls[4]" />
     </div>
     <div class="main-content flex space-between">
       <div class="stay-details flex column">

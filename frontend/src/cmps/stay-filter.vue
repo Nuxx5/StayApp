@@ -42,22 +42,27 @@
     </div> -->
     <div class="filter-guests flex column">
       <button @click="showModal">
-      <label>Guests</label>
-      <span class="flex"
-        >Add guests: <span>{{ sumOfGuests }}</span></span
-      >
+        <label>Guests</label>
+        <span class="flex"
+          >Add guests: <span>{{ sumOfGuests }}</span></span
+        >
       </button>
     </div>
-    <el-popover
+    <!-- <el-popover
     placement="bottom"
     title="Title"
     width="200"
     offset="200"
     trigger="click">
-    <!-- content="this is content, this is content, this is content"> -->
     <el-button slot="reference">Add guests: <span>{{ sumOfGuests }}</span></el-button>
-  </el-popover>
-    <div class="guests-modal flex column">
+  </el-popover> -->
+
+    <div
+      v-click-outside="onClickOutside"
+      v-if="isShown"
+      class="guests-modal flex column"
+      :class="{ modal: isShown }"
+    >
       <p>
         Adults:<button @click="removeAdult">-</button><span>{{ adults }}</span
         ><button @click="addAdult">+</button>
@@ -73,6 +78,7 @@
         ><button @click="addInfant">+</button>
       </p>
     </div>
+
     <div class="search-btn">
       <button class="filter-search" @click="setFilter">🔎</button>
     </div>
@@ -81,6 +87,7 @@
 </template>
 
 <script>
+import vClickOutside from "v-click-outside";
 export default {
   data() {
     return {
@@ -93,12 +100,15 @@ export default {
         endDate: null,
         capacity: 0,
       },
+      isShown: false,
     };
+  },
+  directives: {
+    clickOutside: vClickOutside.directive,
   },
   computed: {
     sumOfGuests() {
-      this.filterBy.capacity = this.adults + this.children + this.infants;
-      // console.log("capacity filter", this.filterBy.capacity);
+      this.filterBy.capacity = this.adults + this.children;
       return this.filterBy.capacity;
     },
   },
@@ -127,9 +137,12 @@ export default {
       this.infants--;
       if (this.infants < 0) this.infants = 0;
     },
-    showModal(){
-
-    }
+    showModal() {
+      this.isShown = !this.isShown;
+    },
+    onClickOutside(event) {
+      this.isShown = !this.isShown;
+    },
   },
 };
 </script>
