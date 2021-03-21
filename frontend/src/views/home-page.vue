@@ -34,19 +34,17 @@
           <div class="about-txt-card">
             <h3>Who we are</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Recusandae perferendis dignissimos nihil, id, sequi repudiandae
-              doloribus nisi culpa nulla tempora a harum aliquam ab, iusto qui
-              minus eaque nostrum? Voluptates.
+              Airbnb Experiences are not your typical tour. Whether you’re on a trip, 
+              exploring your own city, or staying at home,learn something new from an expert host.
+              Choose from dance lessons, pasta-making—even yoga with goats.
             </p>
           </div>
           <div class="about-txt-card">
             <h3>Our services</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Recusandae perferendis dignissimos nihil, id, sequi repudiandae
-              doloribus nisi culpa nulla tempora a harum aliquam ab, iusto qui
-              minus eaque nostrum? Voluptates.
+              Whether you’re looking for a treehouse for the weekend or an entire home for the whole family,
+              a warm welcome awaits. Behind every stay is a real person who can give you the details you need
+              to check in and feel at home.
             </p>
           </div>
         </div>
