@@ -81,10 +81,10 @@ function getEmptyStay() {
     _id: utilService.makeId(),
     name: '',
     imgUrls: [],
-    price: 0,
+    price: null,
     createdAt: null,
     summary: '',
-    capacity: 4,
+    capacity: null,
     amenities: [
       "TV",
       "Wifi",

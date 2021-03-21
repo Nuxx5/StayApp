@@ -12,26 +12,26 @@
       <div class="host-form" v-if="isForm">
         <form @submit.prevent="addStay">
           <div class="form-header">
-            Please fill the below details about you and your stay
+            Please fill out the details below about you and your stay
           </div>
           <div class="form-txt">
             <input
               type="text"
               class="form-input"
               v-model="stayToEdit.host.fullname"
-              placeholder="Please type your full name"
+              placeholder="Enter your full name"
             />
             <input
               type="text"
               class="form-input"
               v-model="stayToEdit.name"
-              placeholder="Please type your stay name"
+              placeholder="Enter your stay name"
             />
             <input
               type="text"
               class="form-input"
               v-model="stayToEdit.summary"
-              placeholder="Please describe your stay"
+              placeholder="Describe your stay"
             />
             <select v-model="stayToEdit.loc.address" class="form-input">
               <option value disabled>Located at</option>
@@ -44,14 +44,14 @@
               min="0"
               class="form-input"
               v-model="stayToEdit.price"
-              placeholder="How much will you charge for a night"
+              placeholder="How much will you charge per night"
             />
             <input
               type="number"
               min="0"
               class="form-input"
               v-model="stayToEdit.capacity"
-              placeholder="How many accommodates in yor stay"
+              placeholder="How many guests can you accommodate"
             />
           </div>
           <button>Apply</button>
