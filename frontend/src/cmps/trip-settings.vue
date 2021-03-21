@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="onReserve">
+  <form @submit.prevent="onReserve" style="width:200px">
     <div class="flex column">
       <label for="start">Check in:</label>
       <input
