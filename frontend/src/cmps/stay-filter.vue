@@ -8,10 +8,10 @@
         type="text"
         v-model="filterBy.txt"
         placeholder="Where are you going?"
+        @keyup.enter="setFilter"
       />
-      <!-- @input="setFilter" -->
     </div>
-    <div class="flex column">
+    <!-- <div class="flex column">
       <label for="start">Check in:</label>
       <input
         type="date"
@@ -34,21 +34,19 @@
         max="2031-12-31"
         v-model="filterBy.endDate"
       />
-      <!-- @input="setFilter" -->
-    </div>
-    <!-- <div class="filter-dates flex column">
-      <label>Dates</label>
-      <span>Check in - Check out</span>
     </div> -->
-
-    <!-- <div class="filter-guests flex column">
+    <div class="filter-dates flex column">
+      <label>Dates</label>
+      <date-picker v-model="date" type="date" format="MMM DD, YYYY" range range-separator="  -  " placeholder="Check in - Check out"></date-picker>
+    </div>
+    <div class="filter-guests flex column">
       <button @click="showModal">
         <label>Guests</label>
         <span class="flex"
           >Add guests: <span>{{ sumOfGuests }}</span></span
         >
       </button>
-    </div> -->
+    </div>
     
     <!-- <el-popover
     placement="bottom"
@@ -90,12 +88,15 @@
 
 <script>
 import vClickOutside from "v-click-outside";
+import DatePicker from 'vue2-datepicker';
+import 'vue2-datepicker/index.css';
 export default {
   data() {
     return {
       adults: 0,
       children: 0,
       infants: 0,
+      date:[],
       filterBy: {
         txt: "",
         startDate: null,
@@ -108,6 +109,9 @@ export default {
   directives: {
     clickOutside: vClickOutside.directive,
   },
+  created(){
+console.log('filter', this.filterBy);
+  },
   computed: {
     sumOfGuests() {
       this.filterBy.capacity = this.adults + this.children;
@@ -116,6 +120,9 @@ export default {
   },
   methods: {
     setFilter() {
+      this.filterBy.startDate = this.date[0];
+      this.filterBy.endDate = this.date[1];
+      console.log('this.filterBy', this.filterBy);
       this.$emit("setFilter", this.filterBy);
     },
     addAdult() {
@@ -145,6 +152,9 @@ export default {
     onClickOutside(event) {
       this.isShown = !this.isShown;
     },
+  },
+  components: {
+    DatePicker,
   },
 };
 </script>
