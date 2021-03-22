@@ -340,8 +340,83 @@ function _createStays() {
             "_id": "u111",
             "fullname": "Ephraim Nethanael",
             "imgUrl": "https://a0.muscache.com/im/users/6366029/profile_pic/1368458816/original.jpg?im_w=240"
-          }
+          },
+          
         }]
+        
+      },
+      {
+        "_id": "10073566",
+        "name": "Apartment near Eiffel Tower",
+        "imgUrls": ["https://a0.muscache.com/im/pictures/be0cacdf-bab1-4734-b74e-b1f8c2977125.jpg?im_w=720", "https://a0.muscache.com/im/pictures/a65d6a60-657b-4f6a-a5a8-8ef956316d5c.jpg?im_w=720", "https://a0.muscache.com/im/pictures/2fa36630-f4b5-403a-8c76-398e2a64fb34.jpg?im_w=720", "https://a0.muscache.com/im/pictures/3d1191ac-29b6-4261-8993-1ef9d597c805.jpg?im_w=720", "https://a0.muscache.com/im/pictures/bd7c88a2-611d-4917-be5a-3c10f4a3c70a.jpg?im_w=720"],
+        "price": 108.00,
+        "summary": "..In the heart of the 7Th District... One of the best and typical \"Quartier parisien\"... Near The Eiffel Tower, Invalides Dome, Rodin museum, Champs de Mars park and the famous and typical parisian Rue CLER market... Luxury studios for rental...",
+        "capacity": 4,
+        "amenities": [
+          "TV",
+          "Wifi",
+          "Kitchen",
+          "Washer and dryer",
+          "Pets allowed",
+          "Pool and Spa"
+        ],
+        "host": {
+          "_id": "864312322",
+          "fullname": "Armen Argento",
+          "imgUrl": "https://a0.muscache.com/im/pictures/user/21dff0f8-809e-4059-88c0-7476c237d240.jpg?im_w=240"
+        },
+        "loc": {
+          "country": "France",
+          "countryCode": "FR",
+          "address": "Paris",
+          "lat": 48.864716,
+          "lng": 2.349014
+        },
+        "reviews": [{
+          "id": "93494708",
+          "txt": "Good place to stay near the Eiffel Tower. My only concern was the lack of an elevator (would not recommend for disabled guests).",
+          "rate": 5,
+          "by": {
+            "_id": "u151",
+            "fullname": "Benjamin",
+            "imgUrl": "https://a0.muscache.com/im/pictures/user/241235da-1580-4a88-bcca-8a9c86c3233b.jpg?im_w=240"
+          },
+          
+        },
+        {
+          "id": "93426908",
+          "txt": "Very responsive, very clean and great location. The food around the area is great. This Airbnb will not disappoint",
+          "rate": 5,
+          "by": {
+            "_id": "u321",
+            "fullname": "Rob",
+            "imgUrl": "https://a0.muscache.com/im/pictures/user/f99c913e-b641-4363-9145-8f6440c3c11c.jpg?im_w=240"
+          },
+          
+        },
+        {
+          "id": "93426908",
+          "txt": "The apartment (and room where I stayed) was better than I expected. It had all the amenities you’ll need. The place is very stylish and convenient. Armen was kind and responsive.",
+          "rate": 5,
+          "by": {
+            "_id": "u321",
+            "fullname": "Diego",
+            "imgUrl": "https://a0.muscache.com/im/pictures/user/cb68fbe2-3c9e-4301-b491-6d55d897bc8b.jpg?im_w=240"
+          },
+          
+        },
+        {
+          "id": "93425408",
+          "txt": "Amazing place to stay at in the heart of Paris!!",
+          "rate": 5,
+          "by": {
+            "_id": "u331",
+            "fullname": "Bella",
+            "imgUrl": "https://a0.muscache.com/im/pictures/user/749b9686-6796-4441-ad8c-60252f4630ce.jpg?im_w=240"
+          },
+          
+        },
+      ]
         
       }
     ];
