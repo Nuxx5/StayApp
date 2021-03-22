@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="onReserve" class="trip-settings">
     <div class="flex column">
-      <date-picker class="date-picker" v-model="date" value-type="format" format="DD/MM/YYYY" placeholder="check-in check-out dates" range></date-picker>
+      <date-picker class="date-picker" v-model="date" value-type="format" format="DD/MM/YYYY" placeholder="check-in check-out" range></date-picker>
       <!-- <label for="start">Check in:</label>
       <input
         type="date"
