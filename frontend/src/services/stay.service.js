@@ -384,7 +384,7 @@ function _createStays() {
           
         },
         {
-          "id": "93426908",
+          "id": "93426998",
           "txt": "Very responsive, very clean and great location. The food around the area is great. This Airbnb will not disappoint",
           "rate": 5,
           "by": {
@@ -395,7 +395,7 @@ function _createStays() {
           
         },
         {
-          "id": "93426908",
+          "id": "93426608",
           "txt": "The apartment (and room where I stayed) was better than I expected. It had all the amenities you’ll need. The place is very stylish and convenient. Armen was kind and responsive.",
           "rate": 5,
           "by": {

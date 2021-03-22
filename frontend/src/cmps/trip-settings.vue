@@ -1,7 +1,8 @@
 <template>
   <form @submit.prevent="onReserve" class="trip-settings">
     <div class="flex column">
-      <label for="start">Check in:</label>
+      <date-picker class="date-picker" v-model="date" value-type="format" format="DD/MM/YYYY" placeholder="check-in check-out dates" range></date-picker>
+      <!-- <label for="start">Check in:</label>
       <input
         type="date"
         id="start"
@@ -22,7 +23,7 @@
         min="2021-03-17"
         max="2031-12-31"
         v-model="endDate"
-      />
+      /> -->
     </div>
     <details>
       <summary>Guests</summary>
@@ -52,6 +53,8 @@
 </template>
 
 <script>
+import DatePicker from 'vue2-datepicker';
+  import 'vue2-datepicker/index.css';
 export default {
     data() {
     return {
@@ -59,7 +62,8 @@ export default {
       children: 0,
       infants: 0,
       startDate: null,
-      endDate: null
+      endDate: null,
+      date: [],
       }
     },
     methods:{
@@ -96,6 +100,9 @@ export default {
       this.infants--;
       if (this.infants < 0) this.infants = 0;
     }
+    },
+    components: {
+      DatePicker
     }
   }
 </script>
