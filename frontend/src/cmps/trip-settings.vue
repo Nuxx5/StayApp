@@ -1,7 +1,7 @@
 <template>
   <form v-if="stay" @submit.prevent="onReserve" class="trip-settings">
-    <div class="dates-reserve-container flex column">
       <p><span class="bold">${{ stay.price }}</span> / night</p>
+    <div class="dates-reserve-container flex column">
       <div class="dates-reserve flex space-between">
         <span class="check-in">Check-in</span>|
         <span class="check-out">Check-out</span>
@@ -76,7 +76,7 @@ export default {
         onReserve(){
             
             console.log('emiting...')
-            let reservation = {startDate:this.startDate,endDate:this.endDate,infants:this.infants,children:this.children,adults:this.adults}
+            let reservation = {startDate:this.date[0],endDate:this.date[1],infants:this.infants,children:this.children,adults:this.adults}
             this.$emit("reservationMade",reservation)
         },
         addAdult(ev) {
