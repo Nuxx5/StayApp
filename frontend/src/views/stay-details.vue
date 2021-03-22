@@ -60,6 +60,7 @@
         <h2>{{ stay.loc.address }}</h2>
         <span>{{date[0]}} - {{date[1]}}</span>
        <date-picker v-model="date" value-type="format" format="MMM DD, YYYY" inline range></date-picker>
+
       </div>
       </div>
       <tripSettings @reservationMade="handleReservation" />
