@@ -21,14 +21,18 @@
         height: 67vh;
         width: 95%;
         padding-top: 10vh;
-        margin: auto;
         object-fit: cover;
+        border: yellow 2px solid;
     }
     .hero-img{
         height: 80vh;
-        background-color: black;
+        background-image: url(~@/assets/img/hero.jpg);
         margin-bottom: 60px;
-        color: whitesmoke
+        color: whitesmoke;
+        width: 100%;
+        border: transparent 1px solid;
+        background-size: 100vw 80vh;
+        background-repeat: no-repeat;
     }
 
     ul{
@@ -46,8 +50,14 @@
 }
 
 .main-txt {
+    margin-top: 30vh;
+    margin-left: 35vw;
+    width: 20vh;
+    text-align: left;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(81, 81, 81);
 
 h1{
-    font-size: 30px !important
+    font-size: 72px !important
 }
 }    
