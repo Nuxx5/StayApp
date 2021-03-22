@@ -1,6 +1,7 @@
 <template>
-  <form @submit.prevent="onReserve" class="trip-settings">
+  <form v-if="stay" @submit.prevent="onReserve" class="trip-settings">
     <div class="dates-reserve-container flex column">
+      <p><span class="bold">${{ stay.price }}</span> / night</p>
       <div class="dates-reserve flex space-between">
         <span class="check-in">Check-in</span>|
         <span class="check-out">Check-out</span>
@@ -60,6 +61,7 @@
 import DatePicker from 'vue2-datepicker';
   import 'vue2-datepicker/index.css';
 export default {
+  props: ["stay"],
     data() {
     return {
       adults: 0,
