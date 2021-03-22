@@ -61,8 +61,8 @@
         <span>{{date[0]}} - {{date[1]}}</span>
        <date-picker v-model="date" value-type="format" format="MMM DD, YYYY" inline range></date-picker>
       </div>
-      <div class="reviews flex column">
-        <ul class="review-cards">
+      <div class="reviews flex">
+        <ul class="review-cards flex">
           <li
         v-for="review in stay.reviews"
         :key="review.id"

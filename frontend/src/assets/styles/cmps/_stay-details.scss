@@ -138,8 +138,10 @@
 .reviews {
   line-height: 20px;
   border-top: 1px solid #ddd;
-  padding: 30px;
-  max-width: 650px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+ 
+  // max-width: 650px;
 }
 
 .review-cards {
@@ -147,12 +149,17 @@
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
+  padding-inline-start: unset;
+  
+  // height: 200px;
 }
 .review-card {
   color: #222;
   text-align: start;
   object-fit: contain;
   margin-bottom: 30px;
+  padding-right: 50px;
+  width: 50%;
 }
 
   .review-header {
