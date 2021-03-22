@@ -1,8 +1,12 @@
 <template>
   <form v-if="stay" @submit.prevent="onReserve" class="trip-settings">
-    <div class="flex column">
+    <div class="dates-reserve-container flex column">
       <p><span class="bold">${{ stay.price }}</span> / night</p>
-      <date-picker class="date-picker" v-model="date" value-type="format" format="DD/MM/YYYY" placeholder="check-in check-out" range></date-picker>
+      <div class="dates-reserve flex space-between">
+        <span class="check-in">Check-in</span>|
+        <span class="check-out">Check-out</span>
+      </div>
+      <date-picker v-model="date" value-type="format" format="MMM DD, YYYY" range range-separator="                   "></date-picker>
       <!-- <label for="start">Check in:</label>
       <input
         type="date"
