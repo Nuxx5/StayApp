@@ -126,7 +126,7 @@ export default {
     // },
     rating() {
       return this.stay.reviews.length
-        ? "⭐ " +
+        ? "󰀄 " +
             this.stay.reviews[0].rate +
             " (" +
             this.stay.reviews.length +
