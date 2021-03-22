@@ -1,7 +1,7 @@
 <template>
   <section class="home text-center">
     <div class="hero-img">
-      <img class="bgimage" src="@/assets/img/hero.jpg" alt="" />
+      <!-- <img class="bgimage" src="@/assets/img/hero.jpg" alt="" /> -->
       <div class="home-filter">
         <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" />
       </div>
