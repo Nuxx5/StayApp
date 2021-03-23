@@ -36,9 +36,11 @@
     }
     .mx-input {
         padding: 6px 10px;
-        border-color: #fff;
+        border:1px transparent solid;
+        border-top: 1px gray solid;
         box-shadow: unset;
         text-align:center;
+        cursor: pointer;
     }
     
     .mx-datepicker svg {
@@ -54,7 +56,8 @@
     }
     
     .mx-input:hover, .mx-input:focus {
-        border-color: #fff;
+        border-color: transparent;
+        border-top: 1px gray solid;
     }
     
     .mx-icon-calender{
