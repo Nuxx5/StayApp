@@ -30,8 +30,7 @@
       </section>
     </div>
     <div class="header-filter-container">
-      <stay-filter v-if="!isUserScrolling && isHomePage" @setFilter="setFilter" />
-      <stay-filter v-if="isSearch" @setFilter="setFilter" />
+      <stay-filter v-if="!isUserScrolling && isHomePage || isSearch" @setFilter="setFilter" />
     </div>
   </header>
 </template>
@@ -42,7 +41,7 @@ export default {
     return {
       isUserScrolling: false,
       isSearch: false,
-      isHomePage: false,
+      isHomePage: true,
       // filterBy: {
       //   txt: '',
       //   startDate: null,
