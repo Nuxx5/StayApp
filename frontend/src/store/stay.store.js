@@ -14,18 +14,18 @@ export const stayStore = {
     },
     getters: {
         staysForDisplay(state) {
-            console.log('filter display', state.filterBy);
-            console.log('stays display', state.stays);
-            const regex = new RegExp(state.filterBy.txt, 'i')
-            return state.stays.filter(stay => {
-                const containsTxt = regex.test(stay.loc.address);
-                return containsTxt
+            // console.log('filter display', state.filterBy);
+            // console.log('stays display', state.stays);
+            // const regex = new RegExp(state.filterBy.txt, 'i')
+            // return state.stays.filter(stay => {
+            //     const containsTxt = regex.test(stay.loc.address);
+            //     return containsTxt
                 // if (!state.filterBy.complete) return containsTxt
                 // const isComplete = (state.filterBy.complete === 'true');
                 // const matchesComplete = isComplete ? stay.completedAt : !stay.completedAt;
                 // return containsTxt && matchesComplete
-            })
-            // return state.stays
+            // })
+            return state.stays
         },
         // donePrecentage(state) {
         //     const doneStaysAmount = state.stays.filter(stay => stay.completedAt).length;
