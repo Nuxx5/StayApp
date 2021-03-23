@@ -30,6 +30,10 @@
             <img src="@/assets/img/paris.jpg" alt="" />
             <h3>Paris</h3>
           </li>
+          <li class="card clickable" @click="setStay('Berlin')">
+            <img src="@/assets/img/berlin.jpg" alt="" />
+            <h3>Berlin</h3>
+          </li>
           <li class="card clickable" @click="setStay('Haifa')">
             <img src="@/assets/img/haifa.jpg" alt="" />
             <h3>Haifa</h3>
