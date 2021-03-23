@@ -74,8 +74,8 @@ export default {
   methods: {
     setFilter(filterBy) {
       console.log("filterBy header", filterBy);
-      this.$store.commit({ type: "setFilter", filterBy });
-      // this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
+      // this.$store.commit({ type: "setFilter", filterBy });
+      this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
       if (this.$route.path !== `/stay?city=${filterBy.txt}`) {
         this.$router.push(`/stay?city=${filterBy.txt}`);
       }
