@@ -17,22 +17,19 @@
         
     }
     
-    .bgimage {
-        height: 67vh;
-        width: 95%;
-        padding-top: 10vh;
-        object-fit: cover;
-        border: yellow 2px solid;
-    }
+    
     .hero-img{
         height: 80vh;
-        background-image: url(~@/assets/img/hero.jpg);
+        background-image: url(https://mi-casa-app.herokuapp.com/img/homePageBg.7c56e7be.jpg);
         margin-bottom: 60px;
         color: whitesmoke;
         width: 100%;
-        border: transparent 1px solid;
+        border: black 1px solid;
+        background-position-x: 0;
+        background-position-y: 0;
         background-size: 100vw 80vh;
-        background-repeat: no-repeat;
+        background-position: 0 0;
+        color: whitesmoke;
     }
 
     ul{
