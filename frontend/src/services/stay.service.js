@@ -30,8 +30,9 @@ function setFilter(filterBy) {
 // }
 }
 function query(filterBy) {
-  var queryStr = (!filterBy) ? '' : `?txt=${filterBy.txt}`
+  var queryStr = (!filterBy) ? '' : `?city=${filterBy.txt}`
   return httpService.get(`stay${queryStr}`)
+  // return httpService.get('stay')
   // return httpService.get('stay', filterBy)
   // return axios.get(STAY_URL, { params: filterBy})
   //     .then(res => res.data)

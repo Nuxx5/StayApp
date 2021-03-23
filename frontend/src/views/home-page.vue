@@ -81,7 +81,8 @@ export default {
       console.log('filterBy', this.filterBy);
       var filterBy = this.filterBy
       // this.setFilter(filterBy);
-      this.$store.commit({ type: "setFilter", filterBy });
+      this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
+      // this.$store.commit({ type: "setFilter", filterBy });
       this.$router.push(`/stay?city=${city}`);
     },
     setFilter(filterBy) {
