@@ -4,11 +4,11 @@ import { utilService } from '../services/util.service.js';
 // import { storageService } from './async-storage.service.js';
 import { httpService } from './http.service.js';
 const KEY = 'stays';
-const TOY_URL = (process.env.NODE_ENV !== 'development') ? '/api/stay/'
+const STAY_URL = (process.env.NODE_ENV !== 'development') ? '/api/stay/'
   : '//localhost:3030/api/stay/';
 // 'http://localhost:3030/api/stay/'
 
-// var gFilterBy = { txt: '', pageIdx: 0 }
+var gFilterBy = { txt: '' }
 // var gStays = _createStays();
 
 export const stayService = {
@@ -17,21 +17,23 @@ export const stayService = {
   getEmptyStay,
   save,
   getStayById,
-  // setFilter,
+  setFilter,
   // nextPage
 };
 
-// function setFilter(filterBy) {
-//   gFilterBy.txt = filterBy.txt
-//   gFilterBy.pageIdx = 0;
+function setFilter(filterBy) {
+  gFilterBy.txt = filterBy.txt
+  // gFilterBy.pageIdx = 0;
 // }
 // function nextPage() {
 //   gFilterBy.pageIdx++
 // }
-
+}
 function query(filterBy) {
-  return httpService.get('stay', { params: filterBy})
-  // return axios.get(TOY_URL, { params: filterBy})
+  var queryStr = (!filterBy) ? '' : `?txt=${filterBy.txt}`
+  return httpService.get(`stay${queryStr}`)
+  // return httpService.get('stay', filterBy)
+  // return axios.get(STAY_URL, { params: filterBy})
   //     .then(res => res.data)
   //  { params: gFilterBy }
 
@@ -47,7 +49,7 @@ function query(filterBy) {
 
 function remove(id) {
   return httpService.delete('stay/' + id)
-  // return axios.delete(TOY_URL + id).then(res => res.data)
+  // return axios.delete(STAY_URL + id).then(res => res.data)
   // return storageService.remove(KEY, id)
   // const idx = gStays.find(stay => stay._id === id);
   // gStays.splice(idx,1);
@@ -57,10 +59,10 @@ function remove(id) {
 function save(stay) {
   if (stay._id) {
   return httpService.put('stay/' + stay._id, stay)
-  // return axios.put(TOY_URL + stay._id, stay).then(res => res.data)
+  // return axios.put(STAY_URL + stay._id, stay).then(res => res.data)
   } else {
   return httpService.post('stay', stay)
-  // return axios.post(TOY_URL, stay).then(res => res.data)
+  // return axios.post(STAY_URL, stay).then(res => res.data)
   }
 
   // const savedStay = (stay._id) ? storageService.put(KEY, stay) : storageService.post(KEY, stay)
@@ -102,7 +104,7 @@ function getEmptyStay() {
 
 function getStayById(id) {
   return httpService.get('stay/' + id)
-  // return axios.get(TOY_URL + id).then(res => res.data)
+  // return axios.get(STAY_URL + id).then(res => res.data)
   // return storageService.get(KEY, id)
   // return gStays.find(stay => stay._id === stayId)
 }

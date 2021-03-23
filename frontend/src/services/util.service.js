@@ -2,7 +2,8 @@
 export const utilService = {
     delay,
     getRandomInt,
-    makeId
+    makeId,
+    formatFilter
 }
 
 function delay(ms = 1500) {
@@ -24,4 +25,10 @@ function makeId(length = 5) {
         txt += possible.charAt(Math.floor(Math.random() * possible.length));
     }
     return txt;
+}
+
+function formatFilter(filterBy){
+    if(!filterBy) return '';
+    const filterKeys = Object.keys(filterBy);
+    return filterKeys.map(key => `${key}=${filterBy[key]}`).join('&')
 }
