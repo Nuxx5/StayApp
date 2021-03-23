@@ -10,9 +10,9 @@
         <button class="get-started-btn" @click="openForm">Get started</button>
       </div>
       <div class="host-form" v-if="isForm">
-        <form @submit.prevent="addStay">
+        <form class="main-form" @submit.prevent="addStay">
           <div class="form-header">
-            Please fill out the details below about you and your stay
+            Please fill out the details below about yourself and your stay
           </div>
           <div class="form-txt">
             <input
