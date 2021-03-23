@@ -1,8 +1,8 @@
 import { userService } from '../services/user.service'
-// import { socketService, SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED } from '../services/socket.service'
+import { socketService, SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED } from '../services/socket.service'
 
-// var localLoggedinUser = null;
-// if (sessionStorage.user) localLoggedinUser = JSON.parse(sessionStorage.user || null);
+var localLoggedinUser = null;
+if (sessionStorage.user) localLoggedinUser = JSON.parse(sessionStorage.user || null);
 
 export const userStore = {
     state: {
@@ -10,11 +10,11 @@ export const userStore = {
         users: [],
         watchedUser: null
     },
-    // getters: {
-        // users({ users }) { return users },
-        // loggedinUser({ loggedinUser }) { return loggedinUser },
-        // watchedUser({ watchedUser }) { return watchedUser }
-    // },
+    getters: {
+        users({ users }) { return users },
+        loggedinUser({ loggedinUser }) { return loggedinUser },
+        watchedUser({ watchedUser }) { return watchedUser }
+    },
     mutations: {
         setLoggedinUser(state, { user }) {
             state.loggedinUser = user;
