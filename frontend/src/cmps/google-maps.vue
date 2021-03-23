@@ -4,7 +4,7 @@
 		:center="pos"
 		:zoom="11"
 		map-type-id="terrain"
-		style="width: 500px; height: 300px"
+		style="width: 100%; height: 400px;"
 	>
 		<GmapMarker
 			v-for="(m, index) in markers"

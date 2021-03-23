@@ -1,42 +1,41 @@
 // import axios from 'axios'
 import { utilService } from '../services/util.service.js';
 // import { storageService } from './storage.service.js';
-import { storageService } from './async-storage.service.js';
+// import { storageService } from './async-storage.service.js';
 import { httpService } from './http.service.js';
 const KEY = 'stays';
 const TOY_URL = (process.env.NODE_ENV !== 'development') ? '/api/stay/'
   : '//localhost:3030/api/stay/';
 // 'http://localhost:3030/api/stay/'
 
-var gFilterBy = { txt: '', pageIdx: 0 }
-var gStays = _createStays();
+// var gFilterBy = { txt: '', pageIdx: 0 }
+// var gStays = _createStays();
 
 export const stayService = {
   query,
-  // toggleCompleted,
   remove,
   getEmptyStay,
   save,
   getStayById,
-  setFilter,
-  nextPage
+  // setFilter,
+  // nextPage
 };
 
-function setFilter(filterBy) {
-  gFilterBy.txt = filterBy.txt
-  gFilterBy.pageIdx = 0;
-}
-function nextPage() {
-  gFilterBy.pageIdx++
-}
+// function setFilter(filterBy) {
+//   gFilterBy.txt = filterBy.txt
+//   gFilterBy.pageIdx = 0;
+// }
+// function nextPage() {
+//   gFilterBy.pageIdx++
+// }
 
 function query(filterBy) {
-  // return httpService.get('stay', { params: filterBy})
+  return httpService.get('stay', { params: filterBy})
   // return axios.get(TOY_URL, { params: filterBy})
   //     .then(res => res.data)
   //  { params: gFilterBy }
 
-  return storageService.query(KEY)
+  // return storageService.query(KEY)
   // return JSON.parse(JSON.stringify(gStays));
 }
 
@@ -47,25 +46,25 @@ function query(filterBy) {
 // }
 
 function remove(id) {
-  // return httpService.delete('stay/' + id)
+  return httpService.delete('stay/' + id)
   // return axios.delete(TOY_URL + id).then(res => res.data)
-  return storageService.remove(KEY, id)
+  // return storageService.remove(KEY, id)
   // const idx = gStays.find(stay => stay._id === id);
   // gStays.splice(idx,1);
   // _saveStaysToStorage(gStays);
 }
 
 function save(stay) {
-  // if (stay._id) {
-  // return httpService.put('stay/' + stay._id, stay)
+  if (stay._id) {
+  return httpService.put('stay/' + stay._id, stay)
   // return axios.put(TOY_URL + stay._id, stay).then(res => res.data)
-  // } else {
-  // return httpService.post('stay', stay)
+  } else {
+  return httpService.post('stay', stay)
   // return axios.post(TOY_URL, stay).then(res => res.data)
-  // }
+  }
 
-  const savedStay = (stay._id) ? storageService.put(KEY, stay) : storageService.post(KEY, stay)
-  return savedStay;
+  // const savedStay = (stay._id) ? storageService.put(KEY, stay) : storageService.post(KEY, stay)
+  // return savedStay;
   // if(newStay._id){
   //     const idx = gStays.find(stay => stay._id === newStay._id);
   //     if(idx<0) return;
@@ -78,7 +77,6 @@ function save(stay) {
 
 function getEmptyStay() {
   return {
-    _id: utilService.makeId(),
     name: '',
     imgUrls: [],
     price: null,
@@ -103,9 +101,9 @@ function getEmptyStay() {
 }
 
 function getStayById(id) {
-  // return httpService.get('stay/' + id)
+  return httpService.get('stay/' + id)
   // return axios.get(TOY_URL + id).then(res => res.data)
-  return storageService.get(KEY, id)
+  // return storageService.get(KEY, id)
   // return gStays.find(stay => stay._id === stayId)
 }
 
@@ -384,7 +382,7 @@ function _createStays() {
           
         },
         {
-          "id": "93426908",
+          "id": "93426998",
           "txt": "Very responsive, very clean and great location. The food around the area is great. This Airbnb will not disappoint",
           "rate": 5,
           "by": {
@@ -395,7 +393,7 @@ function _createStays() {
           
         },
         {
-          "id": "93426908",
+          "id": "93426608",
           "txt": "The apartment (and room where I stayed) was better than I expected. It had all the amenities you’ll need. The place is very stylish and convenient. Armen was kind and responsive.",
           "rate": 5,
           "by": {

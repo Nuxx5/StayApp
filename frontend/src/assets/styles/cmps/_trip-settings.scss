@@ -17,4 +17,50 @@
         // font-family: Circular;
         font-size: 16px;
     }
+
+    .dates-reserve-container{
+        border: 1px solid gray;
+    }
+
+    .check-in{
+        padding-left: 15%;
+    }
+    .check-out{
+        padding-right: 16%;
+    }
+    .mx-datepicker{
+        width: unset;
+    }
+    .mx-datepicker-rang{
+        width: unset;
+    }
+    .mx-input {
+        padding: 6px 10px;
+        border-color: #fff;
+        box-shadow: unset;
+        text-align:center;
+    }
+    
+    .mx-datepicker svg {
+        display: none;
+    }
+    
+    .mx-datepicker-footer{
+        border:unset
+    }
+    
+    .mx-datepicker-popup{
+        box-shadow: unset;
+    }
+    
+    .mx-input:hover, .mx-input:focus {
+        border-color: #fff;
+    }
+    
+    .mx-icon-calender{
+        display: none;
+    }
+    .mx-icon-clear{
+        display: none;
+    }
 }

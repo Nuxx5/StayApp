@@ -1,7 +1,13 @@
 <template>
-  <form @submit.prevent="onReserve" class="trip-settings">
-    <div class="flex column">
-      <label for="start">Check in:</label>
+  <form v-if="stay" @submit.prevent="onReserve" class="trip-settings">
+      <p><span class="bold">${{ stay.price }}</span> / night</p>
+    <div class="dates-reserve-container flex column">
+      <div class="dates-reserve flex space-between">
+        <span class="check-in">Check-in</span>|
+        <span class="check-out">Check-out</span>
+      </div>
+      <date-picker v-model="date" value-type="format" format="MMM DD, YYYY" range range-separator="                   "></date-picker>
+      <!-- <label for="start">Check in:</label>
       <input
         type="date"
         id="start"
@@ -22,7 +28,7 @@
         min="2021-03-17"
         max="2031-12-31"
         v-model="endDate"
-      />
+      /> -->
     </div>
     <details>
       <summary>Guests</summary>
@@ -52,21 +58,25 @@
 </template>
 
 <script>
+import DatePicker from 'vue2-datepicker';
+  import 'vue2-datepicker/index.css';
 export default {
+  props: ["stay"],
     data() {
     return {
       adults: 0,
       children: 0,
       infants: 0,
       startDate: null,
-      endDate: null
+      endDate: null,
+      date: [],
       }
     },
     methods:{
         onReserve(){
             
             console.log('emiting...')
-            let reservation = {startDate:this.startDate,endDate:this.endDate,infants:this.infants,children:this.children,adults:this.adults}
+            let reservation = {startDate:this.date[0],endDate:this.date[1],infants:this.infants,children:this.children,adults:this.adults}
             this.$emit("reservationMade",reservation)
         },
         addAdult(ev) {
@@ -96,6 +106,9 @@ export default {
       this.infants--;
       if (this.infants < 0) this.infants = 0;
     }
+    },
+    components: {
+      DatePicker
     }
   }
 </script>

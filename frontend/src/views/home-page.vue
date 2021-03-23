@@ -2,9 +2,9 @@
   <section class="home text-center">
     <div class="hero-img">
       <!-- <img class="bgimage" src="@/assets/img/hero.jpg" alt="" /> -->
-      <div class="home-filter">
-        <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" />
-      </div>
+      <!-- <div class="home-filter"> -->
+        <!-- <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" /> -->
+      <!-- </div> -->
       <div class="main-txt">
         <h1>Stay.</h1>
         <h1>Anywhere.</h1>
@@ -61,7 +61,7 @@ export default {
     return {
       isUserScrolling: false,
       filterBy: {
-        txt: "",
+        txt: '',
         startDate: null,
         endDate: null,
         capacity: 0,
@@ -80,15 +80,16 @@ export default {
       this.filterBy.txt = city;
       console.log('filterBy', this.filterBy);
       var filterBy = this.filterBy
-      // this.$store.commit({ type: "setFilter", filterBy });
-      this.setFilter(filterBy);
+      // this.setFilter(filterBy);
+      this.$store.commit({ type: "setFilter", filterBy });
       this.$router.push(`/stay?city=${city}`);
     },
     setFilter(filterBy) {
       console.log("filterBy home", filterBy);
       this.$store.commit({ type: "setFilter", filterBy });
       // this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
-      this.$router.push("/stay");
+      // this.$router.push("/stay");
+      this.$router.push(`/stay?city=${filterBy.txt}`);
     },
     handleScroll(event) {
       // Any code to be executed when the window is scrolled
