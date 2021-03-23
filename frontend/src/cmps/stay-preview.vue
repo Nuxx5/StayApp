@@ -3,7 +3,7 @@
     <div class="preview-img">
     <img :src="loadImg"/>
     </div>  
-    <p :class="{opacity:noReviews}">{{ rating }}</p>
+    <p :class="{opacity:noReviews}"><span v-if="!this.noReviews" style="color:#FF385C">󰀄</span>{{ rating }}</p>
     <div class="preview-txt">
     <p>{{ stay.loc.address }}</p>
     <p class="bold">{{ getName }}</p>
@@ -21,7 +21,7 @@ export default {
       return this.stay.imgUrls[0]
     },
     rating() {
-      return this.stay.reviews.length? '⭐ ' + this.stay.reviews[0].rate + ' (' + this.stay.reviews.length + ')' : 'no reviews yet'
+      return this.stay.reviews.length? this.stay.reviews[0].rate + ' (' + this.stay.reviews.length + ')' : 'no reviews yet'
     },
     noReviews() {
       return !this.stay.reviews.length 
