@@ -3,7 +3,7 @@
     <h2 class="stay-title">{{ stay.name }}</h2>
     <div class="ratings flex">
       <div class="details-rating" :class="{ opacity: noReviews }">
-        {{ rating }}
+        <span v-if="!this.noReviews" style="color:#FF385C">󰀄</span> {{ rating }}
       </div>
       <div>{{ stay.loc.address }}</div>
     </div>
@@ -126,8 +126,7 @@ export default {
     // },
     rating() {
       return this.stay.reviews.length
-        ? "󰀄 " +
-            this.stay.reviews[0].rate +
+        ? this.stay.reviews[0].rate +
             " (" +
             this.stay.reviews.length +
             ")"
