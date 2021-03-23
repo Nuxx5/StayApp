@@ -13,7 +13,7 @@
     <div class="main-container">
       <h2>Explore Locations</h2>
       <div class="home-card">
-        <ul class="clean-list flex space-between">
+        <ul class="clean-list flex wrap space-between">
           <li class="card clickable" @click="setStay('Toronto')">
             <img src="@/assets/img/toronto.jpg" alt="" />
             <h3>Toronto</h3>
@@ -25,6 +25,14 @@
           <li class="card clickable" @click="setStay('Los Angeles')">
             <img src="@/assets/img/losangeles.jpg" alt="" />
             <h3>Los Angeles</h3>
+          </li>
+          <li class="card clickable" @click="setStay('Paris')">
+            <img src="@/assets/img/paris.jpg" alt="" />
+            <h3>Paris</h3>
+          </li>
+          <li class="card clickable" @click="setStay('Haifa')">
+            <img src="@/assets/img/haifa.jpg" alt="" />
+            <h3>Haifa</h3>
           </li>
         </ul>
       </div>
