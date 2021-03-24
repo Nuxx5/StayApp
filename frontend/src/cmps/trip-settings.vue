@@ -8,14 +8,7 @@
         <span class="check-in">Check-in</span>|
         <span class="check-out">Check-out</span>
       </div>
-      <date-picker
-        placeholder="Add date"
-        v-model="date"
-        value-type="format"
-        format="MMM DD, YYYY"
-        range
-        range-separator="                   "
-      ></date-picker>
+      <date-picker placeholder="Add dates" v-model="date" value-type="format" format="MMM DD, YYYY" range range-separator="                   "></date-picker>
       <!-- <label for="start">Check in:</label>
       <input
         type="date"

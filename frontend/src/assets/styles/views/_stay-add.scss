@@ -15,17 +15,23 @@ align-items: center;
     width: 400px
 }
 
+.form-txt {
+    border: 1px solid #bbb;
+    border-radius: 4px;
+}
+
 form > *{
     width: unset;
 }
 .form-input{
-    border: 1px solid #bbb;
+    // border: 1px solid #bbb;
     color: #606266;
     font-size: inherit;
     line-height: 40px;
     padding: 10px 15px;
     min-width: 400px;
     height: 60px;
+    // border-radius: 4px;
 }
 .get-started-btn {
     margin-top: 24px;
