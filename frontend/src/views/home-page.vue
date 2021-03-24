@@ -1,6 +1,6 @@
 <template>
   <section class="home text-center">
-    <div class="hero-img">
+    <div class="hero-img main-container">
       <!-- <img class="bgimage" src="@/assets/img/hero.jpg" alt="" /> -->
       <!-- <div class="home-filter"> -->
         <!-- <stay-filter v-if="!isUserScrolling" @setFilter="setFilter" /> -->
@@ -13,7 +13,7 @@
     <div class="main-container">
       <h2>Explore Locations</h2>
       <div class="home-card">
-        <ul class="clean-list flex wrap space-between">
+        <ul class="clean-list card-gallery">
           <li class="card clickable" @click="setStay('Toronto')">
             <img src="@/assets/img/toronto.jpg" alt="" />
             <h3>Toronto</h3>

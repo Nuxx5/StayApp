@@ -1,7 +1,7 @@
 <template>
   <!-- <form @submit.prevent="setFilter"> -->
   <!-- <form class="stay-filter space-evenly" @submit.prevent="setFilter"> -->
-  <section class="filter-container flex">
+  <section class="filter-container flex justify-center align-center">
     <div class="filter-location flex column">
       <label>Location</label>
       <input
@@ -46,18 +46,7 @@
           >Add guests: <span>{{ sumOfGuests }}</span></span
         >
       </button>
-    </div>
-    
-    <!-- <el-popover
-    placement="bottom"
-    title="Title"
-    width="200"
-    offset="200"
-    trigger="click">
-    <el-button slot="reference">Add guests: <span>{{ sumOfGuests }}</span></el-button>
-  </el-popover> -->
-
-    <div
+      <div
       v-click-outside="onClickOutside"
       v-if="isShown"
       class="guests-modal flex column"
@@ -79,6 +68,18 @@
       </p>
     </div>
 
+    </div>
+    
+    <!-- <el-popover
+    placement="bottom"
+    title="Title"
+    width="200"
+    offset="200"
+    trigger="click">
+    <el-button slot="reference">Add guests: <span>{{ sumOfGuests }}</span></el-button>
+  </el-popover> -->
+
+    
     <div class="search-btn">
       <button class="filter-search" @click="setFilter">🔎</button>
     </div>

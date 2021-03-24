@@ -1,5 +1,5 @@
 .filter-container {
-    width: 70vw;
+    // width: 70vw;
     height: 80px;
     background-color: #fff;
     display: flex;
@@ -7,7 +7,7 @@
     align-items: center;
     padding-bottom: 20px;
     border-radius: 50px;
-    margin-left: 15%;
+    // margin-left: 15%;
     color: black;
     border: 1px solid grey;
 }
@@ -22,14 +22,18 @@
     background-color: unset;
 }
 
+.filter-guests {
+    position: relative;
+}
+
 .guests-modal{
     background-color: #fff;
-    // width: 100px;
+    width: fit-content;
     margin-top: 310px;
     margin-left: 20px;
     margin-right: 20px;
-    // position: absolute;
-    left: 0;
+    position: absolute;
+    right: 0;
     background: #fff;
     border-radius: 32px;
     padding: 16px 32px;

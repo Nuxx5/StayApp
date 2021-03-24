@@ -2,10 +2,14 @@
     border: 1px rgb(221, 221, 221) solid;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px 0px;
     padding: 24px;
-    margin-top: 20px;
+    margin-top: 48px;
     height: min-content;
     border-radius: 12px;
     width: 400px;
+    position: sticky;
+    top: 100px;
+    margin-bottom: 48px;
+
 
     .reserve-submit-btn{
         width: 100%;

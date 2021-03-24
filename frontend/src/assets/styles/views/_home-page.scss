@@ -19,19 +19,25 @@
     
     
     .hero-img{
-        height: 80vh;
-        background-image: url(~@/assets/img/newhero.jpg);
+        height: 70vh;
+        background-image: url(~@/assets/img/hero.jpg);
         margin-bottom: 60px;
-        color: whitesmoke;
-        width: 100%;
-        border: black 1px solid;
-        background-position-x: 0;
-        background-position-y: 0;
-        background-size: 100vw 120vh;
-        background-position: 0 0;
-        color: whitesmoke;
+        // color: whitesmoke;
+        // width: 100%;
+        // border: transparent 1px solid;
+        // background-position-x: 0;
+        // background-position-y: 0;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center -275px;
+        background-repeat: no-repeat;
     }
 
+    .card-gallery {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
     ul{
         padding-inline-start: 0;
     }
@@ -47,12 +53,13 @@
 }
 
 .main-txt {
-    margin-top: 30vh;
-    margin-left: 35vw;
+    padding-top: 30vh;
+    // margin-left: 16.5vw;
     width: 20vh;
     text-align: left;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgb(81, 81, 81);
+    color: whitesmoke;
+    // -webkit-text-stroke-width: 1px;
+    // -webkit-text-stroke-color: rgb(81, 81, 81);
 
 h1{
     font-size: 72px !important
