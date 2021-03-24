@@ -1,12 +1,21 @@
 <template>
   <form v-if="stay" @submit.prevent="onReserve" class="trip-settings">
-      <p><span class="bold">${{ stay.price }}</span> / night</p>
+    <p>
+      <span class="bold">${{ stay.price }}</span> / night
+    </p>
     <div class="dates-reserve-container flex column">
       <div class="dates-reserve flex space-between">
         <span class="check-in">Check-in</span>|
         <span class="check-out">Check-out</span>
       </div>
-      <date-picker placeholder="Add date" v-model="date" value-type="format" format="MMM DD, YYYY" range range-separator="                   "></date-picker>
+      <date-picker
+        placeholder="Add date"
+        v-model="date"
+        value-type="format"
+        format="MMM DD, YYYY"
+        range
+        range-separator="                   "
+      ></date-picker>
       <!-- <label for="start">Check in:</label>
       <input
         type="date"
@@ -32,83 +41,95 @@
     </div>
     <details>
       <summary>Guests</summary>
-        <div class="flex column">
+      <div class="flex column">
         <div>
-        Adults:<button @click="removeAdult">-</button><span>{{ adults }}</span
-        ><button @click="addAdult">+</button>
+          Adults:<button @click="removeAdult">-</button><span>{{ adults }}</span
+          ><button @click="addAdult">+</button>
         </div>
-      
+
         <div>
-        Children:<button @click="removeChild">-</button
-        ><span>{{ children }}</span
-        ><button @click="addChild">+</button>
+          Children:<button @click="removeChild">-</button
+          ><span>{{ children }}</span
+          ><button @click="addChild">+</button>
         </div>
-      
+
         <div>
-        Infants:<button @click="removeInfant">-</button
-        ><span>{{ infants }}</span
-        ><button @click="addInfant">+</button>
+          Infants:<button @click="removeInfant">-</button
+          ><span>{{ infants }}</span
+          ><button @click="addInfant">+</button>
         </div>
-        </div>
-      
-      
+      </div>
     </details>
-    <input type="submit" value="Reserve" class="reserve-submit-btn">
+    <input type="submit" value="Reserve" class="reserve-submit-btn" />
   </form>
 </template>
 
 <script>
-import DatePicker from 'vue2-datepicker';
-  import 'vue2-datepicker/index.css';
+import DatePicker from "vue2-datepicker";
+import "vue2-datepicker/index.css";
 export default {
-  props: ["stay"],
-    data() {
+  props: ["stay", "date"],
+  data() {
     return {
       adults: 0,
       children: 0,
       infants: 0,
       startDate: null,
       endDate: null,
-      date: [],
-      }
+      // date2: [],
+    };
+  },
+  created() {
+    // console.log('date', this.date);
+  },
+  computed: {
+    // date() {
+    //   console.log("date", this.date);
+    //   return this.date;
+    // },
+  },
+  methods: {
+    onReserve() {
+      console.log("emiting...");
+      let reservation = {
+        startDate: this.date[0],
+        endDate: this.date[1],
+        infants: this.infants,
+        children: this.children,
+        adults: this.adults,
+      };
+      this.$emit("reservationMade", reservation);
     },
-    methods:{
-        onReserve(){
-            
-            console.log('emiting...')
-            let reservation = {startDate:this.date[0],endDate:this.date[1],infants:this.infants,children:this.children,adults:this.adults}
-            this.$emit("reservationMade",reservation)
-        },
-        addAdult(ev) {
-          ev.preventDefault()
+    addAdult(ev) {
+      ev.preventDefault();
       this.adults++;
     },
     removeAdult(ev) {
-      ev.preventDefault()
+      ev.preventDefault();
       this.adults--;
       if (this.adults < 0) this.adults = 0;
     },
     addChild(ev) {
-      ev.preventDefault()
+      ev.preventDefault();
       this.children++;
     },
     removeChild(ev) {
-      ev.preventDefault()
+      ev.preventDefault();
       this.children--;
       if (this.children < 0) this.children = 0;
     },
     addInfant(ev) {
-      ev.preventDefault()
+      ev.preventDefault();
       this.infants++;
     },
     removeInfant(ev) {
-      ev.preventDefault()
+      ev.preventDefault();
       this.infants--;
       if (this.infants < 0) this.infants = 0;
-    }
     },
-    components: {
-      DatePicker
-    }
-  }
+  },
+  components: {
+    DatePicker,
+  },
+};
 </script>
