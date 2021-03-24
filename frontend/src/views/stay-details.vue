@@ -63,7 +63,7 @@
 
       </div>
       </div>
-      <tripSettings :stay="stay" @reservationMade="handleReservation" />
+      <tripSettings :stay="stay" :date="date" @reservationMade="handleReservation" />
       </div>
       <div class="reviews flex">
         <ul class="review-cards flex">
