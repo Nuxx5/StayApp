@@ -86,13 +86,23 @@
 .wrapper .box:first-child {
     width: 250px;
 }
+.wrapper .box:nth-child(2) {
+    width: 250px;
+}
 
 .wrapper .box .location {
     padding-inline-start: 10px
 }
 
-.wrapper .box .title, .wrapper .box .desc {
+.wrapper .box .title {
     font-weight: 800;
+    font-size: 12px;
+    line-height: 16px;
+    padding-bottom: 2px;
+    padding-inline-end: 60px
+}
+.wrapper .box .desc {
+    // font-weight: 800;
     font-size: 12px;
     line-height: 16px;
     padding-bottom: 2px;
@@ -106,4 +116,35 @@
     top: 25%;
     height: 50%;
     border-right: 1px solid #eee;
+}
+
+.wrapper .box .filter-guests {
+    width: 110px;
+}
+.mx-datepicker svg {
+    display: none;
+}
+
+.filter-dates {
+    .mx-datepicker-range {
+    width: unset;
+}
+.mx-input {
+    border: none;
+    display: unset;
+    -webkit-box-sizing: unset;
+    box-sizing: unset;
+    width: unset;
+    height: unset;
+    padding: unset;
+    padding-left: unset;
+    font-size: unset;
+    line-height: unset;
+    color: unset;
+    background-color: unset;
+    border: unset;
+    border-radius: unset;
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+}
 }

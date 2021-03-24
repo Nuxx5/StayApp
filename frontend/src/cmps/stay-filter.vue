@@ -14,35 +14,13 @@
       />
       </div>
       </span>
-    </div>
-    <!-- <div class="flex column">
-      <label for="start">Check in:</label>
-      <input
-        type="date"
-        id="start"
-        name="trip-start"
-        value="2021-03-17"
-        min="2021-03-17"
-        max="2031-12-31"
-        v-model="filterBy.startDate"
-      />
-    </div>
-    <div class="flex column">
-      <label for="end">Check out:</label>
-      <input
-        type="date"
-        id="end"
-        name="trip-end"
-        value="2021-03-19"
-        min="2021-03-17"
-        max="2031-12-31"
-        v-model="filterBy.endDate"
-      />
-    </div> -->
+      <span class="box">
     <div class="filter-dates flex column">
-      <label>Dates</label>
-      <date-picker v-model="date" type="date" format="MMM DD, YYYY" range range-separator="  -  " placeholder="Check in - Check out"></date-picker>
+      <span class="title">Dates</span>
+      <date-picker class="desc" v-model="date" type="date" format="MMM DD, YYYY" range range-separator="  -  " placeholder="Check in - Check out"></date-picker>
     </div>
+    </span>
+    <span class="box">
     <div class="filter-guests flex column">
       <button @click="showModal">
         <label>Guests</label>
@@ -71,8 +49,33 @@
         ><button @click="addInfant">+</button>
       </p>
     </div>
-
+  </div>
+    
+    </span>
+    <!-- <div class="flex column">
+      <label for="start">Check in:</label>
+      <input
+        type="date"
+        id="start"
+        name="trip-start"
+        value="2021-03-17"
+        min="2021-03-17"
+        max="2031-12-31"
+        v-model="filterBy.startDate"
+      />
     </div>
+    <div class="flex column">
+      <label for="end">Check out:</label>
+      <input
+        type="date"
+        id="end"
+        name="trip-end"
+        value="2021-03-19"
+        min="2021-03-17"
+        max="2031-12-31"
+        v-model="filterBy.endDate"
+      />
+    </div> -->
     
     <!-- <el-popover
     placement="bottom"
@@ -88,6 +91,7 @@
       <button class="filter-search" @click="setFilter">🔎</button>
     </div>
     <!-- </div> -->
+    </div>
   </section>
   <!-- </form> -->
 </template>
