@@ -1,5 +1,5 @@
 <template>
-  <div class="container about">
+  <div class="login-container">
     <p>{{ msg }}</p>
 
     <div v-if="loggedinUser">

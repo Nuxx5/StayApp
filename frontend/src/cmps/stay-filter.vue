@@ -2,14 +2,18 @@
   <!-- <form @submit.prevent="setFilter"> -->
   <!-- <form class="stay-filter space-evenly" @submit.prevent="setFilter"> -->
   <section class="filter-container flex justify-center align-center">
+    <div class="wrapper flex">
+      <span class="box">
     <div class="filter-location flex column">
-      <label>Location</label>
-      <input
+      <span class="title">Location</span>
+      <input class="desc"
         type="text"
         v-model="filterBy.txt"
         placeholder="Where are you going?"
         @keyup.enter="setFilter"
       />
+      </div>
+      </span>
     </div>
     <!-- <div class="flex column">
       <label for="start">Check in:</label>
@@ -83,6 +87,7 @@
     <div class="search-btn">
       <button class="filter-search" @click="setFilter">🔎</button>
     </div>
+    <!-- </div> -->
   </section>
   <!-- </form> -->
 </template>
