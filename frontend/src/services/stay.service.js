@@ -431,3 +431,5 @@ return stays;
 // function _saveStaysToStorage(value){
 //     storageService.store(KEY, value);
 // }
+
+
