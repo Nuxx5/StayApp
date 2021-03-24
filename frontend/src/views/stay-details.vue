@@ -8,11 +8,7 @@
       <div>{{ stay.loc.address }}</div>
     </div>
     <div class="image-gallery">
-      <img class="gallery img1" :src="stay.imgUrls[0]" />
-      <img class="gallery img2" :src="stay.imgUrls[1]" />
-      <img class="gallery img3" :src="stay.imgUrls[2]" />
-      <img class="gallery img4" :src="stay.imgUrls[3]" />
-      <img class="gallery img5" :src="stay.imgUrls[4]" />
+      <img v-for="idx in 5" :key=idx :class="`gallery img${idx}`" :src="stay.imgUrls[`${idx-1}`]" />
     </div>
     <div class="main-content flex space-between">
       <div class="stay-details flex column">
