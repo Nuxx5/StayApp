@@ -38,6 +38,9 @@
               <option value="Toronto">Toronto</option>
               <option value="London">London</option>
               <option value="Los Angeles">Los Angeles</option>
+              <option value="Paris">Paris</option>
+              <option value="Berlin">Berlin</option>
+              <option value="Haifa">Haifa</option>
             </select>
             <input
               type="number"

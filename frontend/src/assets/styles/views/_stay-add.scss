@@ -15,16 +15,17 @@ align-items: center;
     width: 400px
 }
 
-.form-txt  {
+.form-txt {
     border: 1px solid #bbb;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 form > *{
     width: unset;
 }
+
 .form-input{
-    // border: 1px solid #bbb;
     color: #606266;
     font-size: inherit;
     line-height: 40px;
@@ -32,10 +33,12 @@ form > *{
     height: 60px;
     width: 100%;
     border: none;
-    border-top: 1px solid #bbb;
-    
+    outline: none;
 }
 
+.form-input:not(:first-child) {
+    border-top: 1px solid #bbb;
+}
 
 .get-started-btn {
     margin-top: 24px;
