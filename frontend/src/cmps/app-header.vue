@@ -6,7 +6,16 @@
           <img class="logo-icon" src="@/assets/img/logo.png" alt="" />
           <span>Stay.</span>
         </router-link>
-        <div class="header-filter">
+        <div class="search">
+          <button v-if="headerFilter"
+            @click="openFilter" class="btn flex align-center">
+            <div class="txt">{{ setSearchTxt }}</div>
+            <div class="search-icon">
+              <img src="@/assets/img/search_m.6a5171ec.svg">
+            </div>
+            </button>
+            </div>
+        <!-- <div class="header-filter">
           <button
             class="header-filter-btn flex align-center"
             v-if="headerFilter"
@@ -15,7 +24,7 @@
             <div class="header-search">{{ setSearchTxt }}</div>
             <div class="search-txt">🔎</div>
           </button>
-        </div>
+        </div> -->
         <div class="nav-menu">
           <router-link to="/stay">Explore</router-link>
           <router-link to="/stay/add">Become a Host</router-link>

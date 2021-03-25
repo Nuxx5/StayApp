@@ -1,93 +1,136 @@
 // header
 header {
-    background-color: white;
-    
-    // padding: 10px;
-    // display: flex;
-    // justify-content: space-between;
+  background-color: white;
+
+  // padding: 10px;
+  // display: flex;
+  // justify-content: space-between;
+  height: 80px;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  // border: 2px black solid;
+
+  .header-container {
+    // height: 80px;
+  }
+
+  .main-nav {
     height: 80px;
-    top: 0;
-    width: 100%;
-    position: fixed;
-    z-index: 10;
-    // border: 2px black solid;
-    
-    .header-container{
-        // height: 80px;
-    }
-    
-    .main-nav{
-        height: 80px;
-        
-    }
+  }
 
-    .logo{
-        text-decoration: none;
-        // display: flex;
-        // align-items: center;
+  .logo {
+    text-decoration: none;
+    // display: flex;
+    // align-items: center;
+    span {
+      color: #ff385c !important;
+      font-family: "Cereal-medium";
+      /* font-weight: 200 !important; */
+      font-size: 1.4em;
     }
-    
-    .logo-icon{
-        width: 50px;
-    }
+  }
 
-    .header-search{
-        width: 240px;
-        text-align: start;
+  .logo-icon {
+    width: 50px;
+  }
+
+  .header-search {
+    width: 240px;
+    text-align: start;
     //     padding: 6px 0;
     // background: none;
     // outline: none;
     // border-radius: 30px;
     // border: 1px solid #ddd;
+  }
 
-    }
+  .header-filter-btn {
+    outline: none;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+  }
 
-    .header-filter-btn{
-        outline: none;
-        border-radius: 30px;
-        border: 1px solid #ddd;
+  .loggedin-user {
+    background-color: $clr1;
+    padding: 2px 0 2px 8px;
+    border-radius: 1em;
+    align-self: flex-end;
+    color: whitesmoke;
+    span {
+      background-color: $clr2;
+      padding: 4px;
+      margin: 10px;
+      border-radius: 50%;
     }
-    
-    .loggedin-user {
-        background-color: $clr1;
-        padding: 2px 0 2px 8px;
-        border-radius: 1em;
-        align-self: flex-end;
-        color: whitesmoke;
-        span{
-            background-color: $clr2;
-            padding: 4px;
-            margin: 10px;
-            border-radius: 50%;
-        }
-    }
-    nav {
-        // background-color: $clr4;
-        // padding: 5px 0;
-        color: whitesmoke;
-    }
-    nav a{
-        // color: $clr6;
-        color: black;
-    }
-    nav a:not(:first-child) {
-        // border-top: 1px solid $clr1;
-        padding: 0 5px;
-        margin: 10px;
-    }
-    nav .active {
-        color: $clr1;
-    }
-    
+  }
+  nav {
+    // background-color: $clr4;
+    // padding: 5px 0;
+    color: whitesmoke;
+  }
+  nav a {
+    // color: $clr6;
+    color: black;
+  }
+  nav a:not(:first-child) {
+    // border-top: 1px solid $clr1;
+    padding: 0 5px;
+    margin: 10px;
+  }
+  nav .active {
+    color: $clr1;
+  }
 }
 
-.header-sec{
-    // background-color: $clr5;
-    // padding: 10px;
-    // display: flex;
-    // justify-content: space-between;
-    // height: 80px;
-    // top: 0;
-    // width: 100%;
+.header-sec {
+  // background-color: $clr5;
+  // padding: 10px;
+  // display: flex;
+  // justify-content: space-between;
+  // height: 80px;
+  // top: 0;
+  // width: 100%;
 }
 
+.search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  transition: display 0.3s;
+  .btn {
+    padding: 6px 0;
+    background: none;
+    outline: none;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    .txt {
+      font-size: 14px;
+      line-height: 18px;
+      font-family: Circular;
+      font-weight: 600;
+      -webkit-margin-start: 20px;
+      margin-inline-start: 20px;
+      width: 240px;
+      text-align: start;
+      pointer-events: none;
+    }
+  }
+}
+.search-icon {
+  background-color: #ff385c;
+  border-radius: 50%;
+  padding: 10px;
+  -webkit-margin-end: 10px;
+  margin-inline-end: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 12px;
+  }
+}

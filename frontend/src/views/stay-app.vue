@@ -28,8 +28,8 @@ export default {
   },
   },
   created() {
-    if(!this.$route.query.city)
-    this.filterBy.txt = '';
+    if(!this.$route.query.city) this.getStays()
+    // this.filterBy.txt = '';
     // console.log("stay-app");
     // console.log("this.$route.params;", this.$route.params);
     console.log("this.$route.query", this.$route.query.city);
