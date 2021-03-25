@@ -12,13 +12,13 @@ import stayList from "../cmps/stay-list.vue";
 export default {
   data() {
     return {
-      //   stayToEdit: stayService.getEmptyStay(),
-      filterBy: {
-        txt: "",
-        startDate: null,
-        endDate: null,
-        capacity: 0,
-      },
+    //   stayToEdit: stayService.getEmptyStay(),
+     // filterBy: {
+      //   txt: '',
+      //   startDate: null,
+      //   endDate: null,
+      //   capacity: 0,
+      // },
     };
   },
   methods: {
@@ -28,8 +28,8 @@ export default {
   },
   },
   created() {
-    // if(!this.$route.query.city)
-    // this.filterBy.txt = '';
+    if(!this.$route.query.city)
+    this.filterBy.txt = '';
     // console.log("stay-app");
     // console.log("this.$route.params;", this.$route.params);
     console.log("this.$route.query", this.$route.query.city);

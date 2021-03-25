@@ -1,37 +1,64 @@
 <template>
-  <form v-if="stay" @submit.prevent="onReserve" class="trip-settings">
-    <p>
-      <span class="bold">${{ stay.price }}</span> / night
-    </p>
-    <div class="dates-reserve-container flex column">
-      <div class="dates-reserve flex space-between">
-        <span class="check-in">Check-in</span>|
-        <span class="check-out">Check-out</span>
+  <section>
+    <div class="trip-settings">
+      <div class="trip-card">
+        <div class="trip-header">
+          <p>
+            <span class="bold">${{ stay.price }}</span> / night
+          </p>
+          <div>
+            <span>star</span>
+            <span>4.8</span>
+            <span>(6)</span>
+          </div>
+        </div>
+        <form class="trip-form" v-if="stay" @submit.prevent="onReserve">
+          <div class="trip-data">
+            <div class="trip-dates flex item-center">
+              <div class="check-in">
+                <date-picker class="date-hide" v-model="date" value-type="format" format="MMM DD, YYYY" range></date-picker>
+                <div class="check-in-title">Check-in</div>
+                <span v-if="!date[0]" class="check-in-date">Add date</span>
+                <span class="date-show">{{date[0]}}</span>
+              </div>
+              <div class="check-out">
+                <div class="check-in-title">Check-out</div>
+                <span v-if="!date[1]" class="check-in-date">Add date</span>
+                <span class="date-show">{{date[1]}}</span>
+              </div>
+            </div>
+            <button class="guest-modal-btn">
+              Guests
+            </button>
+          </div>
+          <button class="reserve-submit-btn">Reserve</button>
+        </form>
       </div>
-      <date-picker placeholder="Add dates" v-model="date" value-type="format" format="MMM DD, YYYY" range range-separator="                   "></date-picker>
-      <!-- <label for="start">Check in:</label>
-      <input
-        type="date"
-        id="start"
-        name="trip-start"
-        value="2021-03-17"
-        min="2021-03-17"
-        max="2031-12-31"
-        v-model="startDate"
-      />
     </div>
-    <div class="flex column">
-      <label for="end">Check out:</label>
-      <input
-        type="date"
-        id="end"
-        name="trip-end"
-        value="2021-03-19"
-        min="2021-03-17"
-        max="2031-12-31"
-        v-model="endDate"
-      /> -->
-    </div>
+  
+
+  <form v-if="stay" @submit.prevent="onReserve" class="trip-settings">
+    <!-- <div class="dates-reserve-container flex space-between">
+      <div class="dates-reserve">
+        <div class="check-in">Check-in</div>
+        <button>{{date[0]}}
+          <span class="date-picker-2">
+            <span style="opacity:1">{{date[0]}}</span>
+            <date-picker v-model="date" value-type="format" format="MMM DD, YYYY" range></date-picker>
+          </span>
+        </button>
+      </div>
+      <div class="dates-reserve ">
+        <div class="check-out">Check-out</div>
+        <span>{{date[1]}}
+          <span class="date-picker-2">
+            <date-picker v-model="date" value-type="format" format="MMM DD, YYYY" range></date-picker>
+          </span>
+        </span>
+      </div>
+    </div> -->
+
+      
     <details>
       <summary>Guests</summary>
       <div class="flex column">
@@ -53,15 +80,16 @@
         </div>
       </div>
     </details>
-    <input type="submit" value="Reserve" class="reserve-submit-btn" />
   </form>
+  </section>
 </template>
 
 <script>
 import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
 export default {
-  props: ["stay", "date"],
+  props: ["stay"],
+  // , "date"
   data() {
     return {
       adults: 0,
@@ -69,7 +97,7 @@ export default {
       infants: 0,
       startDate: null,
       endDate: null,
-      // date2: [],
+      date: [],
     };
   },
   created() {
