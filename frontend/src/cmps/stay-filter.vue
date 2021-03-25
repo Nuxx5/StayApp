@@ -2,43 +2,25 @@
   <!-- <form @submit.prevent="setFilter"> -->
   <!-- <form class="stay-filter space-evenly" @submit.prevent="setFilter"> -->
   <section class="filter-container flex justify-center align-center">
+    <div class="wrapper flex">
+      <span class="box">
     <div class="filter-location flex column">
-      <label>Location</label>
-      <input
+      <span class="title">Location</span>
+      <input class="desc"
         type="text"
         v-model="filterBy.txt"
         placeholder="Where are you going?"
         @keyup.enter="setFilter"
       />
-    </div>
-    <!-- <div class="flex column">
-      <label for="start">Check in:</label>
-      <input
-        type="date"
-        id="start"
-        name="trip-start"
-        value="2021-03-17"
-        min="2021-03-17"
-        max="2031-12-31"
-        v-model="filterBy.startDate"
-      />
-    </div>
-    <div class="flex column">
-      <label for="end">Check out:</label>
-      <input
-        type="date"
-        id="end"
-        name="trip-end"
-        value="2021-03-19"
-        min="2021-03-17"
-        max="2031-12-31"
-        v-model="filterBy.endDate"
-      />
-    </div> -->
+      </div>
+      </span>
+      <span class="box">
     <div class="filter-dates flex column">
-      <label>Dates</label>
-      <date-picker v-model="date" type="date" format="MMM DD, YYYY" range range-separator="  -  " placeholder="Check in - Check out"></date-picker>
+      <span class="title">Dates</span>
+      <date-picker class="desc" v-model="date" type="date" format="MMM DD, YYYY" range range-separator="  -  " placeholder="Check in - Check out"></date-picker>
     </div>
+    </span>
+    <span class="box">
     <div class="filter-guests flex column">
       <button @click="showModal">
         <label>Guests</label>
@@ -67,8 +49,33 @@
         ><button @click="addInfant">+</button>
       </p>
     </div>
-
+  </div>
+    
+    </span>
+    <!-- <div class="flex column">
+      <label for="start">Check in:</label>
+      <input
+        type="date"
+        id="start"
+        name="trip-start"
+        value="2021-03-17"
+        min="2021-03-17"
+        max="2031-12-31"
+        v-model="filterBy.startDate"
+      />
     </div>
+    <div class="flex column">
+      <label for="end">Check out:</label>
+      <input
+        type="date"
+        id="end"
+        name="trip-end"
+        value="2021-03-19"
+        min="2021-03-17"
+        max="2031-12-31"
+        v-model="filterBy.endDate"
+      />
+    </div> -->
     
     <!-- <el-popover
     placement="bottom"
@@ -82,6 +89,8 @@
     
     <div class="search-btn">
       <button class="filter-search" @click="setFilter">🔎</button>
+    </div>
+    <!-- </div> -->
     </div>
   </section>
   <!-- </form> -->

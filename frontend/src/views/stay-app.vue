@@ -22,6 +22,10 @@ export default {
     };
   },
   methods: {
+    getStays() {
+      console.log("in getStays");
+      return this.$store.dispatch({ type: "loadStays" });
+  },
   },
   created() {
     if(!this.$route.query.city)
@@ -33,21 +37,24 @@ export default {
   },
   computed: {
     stays() {
-      console.log(JSON.parse(JSON.stringify(this.$store.getters.staysForDisplay)));
+      // console.log(
+      //   JSON.parse(JSON.stringify(this.$store.getters.staysForDisplay))
+      // );
       return this.$store.getters.staysForDisplay;
     },
   },
   watch: {
-    // "$route.query.city"(city) {
-    //   console.log("Changed to", city);
-    // //   this.$route.go()
-    // this.$router.go()
-    //   this.$router.push("/stay")
-        // this.staysDisplay();
-    // },
+    "$route.query.city"(city) {
+      console.log("Changed to", city);
+      // if (this.$route.path === "/stay/") {
+        if (!city) {
+      console.log("inside if");
+        this.getStays()}
+    }
   },
   components: {
     stayList,
   },
-};
+}
+
 </script>
