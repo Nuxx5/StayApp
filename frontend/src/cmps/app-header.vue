@@ -13,7 +13,7 @@
             @click="openFilter"
           >
             <div class="header-search">{{ setSearchTxt }}</div>
-            <div>🔎</div>
+            <div class="search-txt">🔎</div>
           </button>
         </div>
         <div class="nav-menu">

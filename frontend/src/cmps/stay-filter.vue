@@ -17,78 +17,62 @@
       <span class="box">
     <div class="filter-dates flex column">
       <span class="title">Dates</span>
-      <date-picker class="desc" v-model="date" type="date" format="MMM DD, YYYY" range range-separator="  -  " placeholder="Check in - Check out"></date-picker>
+      <date-picker class="desc" v-model="date" type="date" format="MMM DD" range range-separator="  -  " placeholder="Check in - Check out"></date-picker>
     </div>
     </span>
-    <span class="box">
+    <span @click="showModal" class="box">
     <div class="filter-guests flex column">
-      <button @click="showModal">
-        <label>Guests</label>
-        <span class="flex"
-          >Add guests: <span>{{ sumOfGuests }}</span></span
-        >
-      </button>
+        <span class="title">Guests</span>
+        <span class="desc"
+          >Add guests: {{ sumOfGuests }}</span>
+          </div>
+    </span>
       <div
       v-click-outside="onClickOutside"
       v-if="isShown"
       class="guests-modal flex column"
       :class="{ modal: isShown }"
     >
-      <p>
-        Adults:<button @click="removeAdult">-</button><span>{{ adults }}</span
-        ><button @click="addAdult">+</button>
-      </p>
-      <p>
-        Children:<button @click="removeChild">-</button
-        ><span>{{ children }}</span
-        ><button @click="addChild">+</button>
-      </p>
-      <p>
-        Infants:<button @click="removeInfant">-</button
-        ><span>{{ infants }}</span
-        ><button @click="addInfant">+</button>
-      </p>
-    </div>
+    <div class="container-btns">
+      <div class="btn-container">
+        <div class="txt flex column">
+          <span class="title">Adults:</span>
+          <span class="subtitle">Age 13 or above</span>
+        </div>
+        <div class="btns">
+          <div @click="removeAdult" class="guest-btn">-</div>
+            <p>{{ adults }}</p>
+            <div @click="addAdult" class="guest-btn">+</div>
+      </div>
   </div>
-    
-    </span>
-    <!-- <div class="flex column">
-      <label for="start">Check in:</label>
-      <input
-        type="date"
-        id="start"
-        name="trip-start"
-        value="2021-03-17"
-        min="2021-03-17"
-        max="2031-12-31"
-        v-model="filterBy.startDate"
-      />
+   <div class="btn-container">
+        <div class="txt flex column">
+          <span class="title">Children:</span>
+          <span class="subtitle">Ages 2-12</span>
+        </div>
+        <div class="btns">
+          <div @click="removeChild" class="guest-btn">-</div>
+            <p>{{ children }}</p>
+            <div @click="addChild" class="guest-btn">+</div>
+      </div>
+  </div>
+   <div class="btn-container">
+        <div class="txt flex column">
+          <span class="title">Infants:</span>
+          <span class="subtitle">Under 2</span>
+        </div>
+        <div class="btns">
+          <div @click="removeInfant" class="guest-btn">-</div>
+            <p>{{ infants }}</p>
+            <div @click="addInfant" class="guest-btn">+</div>
+      </div>
+  </div>
     </div>
-    <div class="flex column">
-      <label for="end">Check out:</label>
-      <input
-        type="date"
-        id="end"
-        name="trip-end"
-        value="2021-03-19"
-        min="2021-03-17"
-        max="2031-12-31"
-        v-model="filterBy.endDate"
-      />
-    </div> -->
-    
-    <!-- <el-popover
-    placement="bottom"
-    title="Title"
-    width="200"
-    offset="200"
-    trigger="click">
-    <el-button slot="reference">Add guests: <span>{{ sumOfGuests }}</span></el-button>
-  </el-popover> -->
-
-    
-    <div class="search-btn">
-      <button class="filter-search" @click="setFilter">🔎</button>
+    </div>
+    <div @click="setFilter" class="search-icon">
+      <div class="search-btn" >
+        <img src="@/assets/img/search_m.6a5171ec.svg">
+    </div>
     </div>
     <!-- </div> -->
     </div>
