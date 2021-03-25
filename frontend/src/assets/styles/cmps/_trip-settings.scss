@@ -10,6 +10,93 @@
     top: 100px;
     margin-bottom: 48px;
 
+    .trip-header{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 8px;
+        margin: 5px;
+
+        p{
+            margin: 0 0 0;
+        }
+    }
+
+    .trip-data{
+        border: 1px solid #717171;
+        border-radius: 8px;
+    }
+    
+    .trip-dates{
+        border-bottom: 1px solid #717171;
+        // border-radius: 8px 8px 0 0;
+        padding: 3px;
+        height: 56px; 
+    }
+    
+    .check-in{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .check-in-title{
+        font-size: 10px;
+        line-height: 12px;
+        color: rgb(34, 34, 34);
+    }
+
+    .check-in-date{
+        // height: 56px !important;
+        // width: 100%;
+        // border: none;
+        // outline: none;
+        // margin: 0px;
+        padding: 26px 12px 10px;
+        // background-color: transparent;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: inherit;
+        // line-height: 18px;
+        // appearance: none;
+        // cursor: pointer;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
+        color: rgb(113, 113, 113);
+    }
+
+    .check-out{
+        // flex: 1 1 0%;
+        border-left: 1px solid rgb(176, 176, 176)
+    }
+
+    .date-hide{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        // display: none;
+        // visibility: hidden;
+        opacity: 0;
+        // flex: 1;
+    }
+
+    .guest-modal-btn{
+        border: none;
+        background-color: transparent;
+        color: #717171;
+        margin: 0;
+        padding: 16.5px 20px;
+        border-top: transparent;
+        border-radius: 0 0 8px 8px;
+        font-size: 16px;
+        // font-family: Circular;
+        font-weight: 600;
+        text-align: left;
+        outline: none;
+        width: 100%;
+    }
 
     .reserve-submit-btn{
         width: 100%;
@@ -20,25 +107,26 @@
         border: none;
         // font-family: Circular;
         font-size: 16px;
+        outline: none;
     }
 
     .dates-reserve-container{
         border: 1px solid gray;
     }
 
-    .check-in{
-        padding-left: 15%;
-    }
-    .check-out{
-        padding-right: 16%;
-    }
     .mx-datepicker{
         width: unset;
+        width: 100%;
+        height: 100%;
     }
     .mx-datepicker-rang{
-        width: unset;
+        // width: unset;
+        width: 100%;
+        height: 100%;
     }
     .mx-input {
+        width: 100%;
+        height: 50px;
         padding: 6px 10px;
         border:1px transparent solid;
         border-top: 1px gray solid;
@@ -64,10 +152,16 @@
         border-top: 1px gray solid;
     }
     
-    .mx-icon-calender{
+    .mx-icon-calendar{
         display: none;
     }
     .mx-icon-clear{
         display: none;
     }
+
+    // .date-picker-2{
+    //     opacity: 0;
+    //     cursor: pointer;
+    //     font-size: 4px;
+    // }
 }
