@@ -54,7 +54,8 @@
       <!-- <datepicker :multi="true" :inline="true" :value="Date.now()"></datepicker> -->
       <div class="calendar flex column">
         <h2>{{ stay.loc.address }}</h2>
-        <span>{{date[0]}} - {{date[1]}}</span>
+        <span v-if="date[0]">{{date[0]}} - {{date[1]}}</span>
+        <span class="small-txt" v-else>Add your travel dates for exact pricing</span>
        <date-picker v-model="date" value-type="format" format="MMM DD, YYYY" inline range></date-picker>
 
       </div>
