@@ -6,11 +6,16 @@
           <p>
             <span class="bold">${{ stay.price }}</span> / night
           </p>
-          <div>
+          <div class="trip-ratings flex">
+            <div class="trip-rating" :class="{ opacity: noReviews }">
+              <span v-if="!this.noReviews" style="color:#FF385C">󰀄</span> {{ rating }}
+            </div>
+          </div>
+          <!-- <div>
             <span>star</span>
             <span>4.8</span>
             <span>(6)</span>
-          </div>
+          </div> -->
         </div>
         <form class="trip-form" v-if="stay" @submit.prevent="onReserve">
           <div class="trip-data">
@@ -183,6 +188,17 @@ export default {
     sumOfGuests() {
       this.filterBy.capacity = this.adults + this.children;
       return this.filterBy.capacity;
+    },
+    rating() {
+      return this.stay.reviews.length
+        ? this.stay.reviews[0].rate +
+            " (" +
+            this.stay.reviews.length +
+            ")"
+        : "no reviews yet";
+    },
+    noReviews() {
+      return !this.stay.reviews.length;
     },
     // date() {
     //   console.log("date", this.date);
