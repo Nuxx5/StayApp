@@ -38,12 +38,16 @@
         <!-- <span>{{ loggedInUser.score }}</span> -->
       </section>
     </div>
-    <div class="header-filter-container">
+    <div class="header-filter-container" v-click-outside="onClickOutside">
       <stay-filter v-if="!isUserScrolling && isHomePage || isSearch" @setFilter="setFilter" />
     </div>
+
+    <div v-if="isSearch" class="overlay"></div>
+
   </header>
 </template>
 <script>
+import vClickOutside from "v-click-outside";
 import stayFilter from "./stay-filter.vue";
 export default {
   data() {
@@ -58,6 +62,9 @@ export default {
       //   capacity: 0,
       // },
     };
+  },
+  directives: {
+    clickOutside: vClickOutside.directive,
   },
   computed: {
     loggedInUser() {
@@ -102,6 +109,11 @@ export default {
       // this.$emit("isSearch", this.isSearch)
       this.isSearch = true;
       console.log(this.isSearch);
+    },
+    onClickOutside(event) {
+      if(this.isSearch){
+        this.isSearch = false;
+      }
     },
   },
   watch: {
