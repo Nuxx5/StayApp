@@ -37,12 +37,15 @@
         position: relative;
         width: 50%;
         height: 100%;
+        padding-left: 10px;
     }
 
     .check-in-title{
-        font-size: 10px;
+        font-family: Cereal-medium;
+        font-size: 12px;
         line-height: 12px;
         color: rgb(34, 34, 34);
+      
     }
 
     .check-in-date{
@@ -51,7 +54,7 @@
         // border: none;
         // outline: none;
         // margin: 0px;
-        padding: 26px 12px 10px;
+        padding: 26px 0 10px;
         // background-color: transparent;
         font-family: inherit;
         font-size: 14px;
@@ -69,7 +72,8 @@
         position: relative;
         width: 50%;
         height: 100%;
-        border-left: 1px solid rgb(176, 176, 176)
+        border-left: 1px solid rgb(176, 176, 176);
+        padding-left: 10px;
     }
 
     .date-hide{
@@ -86,6 +90,7 @@
     
     .filter-guests{
         cursor: pointer;
+        height: 56px;
     }
     .guests-modal {
         margin-top: 5px;
@@ -176,4 +181,24 @@
     //     cursor: pointer;
     //     font-size: 4px;
     // }
+    .title {
+    font-weight: 800;
+  font-size: 12px;
+//   padding-bottom: 2px;
+//   padding-inline-end: 60px;
+padding-left: 14px;
+  font-family: Cereal-medium;
+    // line-height: 12px;
+    color: #222222;
+    }
+    .desc {
+      font-size: 19px;
+    //   padding-bottom: 2px;
+    //   padding-inline-end: 60px;
+    padding-left: 14px;
+    padding-bottom: 3px;
+      font-family: Cereal;
+        line-height: 16px;
+        color: #222222;
+        }
 }

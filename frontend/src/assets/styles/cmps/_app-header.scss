@@ -79,6 +79,11 @@ header {
     padding: 0 5px;
     margin: 10px;
   }
+  nav a:last-child {
+    padding: 0 0 0 5px;
+    margin-left: 10px;
+    margin-right: 0;
+  }
   nav .active {
     color: $clr1;
   }
