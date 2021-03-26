@@ -101,6 +101,7 @@ import DatePicker from 'vue2-datepicker';
 // import chatApp from "../cmps/chat-app.vue";
 import tripSettings from "../cmps/trip-settings.vue";
 import googleMaps from "../cmps/google-maps";
+import {socketService} from "../services/socket.service.js"
 export default {
   data() {
     return {
@@ -150,6 +151,7 @@ export default {
           message: `${this.stay.name} reserved from ${reservation.startDate} to ${reservation.endDate}. (${reservation.adults+reservation.children} guests total)`,
           type: 'success'
         });
+        socketService.emit("stay-reserved",'')
     },
   },
 };
