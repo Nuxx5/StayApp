@@ -32,7 +32,9 @@
       <span @click="showModal" class="box">
         <div class="filter-guests flex column">
           <span class="title">Guests</span>
-          <span class="desc-guests">Add guests: {{ sumOfGuests }}</span>
+          <span class="desc-guests" v-if="sumOfGuests">{{ sumOfGuests }} guest<span v-if="sumOfGuests > 1">s</span></span>
+                <span class="desc-guests" v-else>Add guests</span>
+          <!-- <span class="desc-guests">Add guests: {{ sumOfGuests }}</span> -->
         </div>
       </span>
       <div
