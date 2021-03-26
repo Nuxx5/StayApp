@@ -38,11 +38,11 @@
         <!-- <span>{{ loggedInUser.score }}</span> -->
       </section>
     </div>
-    <div class="header-filter-container" v-click-outside="onClickOutside">
+    <div class="header-filter-container">
       <stay-filter v-if="!isUserScrolling && isHomePage || isSearch" @setFilter="setFilter" />
     </div>
-
-    <div v-if="isSearch" class="overlay"></div>
+<!-- v-click-outside="onClickOutside" -->
+    <!-- <div v-if="isSearch" class="overlay"></div> -->
 
   </header>
 </template>
@@ -108,12 +108,12 @@ export default {
       // this.isUserScrolling = !this.isUserScrolling
       // this.$emit("isSearch", this.isSearch)
       this.isSearch = true;
-      console.log(this.isSearch);
+      console.log('isSearch', this.isSearch);
     },
     onClickOutside(event) {
-      if(this.isSearch){
-        this.isSearch = false;
-      }
+      // if(this.isSearch){
+      //   this.isSearch = false;
+      // }
     },
   },
   watch: {
