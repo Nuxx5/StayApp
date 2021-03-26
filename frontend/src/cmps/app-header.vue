@@ -38,11 +38,10 @@
         <!-- <span>{{ loggedInUser.score }}</span> -->
       </section>
     </div>
-    <div   class="header-filter-container">
-      <stay-filter :class="{ homefilter: isHomePage }" v-if="!isUserScrolling && isHomePage || isSearch" @setFilter="setFilter" />
+    <div class="header-filter-container" :class="{'header-ext': isSearch}">
+      <stay-filter v-click-outside="onClickOutside" :class="{ 'home-filter': !isUserScrolling && isHomePage }" v-if="!isUserScrolling && isHomePage || isSearch" @setFilter="setFilter" />
     </div>
-<!-- v-click-outside="onClickOutside" -->
-    <!-- <div v-if="isSearch" class="overlay"></div> -->
+    <div v-if="isSearch" class="overlay"></div>
 
   </header>
 </template>
@@ -82,6 +81,9 @@ export default {
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
+    if (this.$route.path !== "/"){
+      this.isHomePage = false;
+    }
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -89,6 +91,7 @@ export default {
   methods: {
     setFilter(filterBy) {
       console.log("filterBy header", filterBy);
+      this.isSearch = false;
       // this.$store.commit({ type: "setFilter", filterBy });
       this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
       if (this.$route.path !== `/stay?city=${filterBy.txt}`) {
@@ -111,9 +114,9 @@ export default {
       console.log('isSearch', this.isSearch);
     },
     onClickOutside(event) {
-      // if(this.isSearch){
-      //   this.isSearch = false;
-      // }
+      if(this.isSearch){
+        this.isSearch = false;
+      }
     },
   },
   watch: {
