@@ -6,7 +6,7 @@
     <p :class="{opacity:noReviews}"><span v-if="!this.noReviews" style="color:#FF385C">󰀄</span>{{ rating }}</p>
     <div class="preview-txt">
     <p>{{ stay.loc.address }}</p>
-    <p class="bold">{{ getName }}</p>
+    <p>{{ getName }}</p>
     <p>{{ stay.capacity }} guests</p>
     <p><span class="bold">${{ stay.price }}</span> / night</p>
     </div>

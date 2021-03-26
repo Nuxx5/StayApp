@@ -196,7 +196,7 @@
   border-radius: 50px;
   background-color: #fff;
   position: relative;
-  margin-top: 40px;
+//   margin-top: 40px;
 }
 
 .wrapper .box {
@@ -232,6 +232,14 @@
   padding-bottom: 2px;
   padding-inline-end: 60px;
   width: 250px;
+}
+.wrapper .box .desc-guests {
+     font-weight: 800;
+font-size: 12px;
+line-height: 16px;
+padding-bottom: 2px;
+padding-inline-end: 60px;
+width: 135px;
 }
 
 .wrapper .box:first-child:after,

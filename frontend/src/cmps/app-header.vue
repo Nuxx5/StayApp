@@ -38,8 +38,8 @@
         <!-- <span>{{ loggedInUser.score }}</span> -->
       </section>
     </div>
-    <div class="header-filter-container">
-      <stay-filter v-if="!isUserScrolling && isHomePage || isSearch" @setFilter="setFilter" />
+    <div   class="header-filter-container">
+      <stay-filter :class="{ homefilter: isHomePage }" v-if="!isUserScrolling && isHomePage || isSearch" @setFilter="setFilter" />
     </div>
   </header>
 </template>

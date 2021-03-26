@@ -32,7 +32,7 @@
       <span @click="showModal" class="box">
         <div class="filter-guests flex column">
           <span class="title">Guests</span>
-          <span class="desc">Add guests: {{ sumOfGuests }}</span>
+          <span class="desc-guests">Add guests: {{ sumOfGuests }}</span>
         </div>
       </span>
       <div
