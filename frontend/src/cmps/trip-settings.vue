@@ -58,7 +58,7 @@
               <div class="container-btns">
                 <div class="btn-container">
                   <div class="txt flex column">
-                    <span class="title">Adults:</span>
+                    <span class="guest-title">Adults:</span>
                     <span class="subtitle">Age 13 or above</span>
                   </div>
                   <div class="btns">
@@ -69,7 +69,7 @@
                 </div>
                 <div class="btn-container">
                   <div class="txt flex column">
-                    <span class="title">Children:</span>
+                    <span class="guest-title">Children:</span>
                     <span class="subtitle">Ages 2-12</span>
                   </div>
                   <div class="btns">
@@ -80,7 +80,7 @@
                 </div>
                 <div class="btn-container">
                   <div class="txt flex column">
-                    <span class="title">Infants:</span>
+                    <span class="guest-title">Infants:</span>
                     <span class="subtitle">Under 2</span>
                   </div>
                   <div class="btns">
