@@ -1,7 +1,11 @@
 <template>
   <section class="stay-preview clickable" @click="openDetails">
     <div class="preview-img">
-      <img :src="loadImg" />
+      <el-carousel :autoplay="false" trigger="click">
+        <el-carousel-item v-for="item in 5" :key="item">
+          <img :src="loadImg(item)" />
+        </el-carousel-item>
+      </el-carousel>
     </div>
     <p :class="{ opacity: noReviews }">
       <span v-if="!this.noReviews" style="color: #ff385c">󰀄</span> {{ rating }}
@@ -14,16 +18,15 @@
         <span class="bold">${{ stay.price }}</span> / night
       </p>
     </div>
-    <!-- <img class="card" src="@/assets/img/stay1.jpg"/> -->
   </section>
 </template>
 <script>
 export default {
   props: ["stay"],
   computed: {
-    loadImg() {
-      return this.stay.imgUrls[0];
-    },
+    // loadImg() {
+    //   return this.stay.imgUrls[idx];
+    // },
     rating() {
       if(this.stay.reviews.length){
         const reviewsRate = this.stay.reviews.map(reviews => reviews.rate)
@@ -46,6 +49,9 @@ export default {
   methods: {
     openDetails() {
       this.$router.push(`/stay/${this.stay._id}`);
+    },
+    loadImg(idx) {
+      return this.stay.imgUrls[idx-1];
     },
   },
 };
