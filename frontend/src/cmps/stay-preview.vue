@@ -7,7 +7,7 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-    <p :class="{ opacity: noReviews }">
+    <p class="preview-txt-header" :class="{ opacity: noReviews }">
       <span v-if="!this.noReviews" style="color: #ff385c">󰀄</span> {{ rating }}
     </p>
     <div class="preview-txt">
