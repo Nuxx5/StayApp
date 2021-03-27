@@ -8,14 +8,10 @@
           </p>
           <div class="trip-ratings flex">
             <div class="trip-rating" :class="{ opacity: noReviews }">
-              <span v-if="!this.noReviews" style="color:#FF385C">󰀄</span> {{ rating }}
+              <span v-if="!this.noReviews" style="color: #ff385c">󰀄</span>
+              {{ rating }}
             </div>
           </div>
-          <!-- <div>
-            <span>star</span>
-            <span>4.8</span>
-            <span>(6)</span>
-          </div> -->
         </div>
         <form class="trip-form" v-if="stay" @submit.prevent="onReserve">
           <div class="trip-data">
@@ -49,7 +45,11 @@
             <span @click="showModal" class="box">
               <div class="filter-guests flex column">
                 <span class="title">Guests</span>
-                <span class="desc" v-if="sumOfGuests">{{ sumOfGuests }} guest<span v-if="sumOfGuests > 1">s</span></span>
+                <span class="desc" v-if="sumOfGuests"
+                  >{{ sumOfGuests }} guest<span v-if="sumOfGuests > 1"
+                    >s</span
+                  ></span
+                >
                 <span class="desc" v-else>Add guests</span>
               </div>
             </span>
@@ -96,18 +96,37 @@
                 </div>
               </div>
             </div>
-
-            <!-- <button class="guest-modal-btn">
-              Guests
-            </button> -->
           </div>
-          <button class="reserve-submit-btn">Check availability</button>
+
+          <button v-if="!isAvailability" class="reserve-submit-btn">
+            Check availability
+          </button>
+          <button v-if="isAvailability && !isReserve" class="reserve-submit-btn">
+            Reserve
+          </button>
+          <button v-if="isReserve" class="reserve-btn-oreder">Reserved</button>
+
+          <div v-if="isAvailability" class="trip-chrage-ext">
+            <div class="trip-charge">
+              <div class="warning">You will be charged</div>
+            </div>
+            <div class="trip-payment">
+              <p class="desc">
+                {{ sumOfGuests }} guest<span v-if="sumOfGuests > 1">s</span>
+              </p>
+              <div class="payment flex align-center space-between">
+                <p>${{ stay.price }} X {{ nightsCount }}</p>
+                <p>${{ totalPrice }}</p>
+              </div>
+              <p class="total-payment bold">Total: ${{ totalPrice }}</p>
+            </div>
+          </div>
         </form>
       </div>
     </div>
 
     <!-- <form v-if="stay" @submit.prevent="onReserve" class="trip-settings"> -->
-      <!-- <div class="dates-reserve-container flex space-between">
+    <!-- <div class="dates-reserve-container flex space-between">
       <div class="dates-reserve">
         <div class="check-in">Check-in</div>
         <button>{{date[0]}}
@@ -127,7 +146,7 @@
       </div>
     </div> -->
 
-      <!-- <details>
+    <!-- <details>
         <summary>Guests</summary>
         <div class="flex column">
           <div>
@@ -176,6 +195,8 @@ export default {
         capacity: 0,
       },
       isShown: false,
+      isAvailability: false,
+      isReserve: false,
     };
   },
   directives: {
@@ -189,13 +210,29 @@ export default {
       this.filterBy.capacity = this.adults + this.children;
       return this.filterBy.capacity;
     },
+    nightsCount(){
+      return (new Date(this.date[1]) - new Date(this.date[0])) / (1000*60*60*24) ;
+    },
+    totalPrice(){
+      return this.stay.price * (new Date(this.date[1]) - new Date(this.date[0])) / (1000*60*60*24);
+    },
     rating() {
-      return this.stay.reviews.length
-        ? this.stay.reviews[0].rate +
-            " (" +
-            this.stay.reviews.length +
-            ")"
-        : "no reviews yet";
+      if (this.stay.reviews.length) {
+        const reviewsRate = this.stay.reviews.map((reviews) => reviews.rate);
+        const reviewsRateAvg =
+          reviewsRate.reduce(function (sum, val) {
+            return sum + val;
+          }, 0) / reviewsRate.length;
+        return (
+          reviewsRateAvg.toFixed(1) + " (" + this.stay.reviews.length ** 3 + ")"
+        );
+      } else return "no reviews yet";
+      // return this.stay.reviews.length
+      //   ? this.stay.reviews[0].rate +
+      //       " (" +
+      //       this.stay.reviews.length +
+      //       ")"
+      //   : "no reviews yet";
     },
     noReviews() {
       return !this.stay.reviews.length;
@@ -207,16 +244,23 @@ export default {
   },
   methods: {
     onReserve() {
-      if(!this.date[0] || !this.date[1] || !this.adults) return
-      console.log("emiting...");
-      let reservation = {
-        startDate: this.date[0],
-        endDate: this.date[1],
-        infants: this.infants,
-        children: this.children,
-        adults: this.adults,
-      };
-      this.$emit("reservationMade", reservation);
+      if (!this.date[0] || !this.date[1] || !this.adults) return;
+      if (!this.isAvailability) {
+        this.isAvailability = true;
+        return;
+      }
+      if (this.isAvailability && !this.isReserve) {
+        this.isReserve = true;
+        console.log("emiting...");
+        let reservation = {
+          startDate: this.date[0],
+          endDate: this.date[1],
+          infants: this.infants,
+          children: this.children,
+          adults: this.adults,
+        };
+        this.$emit("reservationMade", reservation);
+      }
     },
     addAdult(ev) {
       ev.preventDefault();

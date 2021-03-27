@@ -25,9 +25,14 @@ export default {
       return this.stay.imgUrls[0];
     },
     rating() {
-      return this.stay.reviews.length
-        ? this.stay.reviews[0].rate + " (" + this.stay.reviews.length + ")"
-        : "no reviews yet";
+      if(this.stay.reviews.length){
+        const reviewsRate = this.stay.reviews.map(reviews => reviews.rate)
+        const reviewsRateAvg = reviewsRate.reduce(function(sum, val){
+          return sum + val;
+        }, 0) / reviewsRate.length;
+        return reviewsRateAvg.toFixed(1) + ' (' + this.stay.reviews.length ** 3 + ')';
+      }
+      else return 'no reviews yet';
     },
     noReviews() {
       return !this.stay.reviews.length;

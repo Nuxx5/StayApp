@@ -126,6 +126,18 @@
         font-size: 16px;
         outline: none;
     }
+    
+    .reserve-btn-oreder{
+        width: 100%;
+        background-color: #717171;
+        height: 48px;
+        color: white;
+        border-radius: 12px;
+        border: none;
+        cursor: not-allowed;
+        font-size: 16px;
+        outline: none;
+    }
 
     .dates-reserve-container{
         border: 1px solid gray;
@@ -182,29 +194,44 @@
     //     font-size: 4px;
     // }
     .title {
-    font-weight: 800;
-  font-size: 12px;
+        font-weight: 800;
+        font-size: 12px;
 //   padding-bottom: 2px;
 //   padding-inline-end: 60px;
-padding-left: 14px;
-  font-family: Cereal-medium;
+        padding-left: 14px;
+        font-family: Cereal-medium;
     // line-height: 12px;
-    color: #222222;
+        color: #222222;
     }
     .desc {
       font-size: 19px;
     //   padding-bottom: 2px;
     //   padding-inline-end: 60px;
-    padding-left: 14px;
-    padding-bottom: 3px;
-      font-family: Cereal;
+        padding-left: 14px;
+        padding-bottom: 3px;
+        font-family: Cereal;
         line-height: 16px;
         color: #222222;
-        }
-        .guest-title {
-            font-weight: 800;
-            font-size: 12px;
-            font-family: Cereal-medium;
-              color: #222222;
-        }
+    }
+    .guest-title {
+        font-weight: 800;
+        font-size: 12px;
+        font-family: Cereal-medium;
+        color: #222222;
+    }
+
+    .trip-charge{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .warning{
+        margin:auto;
+        padding-top: 10px;
+    }
+
+    .total-payment{
+        border-top: 1px solid #ddd;
+    }
+
 }

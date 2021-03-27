@@ -123,12 +123,16 @@ export default {
     //   return `http://maps.googleapis.com/maps/api/staticmap?center=${this.stay.loc.lat},${this.stay.loc.lng}&zoom=14&size=480x250&markers=${this.stay.loc.lat},${this.stay.loc.lng}&key=AIzaSyCP18cD4FwL37eXgcB1MbLNtG9ktbkzdlw`
     // },
     rating() {
-      return this.stay.reviews.length
-        ? this.stay.reviews[0].rate +
-            " (" +
-            this.stay.reviews.length +
-            ")"
-        : "no reviews yet";
+      if(this.stay.reviews.length){
+        const reviewsRate = this.stay.reviews.map(reviews => reviews.rate)
+        console.log('reviewsRate', reviewsRate);
+        const reviewsRateAvg = reviewsRate.reduce(function(sum, val){
+          return sum + val;
+        }, 0) / reviewsRate.length;
+        console.log('reviewsRateAvg', reviewsRateAvg);
+        return reviewsRateAvg.toFixed(1) + ' (' + this.stay.reviews.length ** 3 + ')';
+      }
+      else return 'no reviews yet';
     },
     noReviews() {
       return !this.stay.reviews.length;
