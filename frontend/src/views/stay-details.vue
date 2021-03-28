@@ -73,7 +73,7 @@
         <img :src="review.by.imgUrl">
         <div class="header-text">
           <span class="review-name bold">{{review.by.fullname}}</span>
-          <p class="review-date">June 2019</p>
+          <p class="review-date">October 2019</p>
         </div>
       </div>
       <p v-if="review" class="review-txt">{{review.txt}}</p>
