@@ -211,10 +211,10 @@ export default {
       return this.filterBy.capacity;
     },
     nightsCount(){
-      return (new Date(this.date[1]) - new Date(this.date[0])) / (1000*60*60*24) ;
+      return Math.floor((new Date(this.date[1]) - new Date(this.date[0])) / (1000*60*60*24));
     },
     totalPrice(){
-      return this.stay.price * (new Date(this.date[1]) - new Date(this.date[0])) / (1000*60*60*24);
+      return this.stay.price * Math.floor((new Date(this.date[1]) - new Date(this.date[0])) / (1000*60*60*24));
     },
     rating() {
       if (this.stay.reviews.length) {

@@ -146,7 +146,12 @@ header {
       pointer-events: none;
     }
   }
+  .btn:hover{
+    box-shadow: 0 3px 6px -1px rgba(34, 34, 34, 0.3);
+  }
 }
+
+
 .search-icon {
   background-color: #ff385c;
   border-radius: 50%;
