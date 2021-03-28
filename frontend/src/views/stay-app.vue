@@ -1,6 +1,6 @@
 <template>
   <section class="stay-app main-container">
-    <stay-list :stays="stays" />
+    <stay-list :stays="stays" @setFilter="setFilter" />
   </section>
 </template>
 
@@ -12,24 +12,36 @@ import stayList from "../cmps/stay-list.vue";
 export default {
   data() {
     return {
-    //   stayToEdit: stayService.getEmptyStay(),
-     filterBy: {
+      //   stayToEdit: stayService.getEmptyStay(),
+      filterBy: {
         txt: '',
         startDate: null,
         endDate: null,
         capacity: 0,
+        fromPrice: 0,
+        toPrice: 1000,
       },
     };
   },
   methods: {
     getStays() {
-      console.log("in getStays");
+      console.log("getStays in stay-app");
       return this.$store.dispatch({ type: "loadStays" });
-  },
+    },
+    setFilter(filterBy) {
+      console.log("filterBy stay-app", filterBy);
+      this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
+      // if (this.$route.path !== `/stay?city=${filterBy.txt}`) {
+      //   this.$router.push(`/stay?city=${filterBy.txt}`);
+      // }
+      // if (this.$route.path !== "/stay") {
+      //   this.$router.push("/stay");
+      // }
+    },
   },
   created() {
-    if(!this.$route.query.city) {
-      this.getStays()
+    if (!this.$route.query.city) {
+      this.getStays();
       // this.filterBy.txt = '';
     }
     // console.log("stay-app");
@@ -48,14 +60,14 @@ export default {
     "$route.query.city"(city) {
       console.log("Changed to", city);
       // if (this.$route.path === "/stay/") {
-        if (!city) {
-      console.log("inside if");
-        this.getStays()}
-    }
+      if (!city) {
+        console.log("inside if");
+        this.getStays();
+      }
+    },
   },
   components: {
     stayList,
   },
-}
-
+};
 </script>

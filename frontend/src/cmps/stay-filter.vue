@@ -102,10 +102,12 @@ export default {
       infants: 0,
       date: [],
       filterBy: {
-        txt: "",
+        txt: '',
         startDate: null,
         endDate: null,
         capacity: 0,
+        fromPrice: 0,
+        toPrice: 1000,
       },
       isShown: false,
     };

@@ -9,6 +9,8 @@ export const stayStore = {
             startDate: null,
             endDate: null,
             capacity: 0,
+            fromPrice: 0,
+            toPrice: 1000,
           },
         currStay: null
     },

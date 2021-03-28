@@ -30,7 +30,8 @@ function setFilter(filterBy) {
 // }
 }
 function query(filterBy) {
-  var queryStr = (!filterBy) ? '' : `?city=${filterBy.txt}`
+  // var queryStr = (!filterBy) ? '' : `?city=${filterBy.txt}`
+  var queryStr = (!filterBy) ? '' : `?city=${filterBy.txt}&fromPrice=${filterBy.fromPrice}&toPrice=${filterBy.toPrice}`
   return httpService.get(`stay${queryStr}`)
   // return httpService.get('stay')
   // return httpService.get('stay', filterBy)
