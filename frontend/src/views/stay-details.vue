@@ -108,7 +108,7 @@ export default {
     return {
       stay: null,
       date: [],
-      pos: {}
+      pos: {},
       }
     },
   created() {
@@ -139,6 +139,11 @@ export default {
     },
     setPos() {
   return {lat:this.stay.loc.lat, lng:this.stay.loc.lng}
+    }
+  },
+  methods: {
+    disabledBeforeToday(date) {
+       return date < new Date(new Date().setHours(0, 0, 0, 0));
     }
   },
   components: {

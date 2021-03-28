@@ -111,11 +111,11 @@
               <div class="warning">You will be charged</div>
             </div>
             <div class="trip-payment">
-              <p class="desc">
+              <p class="checkout-desc">
                 {{ sumOfGuests }} guest<span v-if="sumOfGuests > 1">s</span>
               </p>
               <div class="payment flex align-center space-between">
-                <p>${{ stay.price }} X {{ nightsCount }}</p>
+                <p>${{ stay.price }} x {{ nightsCount }}</p>
                 <p>${{ totalPrice }}</p>
               </div>
               <p class="total-payment bold">Total: ${{ totalPrice }}</p>
@@ -178,8 +178,7 @@ import vClickOutside from "v-click-outside";
 import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
 export default {
-  props: ["stay"],
-  // , "date"
+  props: ["stay", "date"],
   data() {
     return {
       adults: 1,
