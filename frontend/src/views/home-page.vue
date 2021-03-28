@@ -84,8 +84,7 @@ export default {
   computed: {},
   created() {
     window.addEventListener("scroll", this.handleScroll);
-    socketService.setup()
-    socketService.on("stay-reserved",()=>{
+    socketService.on("show-msg",()=>{
     console.log('hi!')
     const h = this.$createElement;
 
