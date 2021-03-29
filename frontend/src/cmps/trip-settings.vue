@@ -8,8 +8,8 @@
           </p>
           <div class="trip-ratings flex">
             <div class="trip-rating" :class="{ opacity: noReviews }">
-              <span v-if="!this.noReviews" style="color: #ff385c">󰀄</span>
-              {{ rating }}
+              <span v-if="!this.noReviews" style="color: #ff385c">󰀄 </span>
+              <span class="bold">{{ rating }}</span><span class="opacity">{{ reviews }}</span>
             </div>
           </div>
         </div>
@@ -225,7 +225,7 @@ export default {
             return sum + val;
           }, 0) / reviewsRate.length;
         return (
-          reviewsRateAvg.toFixed(1) + " (" + this.stay.reviews.length ** 3 + ")"
+          reviewsRateAvg.toFixed(2)
         );
       } else return "no reviews yet";
       // return this.stay.reviews.length
@@ -234,6 +234,9 @@ export default {
       //       this.stay.reviews.length +
       //       ")"
       //   : "no reviews yet";
+    },
+    reviews() {
+      return ' (' + (this.stay.reviews.length ** 4 + 52) +')'
     },
     noReviews() {
       return !this.stay.reviews.length;
