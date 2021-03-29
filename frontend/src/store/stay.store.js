@@ -10,7 +10,7 @@ export const stayStore = {
             endDate: null,
             capacity: 0,
             fromPrice: 33,
-            toPrice: 3500,
+            toPrice: 500,
         },
         currStay: null
     },
@@ -118,7 +118,10 @@ export const stayStore = {
         },
         setFilter(context, payload) {
             console.log('filterBy stay-store', payload.filterBy);
-            this.state.filterBy = payload.filterBy;
+            // this.state.filterBy = payload.filterBy;
+            // payload = {price: 52}
+            // this.state.filterBy = { ...this.state.filterBy, ['price']: 52 }
+            // this.state.filterBy = { ...this.state.filterBy, [payload.key]: payload.key }
             console.log('this.state.filterBy', this.state.filterBy);
             stayService.query(payload.filterBy)
                 .then(stays => {
