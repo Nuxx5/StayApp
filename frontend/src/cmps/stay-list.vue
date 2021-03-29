@@ -6,10 +6,10 @@
       </h1>
       <h1 v-else class="list-container h1">Places to stay near you</h1>
       <div class="list-filter">
-        <button class="filte-btn">Cancellation flexibility</button>
-        <button class="filte-btn">Type of place</button>
+        <button class="filter-btn">Cancellation flexibility</button>
+        <button class="filter-btn">Type of place</button>
         <button
-          class="filte-btn"
+          class="filter-btn"
           v-if="filterBy.fromPrice <= 33 && filterBy.toPrice >= 500"
           @click="showModal"
         >
