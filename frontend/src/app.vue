@@ -28,7 +28,7 @@ export default {
         this.$notify({
           title: 'New reservation!',
           message: h('i', { style: 'color: teal' }, `You have a reservation at ${data.stay.name} from ${data.date.start} until ${data.date.end}. (${data.guests} guest${str} total)`),
-          duration: 0
+          duration: 60000
         });
     })
   },
