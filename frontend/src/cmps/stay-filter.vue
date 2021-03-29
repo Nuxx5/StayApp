@@ -106,8 +106,8 @@ export default {
         startDate: null,
         endDate: null,
         capacity: 0,
-        fromPrice: 0,
-        toPrice: 1000,
+        fromPrice: 33,
+        toPrice: 3500,
       },
       isShown: false,
     };

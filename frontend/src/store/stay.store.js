@@ -9,9 +9,9 @@ export const stayStore = {
             startDate: null,
             endDate: null,
             capacity: 0,
-            fromPrice: 0,
-            toPrice: 1000,
-          },
+            fromPrice: 33,
+            toPrice: 3500,
+        },
         currStay: null
     },
     getters: {
@@ -22,12 +22,15 @@ export const stayStore = {
             // return state.stays.filter(stay => {
             //     const containsTxt = regex.test(stay.loc.address);
             //     return containsTxt
-                // if (!state.filterBy.complete) return containsTxt
-                // const isComplete = (state.filterBy.complete === 'true');
-                // const matchesComplete = isComplete ? stay.completedAt : !stay.completedAt;
-                // return containsTxt && matchesComplete
+            // if (!state.filterBy.complete) return containsTxt
+            // const isComplete = (state.filterBy.complete === 'true');
+            // const matchesComplete = isComplete ? stay.completedAt : !stay.completedAt;
+            // return containsTxt && matchesComplete
             // })
             return state.stays
+        },
+        filterByForDisplay(state) {
+            return state.filterBy;
         },
         // donePrecentage(state) {
         //     const doneStaysAmount = state.stays.filter(stay => stay.completedAt).length;
@@ -115,10 +118,12 @@ export const stayStore = {
         },
         setFilter(context, payload) {
             console.log('filterBy stay-store', payload.filterBy);
+            this.state.filterBy = payload.filterBy;
+            console.log('this.state.filterBy', this.state.filterBy);
             stayService.query(payload.filterBy)
-            .then(stays => {
-                context.commit({ type: 'setStays', stays })
-          })
+                .then(stays => {
+                    context.commit({ type: 'setStays', stays })
+                })
         }
     }
 }
