@@ -40,6 +40,8 @@
                   id="min-price"
                   name="min-price"
                   placeholder="33"
+                  min="33"
+                  max="499"
                   v-model="priceRange[0]"
                 />
               </div>
@@ -54,6 +56,8 @@
                   id="max-price"
                   name="max-price"
                   placeholder="500+"
+                  min="34"
+                  max="500"
                   v-model="priceRange[1]"
                 />
               </div>
