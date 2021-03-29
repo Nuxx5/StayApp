@@ -31,13 +31,14 @@
         </el-slider>
         <div class="modal-price">
           <div class="price-filter flex align-center">
-            <div class="input-price">
+            <div @click="setMinFocus" class="input-price">
               <label for="min-price">min price</label>
               <div>
                 <span>$</span>
                 <input
                   type="number"
-                  id="min-price"
+                  id="minprice"
+                  ref="minprice"
                   name="min-price"
                   placeholder="33"
                   min="33"
@@ -47,13 +48,14 @@
               </div>
             </div>
             <span class="price-separator">-</span>
-            <div class="input-price">
+            <div @click="setMaxFocus" class="input-price">
               <label for="max-price">max price</label>
               <div>
                 <span>$</span>
                 <input
                   type="number"
-                  id="max-price"
+                  id="maxprice"
+                  ref="maxprice"
                   name="max-price"
                   placeholder="500+"
                   min="34"
@@ -145,6 +147,12 @@ export default {
       console.log("minPrice", minPrice);
       if (minPrice < 33) minPrice = 33;
       this.filterBy.fromPrice = minPrice;
+    },
+    setMinFocus(){
+      this.$refs.minprice.focus();
+    },
+    setMaxFocus(){
+      this.$refs.maxprice.focus();
     },
     // toggleCompleted(stay) {
     //   stay = { ...stay };
