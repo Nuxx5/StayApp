@@ -50,7 +50,7 @@
                     >s</span
                   ></span
                 >
-                <span class="desc" v-else>Add guests</span>
+                <span class="no-guests" v-else>Add guests</span>
               </div>
             </span>
 
@@ -181,7 +181,7 @@ export default {
   props: ["stay", "date"],
   data() {
     return {
-      adults: 1,
+      adults: 0,
       children: 0,
       infants: 0,
       startDate: null,
@@ -224,9 +224,8 @@ export default {
           reviewsRate.reduce(function (sum, val) {
             return sum + val;
           }, 0) / reviewsRate.length;
-        return (
-          reviewsRateAvg.toFixed(2)
-        );
+        
+        return Number.isInteger(reviewsRateAvg)? reviewsRateAvg.toFixed(1) : reviewsRateAvg.toFixed(2);
       } else return "no reviews yet";
       // return this.stay.reviews.length
       //   ? this.stay.reviews[0].rate +

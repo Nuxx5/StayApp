@@ -45,6 +45,7 @@
     font-size: 12px;
     line-height: 12px;
     color: rgb(34, 34, 34);
+    margin-top: 5px;
   }
 
   .check-in-date {
@@ -211,6 +212,7 @@
     font-family: Cereal-medium;
     // line-height: 12px;
     color: #222222;
+    margin-top: 5px;
   }
   .desc {
     font-size: 19px;
@@ -222,6 +224,15 @@
     line-height: 16px;
     color: #222222;
     margin-top: 3px;
+  }
+  .no-guests {
+    padding-left: 14px;
+    padding-bottom: 3px;
+    font-family: Cereal;
+    margin-top: 3px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #555;
   }
   .guest-title {
     font-weight: 800;
