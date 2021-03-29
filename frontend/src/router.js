@@ -8,6 +8,7 @@ import stayEdit from './views/stay-edit.vue'
 import login from './views/login-signup.vue'
 import userDetails from './views/user-details.vue'
 import stayAdd from './views/stay-add.vue'
+import dashboard from './views/dashboard.vue'
 
 Vue.use(Router)
 
@@ -55,5 +56,10 @@ export const router = new Router({
             name: 'user-details',
             component: userDetails
         },
+        {
+            path: '/dashboard',
+            name: 'dashboard',
+            components: dashboard
+        }
     ]
 })

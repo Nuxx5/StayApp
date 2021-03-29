@@ -1,0 +1,4 @@
+<template>
+</template>
+export default {
+}
