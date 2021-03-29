@@ -68,12 +68,12 @@
         v-for="review in stay.reviews"
         :key="review.id"
         class="review-card"
-      >
+>
       <div v-if="review" class="review-header">
         <img :src="review.by.imgUrl">
         <div class="header-text">
           <span class="review-name bold">{{review.by.fullname}}</span>
-          <p class="review-date">October 2019</p>
+          <p class="review-date">{{getRandomMonth()}} 2020</p>
         </div>
       </div>
       <p v-if="review" class="review-txt">{{review.txt}}</p>
@@ -139,12 +139,8 @@ export default {
     },
     setPos() {
   return {lat:this.stay.loc.lat, lng:this.stay.loc.lng}
-    }
+  
   },
-  methods: {
-    disabledBeforeToday(date) {
-       return date < new Date(new Date().setHours(0, 0, 0, 0));
-    }
   },
   components: {
     // chatApp,
@@ -165,6 +161,15 @@ export default {
         let data = {stay: this.stay}
         socketService.emit("stay-reserved",data)
     },
+    disabledBeforeToday(date) {
+      return date < new Date(new Date().setHours(0, 0, 0, 0));
+      },
+      getRandomMonth() {
+        console.log('in getrandommonth');
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var random = Math.floor(Math.random() * months.length);
+        return months[random];
+      }
   },
 };
 </script>
