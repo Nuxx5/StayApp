@@ -33,7 +33,7 @@ export default {
         const reviewsRateAvg = reviewsRate.reduce(function(sum, val){
           return sum + val;
         }, 0) / reviewsRate.length;
-        return reviewsRateAvg.toFixed(2);
+        return Number.isInteger(reviewsRateAvg)? reviewsRateAvg.toFixed(1) : reviewsRateAvg.toFixed(2);
       }
       else return 'no reviews yet';
     },

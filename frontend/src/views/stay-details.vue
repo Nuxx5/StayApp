@@ -130,7 +130,7 @@ export default {
           return sum + val;
         }, 0) / reviewsRate.length;
         console.log('reviewsRateAvg', reviewsRateAvg);
-        return reviewsRateAvg.toFixed(2);
+        return Number.isInteger(reviewsRateAvg)? reviewsRateAvg.toFixed(1) : reviewsRateAvg.toFixed(2);
       }
       else return 'no reviews yet';
     },
