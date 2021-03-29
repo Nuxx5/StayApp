@@ -40,8 +40,11 @@
           </li>
         </ul>
       </div>
-      <div class="home-card">
+      <div>
         <h2>Top rated stays</h2>
+        <div class="home-card">
+
+        
         <ul class="clean-list card-place">
           <li class="card clickable" @click="openDetails('605e3a3803a393688f2e204f')">
             <img src="https://a0.muscache.com/im/pictures/442b41a5-5ccd-48e4-b210-959f19a9ee06.jpg?im_w=720" alt="" />
@@ -60,6 +63,7 @@
             <h3>Beautiful apt in Toronto</h3>
           </li>
         </ul>
+        </div>
       </div>
       <div class="home-about">
         <h2 class="about-header">About Stay.</h2>
