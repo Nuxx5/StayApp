@@ -67,7 +67,6 @@
 
 <script>
 import stayFilter from "../cmps/stay-filter.vue";
-import {socketService} from "../services/socket.service.js";
 export default {
   name: "home",
   data() {
@@ -86,15 +85,6 @@ export default {
   computed: {},
   created() {
     window.addEventListener("scroll", this.handleScroll);
-    socketService.on("show-msg",()=>{
-    console.log('hi!')
-    const h = this.$createElement;
-
-        this.$notify({
-          title: 'Title',
-          message: h('i', { style: 'color: teal' }, 'This is a reminder')
-        });
-    })
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);

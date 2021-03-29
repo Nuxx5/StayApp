@@ -18,8 +18,8 @@ export default {
         startDate: null,
         endDate: null,
         capacity: 0,
-        fromPrice: 0,
-        toPrice: 1000,
+        fromPrice: 33,
+        toPrice: 3500,
       },
     };
   },
@@ -29,7 +29,10 @@ export default {
       return this.$store.dispatch({ type: "loadStays" });
     },
     setFilter(filterBy) {
-      console.log("filterBy stay-app", filterBy);
+      console.log("filterBy stay-app1", filterBy);
+      // console.log('this.$route.query', this.$route.query.city);
+      // this.filterBy.txt = `'${this.$route.query}'`;
+      // console.log("filterBy stay-app2", filterBy);
       this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
       // if (this.$route.path !== `/stay?city=${filterBy.txt}`) {
       //   this.$router.push(`/stay?city=${filterBy.txt}`);

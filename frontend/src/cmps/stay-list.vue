@@ -8,25 +8,66 @@
       <div class="list-filter">
         <button class="filte-btn">Cancellation flexibility</button>
         <button class="filte-btn">Type of place</button>
-        <button class="filte-btn" v-if="filterBy.fromPrice < 1 && filterBy.toPrice >= 1000" @click="showModal">Price</button>
-        <button class="filte-btn" v-else @click="showModal">${{filterBy.fromPrice}} - ${{filterBy.toPrice}}</button>
+        <button
+          class="filte-btn"
+          v-if="filterBy.fromPrice <= 33 && filterBy.toPrice >= 3500"
+          @click="showModal"
+        >
+          Price
+        </button>
+        <button class="filte-btn" v-else @click="showModal">
+          ${{ filterBy.fromPrice }} - ${{ filterBy.toPrice }}
+        </button>
       </div>
 
-      <div v-click-outside="onClickOutside" v-if="isShown" class="filter-price-modal flex column"
-        :class="{ modal: isShown }">
-        <el-slider v-model="value" range :max="1000">
+      <div
+        v-click-outside="onClickOutside"
+        v-if="isShown"
+        class="filter-price-modal flex column"
+        :class="{ modal: isShown }"
+      >
+        <el-slider v-model="priceRange" range :min="33" :max="3500">
         </el-slider>
+        <div class="modal-price">
+          <div class="price-filter flex align-center">
+            <div class="input-price">
+              <label for="min-price">min price</label>
+              <div>
+                <span>$</span>
+                <input
+                  type="number"
+                  id="min-price"
+                  name="min-price"
+                  placeholder="33"
+                />
+              </div>
+            </div>
+            <span class="price-separator">-</span>
+            <div class="input-price">
+              <label for="max-price">max price</label>
+              <div>
+                <span>$</span>
+                <input
+                  type="number"
+                  id="max-price"
+                  name="max-price"
+                  placeholder="3500+"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-price-btn flex space-between">
+            <button>Clear</button>
+            <button>Save</button>
+          </div>
+        </div>
       </div>
       <input
         type="number"
         placeholder="From Price"
         v-model="filterBy.fromPrice"
       />
-      <input
-        type="number"
-        placeholder="To Price"
-        v-model="filterBy.toPrice"
-      />
+      <input type="number" placeholder="To Price" v-model="filterBy.toPrice" />
       <button @click="setFilter">Filter</button>
       <ul class="stay-list clean-list preview-grid">
         <li class="list-card" v-for="stay in stays" :key="stay._id">
@@ -54,26 +95,45 @@ export default {
   data() {
     return {
       filterBy: {
-        txt: '',
+        txt: "",
         startDate: null,
         endDate: null,
         capacity: 0,
-        fromPrice: 0,
-        toPrice: 1000,
+        fromPrice: 33,
+        toPrice: 3500,
       },
       isShown: false,
+      priceRange: [],
     };
   },
   directives: {
     clickOutside: vClickOutside.directive,
   },
+  created() {
+    // this.filterBy = this.$store.getters.filterByForDisplay;
+    console.log('this.filterBy created', this.filterBy);
+  },
   methods: {
-     setFilter() {
-      console.log("this.filterBy", this.filterBy);
+    setFilter() {
+      // if (this.$route.path !== `/stay?city=${filterBy.txt}`) {
+      //   this.$router.push(`/stay?city=${filterBy.txt}`);
+      // }
+      // this.filterBy = this.$store.getters.filterByForDisplay;
+      console.log("this.filterBy1", this.filterBy);
+      console.log("priceRange", this.priceRange[0]);
+      console.log('this.$route.query', this.$route.query.city);
+      if(this.$route.query.city){
+        this.filterBy.txt = this.$route.query.city;
+      } else this.filterBy.txt = '';
+      console.log("this.filterBy2", this.filterBy);
       this.$emit("setFilter", this.filterBy);
+      // this.$emit("setFilter", {
+      //   fromPrice: this.filterBy.fromPrice,
+      //   toPrice: this.filterBy.toPrice,
+      // });
     },
     showModal() {
-      console.log('this.isShown', this.isShown);
+      console.log("this.isShown", this.isShown);
       this.isShown = !this.isShown;
     },
     onClickOutside(event) {

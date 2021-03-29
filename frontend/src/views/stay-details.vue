@@ -161,7 +161,9 @@ export default {
           message: `${this.stay.name} reserved from ${reservation.startDate} to ${reservation.endDate}. (${reservation.adults+reservation.children} guests total)`,
           type: 'success'
         });
-        socketService.emit("stay-reserved",'')
+        let id = (this.$store.getters.loggedinUser===null) ? null : this.$store.getters.loggedinUser._id
+        let data = {stay: this.stay}
+        socketService.emit("stay-reserved",data)
     },
   },
 };
