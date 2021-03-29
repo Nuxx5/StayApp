@@ -30,9 +30,9 @@
 }
 
     .card-gallery {
-    display: grid;
-    gap: 25px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        display: grid;
+        gap: 25px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
     ul{
         padding-inline-start: 0;
@@ -44,6 +44,12 @@
 
     .about-header{
         padding-bottom: 30px;
+    }
+
+    .card-place{
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
     
 }

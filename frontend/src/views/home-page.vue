@@ -40,6 +40,27 @@
           </li>
         </ul>
       </div>
+      <div class="home-card">
+        <h2>Top rated stays</h2>
+        <ul class="clean-list card-place">
+          <li class="card clickable" @click="openDetails('605e3a3803a393688f2e204f')">
+            <img src="https://a0.muscache.com/im/pictures/442b41a5-5ccd-48e4-b210-959f19a9ee06.jpg?im_w=720" alt="" />
+            <h3>Fabulous house in London</h3>
+          </li>
+          <li class="card clickable" @click="openDetails('605f3fb14649737205a30bdb')">
+            <img src="https://a0.muscache.com/im/pictures/6db016ff-619a-462b-aaa1-04815cbb87a2.jpg?im_w=720" alt="" />
+            <h3>Stylish villa in London</h3>
+          </li>
+          <li class="card clickable" @click="openDetails('6060d22446497372050e2b96')">
+            <img src="https://a0.muscache.com/im/pictures/92f3e0d1-7d10-4be3-8eba-e5ca93e28106.jpg?im_w=720" alt="" />
+            <h3>Cozy apt in Paris</h3>
+          </li>
+          <li class="card clickable" @click="openDetails('6058fc993dfeeeccfab54a85')">
+            <img src="https://a0.muscache.com/im/pictures/f9fadcd7-969f-4d65-a7cc-a60613b60e30.jpg?im_w=720" alt="" />
+            <h3>Beautiful apt in Toronto</h3>
+          </li>
+        </ul>
+      </div>
       <div class="home-about">
         <h2 class="about-header">About Stay.</h2>
         <div class="about-txt flex">
@@ -112,6 +133,9 @@ export default {
         this.isUserScrolling = true;
         // this.isSearch = false;
       } else this.isUserScrolling = false;
+    },
+    openDetails(id) {
+      this.$router.push(`/stay/${id}`);
     },
   },
   components: {
