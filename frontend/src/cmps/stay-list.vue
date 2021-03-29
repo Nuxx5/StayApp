@@ -15,7 +15,7 @@
         >
           Price
         </button>
-        <button class="filte-btn" v-else @click="showModal">
+        <button class="filter-btn" v-else @click="showModal">
           ${{ filterBy.fromPrice }} - ${{ filterBy.toPrice }}
         </button>
       </div>
