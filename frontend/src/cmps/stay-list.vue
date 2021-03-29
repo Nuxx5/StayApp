@@ -10,7 +10,7 @@
         <button class="filte-btn">Type of place</button>
         <button
           class="filte-btn"
-          v-if="filterBy.fromPrice <= 33 && filterBy.toPrice >= 3500"
+          v-if="filterBy.fromPrice <= 33 && filterBy.toPrice >= 500"
           @click="showModal"
         >
           Price
@@ -26,7 +26,8 @@
         class="filter-price-modal flex column"
         :class="{ modal: isShown }"
       >
-        <el-slider v-model="priceRange" range :min="33" :max="3500">
+      <p class="price-header">The average nightly price is $130</p>
+        <el-slider class="slider" v-model="priceRange" range :min="33" :max="500">
         </el-slider>
         <div class="modal-price">
           <div class="price-filter flex align-center">
@@ -39,6 +40,7 @@
                   id="min-price"
                   name="min-price"
                   placeholder="33"
+                  v-model="priceRange[0]"
                 />
               </div>
             </div>
@@ -51,24 +53,18 @@
                   type="number"
                   id="max-price"
                   name="max-price"
-                  placeholder="3500+"
+                  placeholder="500+"
+                  v-model="priceRange[1]"
                 />
               </div>
             </div>
           </div>
           <div class="modal-price-btn flex space-between">
-            <button>Clear</button>
-            <button>Save</button>
+            <button @click="clearPrice" class="clear-btn">Clear</button>
+            <button @click="setFilter" class="save-btn">Save</button>
           </div>
         </div>
       </div>
-      <input
-        type="number"
-        placeholder="From Price"
-        v-model="filterBy.fromPrice"
-      />
-      <input type="number" placeholder="To Price" v-model="filterBy.toPrice" />
-      <button @click="setFilter">Filter</button>
       <ul class="stay-list clean-list preview-grid">
         <li class="list-card" v-for="stay in stays" :key="stay._id">
           <stay-preview :stay="stay" />
@@ -100,10 +96,10 @@ export default {
         endDate: null,
         capacity: 0,
         fromPrice: 33,
-        toPrice: 3500,
+        toPrice: 500,
       },
       isShown: false,
-      priceRange: [],
+      priceRange: [33, 500],
     };
   },
   directives: {
@@ -111,26 +107,25 @@ export default {
   },
   created() {
     // this.filterBy = this.$store.getters.filterByForDisplay;
-    console.log('this.filterBy created', this.filterBy);
+    console.log("this.filterBy created", this.filterBy);
   },
   methods: {
     setFilter() {
+      this.filterBy.fromPrice = this.priceRange[0];
+      this.filterBy.toPrice = this.priceRange[1];
+      this.isShown = false;
       // if (this.$route.path !== `/stay?city=${filterBy.txt}`) {
       //   this.$router.push(`/stay?city=${filterBy.txt}`);
       // }
       // this.filterBy = this.$store.getters.filterByForDisplay;
       console.log("this.filterBy1", this.filterBy);
       console.log("priceRange", this.priceRange[0]);
-      console.log('this.$route.query', this.$route.query.city);
-      if(this.$route.query.city){
+      console.log("this.$route.query", this.$route.query.city);
+      if (this.$route.query.city) {
         this.filterBy.txt = this.$route.query.city;
-      } else this.filterBy.txt = '';
+      } else this.filterBy.txt = "";
       console.log("this.filterBy2", this.filterBy);
       this.$emit("setFilter", this.filterBy);
-      // this.$emit("setFilter", {
-      //   fromPrice: this.filterBy.fromPrice,
-      //   toPrice: this.filterBy.toPrice,
-      // });
     },
     showModal() {
       console.log("this.isShown", this.isShown);
@@ -138,6 +133,14 @@ export default {
     },
     onClickOutside(event) {
       this.isShown = !this.isShown;
+    },
+    clearPrice() {
+      this.priceRange = [33, 500];
+    },
+    fromPrice(minPrice) {
+      console.log("minPrice", minPrice);
+      if (minPrice < 33) minPrice = 33;
+      this.filterBy.fromPrice = minPrice;
     },
     // toggleCompleted(stay) {
     //   stay = { ...stay };
