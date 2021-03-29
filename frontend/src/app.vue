@@ -21,13 +21,13 @@ export default {
     console.log("Vue App was created!!!");
     this.$store.dispatch({ type: "loadStays" });
     socketService.on("show-msg",(data)=>{
-    console.log('hi!')
-    console.log(data)
+    console.log(data.date)
     const h = this.$createElement;
+    let str = (data.guests>1) ? 's':''
 
         this.$notify({
-          title: 'Title',
-          message: h('i', { style: 'color: teal' }, 'This is a reminder'),
+          title: 'New reservation!',
+          message: h('i', { style: 'color: teal' }, `You have a reservation at ${data.stay.name} from ${data.date.start} until ${data.date.end}. (${data.guests} guest${str} total)`),
           duration: 0
         });
     })
