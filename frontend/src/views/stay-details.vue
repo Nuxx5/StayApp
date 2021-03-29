@@ -3,7 +3,7 @@
     <h2 class="stay-title">{{ stay.name }}</h2>
     <div class="ratings flex">
       <div class="details-rating" :class="{ opacity: noReviews }">
-        <span v-if="!this.noReviews" style="color:#FF385C">󰀄</span> {{ rating }}
+        <span v-if="!this.noReviews" style="color:#FF385C">󰀄 </span><span class="bold">{{ rating }}</span><span class="opacity">{{ reviews }}</span>
       </div>
       <div>{{ stay.loc.address }}</div>
     </div>
@@ -130,9 +130,12 @@ export default {
           return sum + val;
         }, 0) / reviewsRate.length;
         console.log('reviewsRateAvg', reviewsRateAvg);
-        return reviewsRateAvg.toFixed(1) + ' (' + this.stay.reviews.length ** 3 + ')';
+        return reviewsRateAvg.toFixed(2);
       }
       else return 'no reviews yet';
+    },
+    reviews() {
+      return ' (' + (this.stay.reviews.length ** 4 + 52) +')'
     },
     noReviews() {
       return !this.stay.reviews.length;

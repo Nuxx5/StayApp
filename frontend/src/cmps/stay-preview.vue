@@ -8,7 +8,7 @@
       </el-carousel>
     </div>
     <p class="preview-txt-header" :class="{ opacity: noReviews }">
-      <span v-if="!this.noReviews" style="color: #ff385c">󰀄</span> {{ rating }}
+      <span v-if="!this.noReviews" style="color: #ff385c">󰀄 </span><span class="bold">{{ rating }}</span><span v-if="!this.noReviews" class="opacity">{{ reviews }}</span>
     </p>
     <div class="preview-txt">
       <p>{{ stay.loc.address }}</p>
@@ -33,9 +33,12 @@ export default {
         const reviewsRateAvg = reviewsRate.reduce(function(sum, val){
           return sum + val;
         }, 0) / reviewsRate.length;
-        return reviewsRateAvg.toFixed(1) + ' (' + this.stay.reviews.length ** 3 + ')';
+        return reviewsRateAvg.toFixed(2);
       }
       else return 'no reviews yet';
+    },
+    reviews() {
+      return ' (' + (this.stay.reviews.length ** 4 + 52) +')'
     },
     noReviews() {
       return !this.stay.reviews.length;
