@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="main-container">
-      <h2>Explore Locations</h2>
+      <h2 class="explore-locations">Explore Locations</h2>
       <div class="home-card">
         <ul class="clean-list card-gallery">
           <li class="card clickable" @click="setStay('Toronto')">
@@ -41,7 +41,7 @@
         </ul>
       </div>
       <div>
-        <h2>Top rated stays</h2>
+        <h2 class="top-rated">Top rated stays</h2>
         <div class="home-card">
 
         
