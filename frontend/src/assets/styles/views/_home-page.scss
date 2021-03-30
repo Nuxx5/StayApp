@@ -43,13 +43,16 @@
     }
 
     .about-header{
-        padding-bottom: 30px;
+        // padding-bottom: 30px;
+        margin-top: 30px !important;
+    margin-bottom: 34px !important;
     }
 
     .card-place{
         display: grid;
         gap: 15px;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        margin-top: 34px;
     }
     
 }
@@ -73,4 +76,9 @@ h1{
 
 .card img{
     border-radius: 8px;
+}
+
+.top-rated {
+    margin-top: 30px !important;
+    margin-bottom: 34px !important;
 }
