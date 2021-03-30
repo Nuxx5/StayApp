@@ -4,7 +4,7 @@
       <div>
         <small>© 2021 Stay. All rights reserved · Privacy · Terms · Sitemap</small>
       </div>
-      <div>
+      <div class="flex align-center">
         <img src="@/assets/img/facebook.76a41a2f.svg" class="social-icon" alt="">
         <img src="@/assets/img/twitter.fa7d4559.svg" class="social-icon" alt="">
         <img src="@/assets/img/instagram.d5c4e427.svg" class="social-icon" alt="">
