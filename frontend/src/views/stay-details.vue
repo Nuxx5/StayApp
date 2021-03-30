@@ -60,7 +60,7 @@
 
       </div>
       </div>
-      <tripSettings :stay="stay" :date="date" @reservationMade="handleReservation" />
+      <tripSettings :stay="stay" :fullDate="date" @reservationMade="handleReservation" @setDate="setDate" />
       </div>
       <div class="reviews flex">
         <ul class="review-cards flex">
@@ -114,7 +114,6 @@ export default {
   created() {
     const stayId = this.$route.params.id;
     stayService.getStayById(stayId).then((stay) => {
-      console.log(stay);
       this.stay = stay;
     });
   },
@@ -125,11 +124,11 @@ export default {
     rating() {
       if(this.stay.reviews.length){
         const reviewsRate = this.stay.reviews.map(reviews => reviews.rate)
-        console.log('reviewsRate', reviewsRate);
+        // console.log('reviewsRate', reviewsRate);
         const reviewsRateAvg = reviewsRate.reduce(function(sum, val){
           return sum + val;
         }, 0) / reviewsRate.length;
-        console.log('reviewsRateAvg', reviewsRateAvg);
+        // console.log('reviewsRateAvg', reviewsRateAvg);
         return Number.isInteger(reviewsRateAvg)? reviewsRateAvg.toFixed(1) : reviewsRateAvg.toFixed(2);
       }
       else return 'no reviews yet';
@@ -165,11 +164,13 @@ export default {
         let data = {stay: this.stay, date, guests}
         socketService.emit("stay-reserved",data)
     },
+    setDate(date){
+      this.date = date;
+    },
     disabledBeforeToday(date) {
       return date < new Date(new Date().setHours(0, 0, 0, 0));
       },
       getRandomMonth() {
-        console.log('in getrandommonth');
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         var random = Math.floor(Math.random() * months.length);
         return months[random];

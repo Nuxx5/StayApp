@@ -23,6 +23,7 @@
                   value-type="format"
                   format="MMM DD, YYYY"
                   range
+                  @input="setDate"
                 ></date-picker>
                 <div class="check-in-title">Check-in</div>
                 <span v-if="!date[0]" class="check-in-date">Add date</span>
@@ -35,6 +36,7 @@
                   value-type="format"
                   format="MMM DD, YYYY"
                   range
+                  @input="setDate"
                 ></date-picker>
                 <div class="check-in-title">Check-out</div>
                 <span v-if="!date[1]" class="check-in-date">Add date</span>
@@ -178,7 +180,7 @@ import vClickOutside from "v-click-outside";
 import DatePicker from "vue2-datepicker";
 import "vue2-datepicker/index.css";
 export default {
-  props: ["stay", "date"],
+  props: ["stay", "fullDate"],
   data() {
     return {
       adults: 0,
@@ -186,7 +188,7 @@ export default {
       infants: 0,
       startDate: null,
       endDate: null,
-      date: [],
+      date: this.fullDate,
       filterBy: {
         txt: '',
         startDate: null,
@@ -202,9 +204,6 @@ export default {
   },
   directives: {
     clickOutside: vClickOutside.directive,
-  },
-  created() {
-    // console.log('date', this.date);
   },
   computed: {
     sumOfGuests() {
@@ -240,10 +239,6 @@ export default {
     noReviews() {
       return !this.stay.reviews.length;
     },
-    // date() {
-    //   console.log("date", this.date);
-    //   return this.date;
-    // },
   },
   methods: {
     onReserve() {
@@ -264,6 +259,9 @@ export default {
         };
         this.$emit("reservationMade", reservation);
       }
+    },
+    setDate(){
+      this.$emit("setDate", this.date);
     },
     addAdult(ev) {
       ev.preventDefault();
@@ -297,6 +295,11 @@ export default {
     },
     onClickOutside(event) {
       this.isShown = !this.isShown;
+    },
+  },
+  watch:{
+    fullDate() {
+      this.date = this.fullDate
     },
   },
   components: {
