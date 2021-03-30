@@ -72,7 +72,7 @@
             <h3>Who we are</h3>
             <p>
               Stay experiences are not your typical tour. Whether you’re on a trip, 
-              exploring your own city, or staying at home,learn something new from an expert host.
+              exploring your own city, or staying at home, learn something new from an expert host.
               Choose from dance lessons, pasta-making—even yoga with goats.
             </p>
           </div>

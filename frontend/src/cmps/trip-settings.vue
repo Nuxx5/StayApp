@@ -9,7 +9,7 @@
           <div class="trip-ratings flex">
             <div class="trip-rating" :class="{ opacity: noReviews }">
               <span v-if="!this.noReviews" style="color: #ff385c">󰀄 </span>
-              <span class="bold">{{ rating }}</span><span class="opacity">{{ reviews }}</span>
+              <span class="bold">{{ rating }}</span><span v-if="!this.noReviews" class="opacity">{{ reviews }}</span>
             </div>
           </div>
         </div>
