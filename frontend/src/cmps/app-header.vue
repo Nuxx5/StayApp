@@ -7,23 +7,17 @@
           <span>Stay.</span>
         </router-link>
         <div class="search">
-          <button v-if="headerFilter" @click="openFilter" class="btn flex align-center">
+          <button
+            v-if="headerFilter"
+            @click="openFilter"
+            class="btn flex align-center"
+          >
             <div class="txt">{{ setSearchTxt }}</div>
             <div class="search-icon">
               <img src="@/assets/img/search_m.6a5171ec.svg" />
             </div>
           </button>
         </div>
-        <!-- <div class="header-filter">
-          <button
-            class="header-filter-btn flex align-center"
-            v-if="headerFilter"
-            @click="openFilter"
-          >
-            <div class="header-search">{{ setSearchTxt }}</div>
-            <div class="search-txt">🔎</div>
-          </button>
-        </div> -->
         <div class="nav-menu">
           <router-link to="/stay">Explore</router-link>
           <router-link to="/stay/add">Become a Host</router-link>
@@ -34,7 +28,6 @@
         <router-link :to="`/user/${loggedInUser._id}`">
           {{ loggedInUser.fullname }}
         </router-link>
-        <!-- <span>{{ loggedInUser.score }}</span> -->
       </section>
     </div>
     <div class="header-filter-container" :class="{ 'header-ext': isSearch }">
@@ -57,14 +50,6 @@ export default {
       isUserScrolling: false,
       isSearch: false,
       isHomePage: true,
-      // filterBy: {
-      //   txt: '',
-      //   startDate: null,
-      //   endDate: null,
-      //   capacity: 0,
-      // fromPrice: 0,
-      // toPrice: 1000,
-      // },
     };
   },
   directives: {
@@ -78,7 +63,6 @@ export default {
       return !(!this.isUserScrolling && this.$route.path === "/");
     },
     setSearchTxt() {
-      // return this.filterBy.txt ? this.filterBy.txt : "city search";
       return this.$route.query.city
         ? this.$route.query.city
         : "Start your search";
@@ -95,16 +79,11 @@ export default {
   },
   methods: {
     setFilter(filterBy) {
-      console.log("filterBy header", filterBy);
       this.isSearch = false;
-      // this.$store.commit({ type: "setFilter", filterBy });
       this.$store.dispatch({ type: "setFilter", filterBy: { ...filterBy } });
       if (this.$route.path !== `/stay?city=${filterBy.txt}`) {
         this.$router.push(`/stay?city=${filterBy.txt}`);
       }
-      // if (this.$route.path !== "/stay") {
-      //   this.$router.push("/stay");
-      // }
     },
     handleScroll(event) {
       if (window.scrollY > 0) {
@@ -116,7 +95,6 @@ export default {
       // this.isUserScrolling = !this.isUserScrolling
       // this.$emit("isSearch", this.isSearch)
       this.isSearch = true;
-      console.log("isSearch", this.isSearch);
     },
     onClickOutside(event) {
       if (this.isSearch) {
@@ -130,7 +108,6 @@ export default {
       if (url === "/") {
         this.isHomePage = true;
       } else this.isHomePage = false;
-      console.log("isHomePage", this.isHomePage);
     },
   },
   components: {
