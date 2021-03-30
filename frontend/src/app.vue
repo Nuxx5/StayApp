@@ -19,6 +19,7 @@ export default {
   },
   created() {
     console.log("Vue App was created!!!");
+    document.title = 'Stay'
     this.$store.dispatch({ type: "loadStays" });
     socketService.on("show-msg",(data)=>{
     console.log(data.date)
