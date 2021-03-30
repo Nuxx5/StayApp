@@ -86,6 +86,14 @@
       </div>
       <!-- </div> -->
     </div>
+    <div class="searchMobile">
+          <button @click="setFilter" class="btn flex align-center">
+            <div class="txt">{{ setSearchTxt }}</div>
+            <div class="search-icon">
+              <img src="@/assets/img/search_m.6a5171ec.svg" />
+            </div>
+          </button>
+        </div>
   </section>
   <!-- </form> -->
 </template>
@@ -122,6 +130,11 @@ export default {
     sumOfGuests() {
       this.filterBy.capacity = this.adults + this.children;
       return this.filterBy.capacity;
+    },
+    setSearchTxt() {
+      return this.$route.query.city
+        ? this.$route.query.city
+        : "Start your search";
     },
   },
   methods: {

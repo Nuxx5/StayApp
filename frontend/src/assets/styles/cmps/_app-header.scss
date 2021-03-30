@@ -170,3 +170,29 @@ header {
 .home-filter {
     margin-top: 40px;
 }
+
+// Mobile Layout
+
+@media (max-width: $mobile-breakpoint + 40){
+  .nav-menu{
+    display: none;
+  }
+
+  .search{
+    left:unset;
+    right: 0;
+  }
+
+  .search .txt{
+    display: none;
+  }
+
+  .search .btn{
+    padding: unset;
+    border: unset;
+  }
+  .search-icon .search-icon{
+    left: 0;
+  }
+
+}

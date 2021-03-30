@@ -7,14 +7,13 @@
           <span>Stay.</span>
         </router-link>
         <div class="search">
-          <button v-if="headerFilter"
-            @click="openFilter" class="btn flex align-center">
+          <button v-if="headerFilter" @click="openFilter" class="btn flex align-center">
             <div class="txt">{{ setSearchTxt }}</div>
             <div class="search-icon">
-              <img src="@/assets/img/search_m.6a5171ec.svg">
+              <img src="@/assets/img/search_m.6a5171ec.svg" />
             </div>
-            </button>
-            </div>
+          </button>
+        </div>
         <!-- <div class="header-filter">
           <button
             class="header-filter-btn flex align-center"
@@ -38,11 +37,15 @@
         <!-- <span>{{ loggedInUser.score }}</span> -->
       </section>
     </div>
-    <div class="header-filter-container" :class="{'header-ext': isSearch}">
-      <stay-filter v-click-outside="onClickOutside" :class="{ 'home-filter': !isUserScrolling && isHomePage }" v-if="!isUserScrolling && isHomePage || isSearch" @setFilter="setFilter" />
+    <div class="header-filter-container" :class="{ 'header-ext': isSearch }">
+      <stay-filter
+        v-click-outside="onClickOutside"
+        :class="{ 'home-filter': !isUserScrolling && isHomePage }"
+        v-if="(!isUserScrolling && isHomePage) || isSearch"
+        @setFilter="setFilter"
+      />
     </div>
     <div v-if="isSearch" class="overlay"></div>
-
   </header>
 </template>
 <script>
@@ -59,8 +62,8 @@ export default {
       //   startDate: null,
       //   endDate: null,
       //   capacity: 0,
-        // fromPrice: 0,
-        // toPrice: 1000,
+      // fromPrice: 0,
+      // toPrice: 1000,
       // },
     };
   },
@@ -83,7 +86,7 @@ export default {
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
-    if (this.$route.path !== "/"){
+    if (this.$route.path !== "/") {
       this.isHomePage = false;
     }
   },
@@ -113,10 +116,10 @@ export default {
       // this.isUserScrolling = !this.isUserScrolling
       // this.$emit("isSearch", this.isSearch)
       this.isSearch = true;
-      console.log('isSearch', this.isSearch);
+      console.log("isSearch", this.isSearch);
     },
     onClickOutside(event) {
-      if(this.isSearch){
+      if (this.isSearch) {
         this.isSearch = false;
       }
     },
