@@ -283,3 +283,47 @@
     box-shadow: unset;
   }
 }
+
+.searchMobile{
+  display: none;
+}
+
+// Mobile Layout
+
+@media (max-width: $mobile-breakpoint + 40){
+  .searchMobile{
+    display: block;
+    margin-top: 40px;
+    margin-left: 300px;
+    // border: 1px solid #ddd;
+    border-radius: 50px;
+    background-color: #fff;
+    position: relative;
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      transform: translate(-50%, -50%);
+      // display: block;
+      transition: display 0.3s;
+      .btn {
+        padding: 6px 0;
+        background: none;
+        outline: none;
+        border-radius: 30px;
+        // border: 1px solid #ddd;
+        .txt {
+          font-size: 14px;
+          line-height: 18px;
+          -webkit-margin-start: 20px;
+          margin-inline-start: 20px;
+          width: 240px;
+          text-align: start;
+          pointer-events: none;
+        }
+      }
+    }
+
+  .wrapper{
+    display: none;
+  }
+}

@@ -63,7 +63,7 @@
     color: whitesmoke;
 
 h1{
-    font-size: 72px !important
+    font-size: 72px;
 }
 }    
 
@@ -73,4 +73,12 @@ h1{
 
 .card img{
     border-radius: 8px;
+}
+
+// Mobile Layout
+
+@media (max-width: $mobile-breakpoint + 40){
+    .main-txt h1{
+        font-size: 50px;
+    }
 }
