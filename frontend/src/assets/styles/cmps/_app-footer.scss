@@ -1,11 +1,21 @@
 footer {
-    // background-color: black;
-    // color: white;
     padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     // position: fixed;
     bottom: 0;
     border-top: 1px solid #ddd;
+
+    .social-icon{
+        width: 20px;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
+    .social-icon:hover{
+        opacity: 0.6;
+    }
+    
+    .social-icon:not(:last-child){
+        margin-right: 24px
+    }
 }
